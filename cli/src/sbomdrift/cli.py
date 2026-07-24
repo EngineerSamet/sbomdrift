@@ -27,7 +27,7 @@ from .evaluate import evaluate_snapshot
 from .ingest import ingest_directory, ingest_file
 from .models import SEVERITY_ORDER, normalise_severity
 from .osv import OSVClient
-from .store import Store
+from .store import DuplicateLabelError, Store
 
 app = typer.Typer(
     name="sbomdrift",
@@ -173,7 +173,13 @@ def evaluate_command(
             raise typer.Exit(code=1)
 
         with OSVClient(base_url=osv_url) as client:
-            result = evaluate_snapshot(store, snapshot, client, as_of=cutoff, label=label)
+            try:
+                result = evaluate_snapshot(store, snapshot, client, as_of=cutoff, label=label)
+            except DuplicateLabelError as exc:
+                err_console.print(
+                    f"[red]{exc}[/red] — pick another with --label, or omit it to leave it unnamed."
+                )
+                raise typer.Exit(code=1) from exc
 
         evaluation = result.evaluation
         scope = f" as of {cutoff.date()}" if cutoff else ""

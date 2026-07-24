@@ -12,7 +12,7 @@ from datetime import UTC, datetime
 import pytest
 
 from sbomdrift.models import Component, Evaluation, Finding, Snapshot
-from sbomdrift.store import Store, from_iso, to_iso
+from sbomdrift.store import DuplicateLabelError, Store, from_iso, to_iso
 
 
 def _snapshot(artefact: str = "demo-app", **kwargs) -> Snapshot:
@@ -84,15 +84,37 @@ def test_evaluation_and_findings_round_trip(store):
     assert store.get_evaluation(evaluation.id).label == "march"
 
 
-def test_labels_are_unique(store):
+def test_a_reused_label_raises_a_named_error(store):
+    """A clash is a user-facing condition, not a bare IntegrityError.
+
+    This is the failure a scheduled scan hit in practice: labelling evaluations
+    by date, then running twice in one day. The message has to name the label so
+    the caller can act on it.
+    """
     snapshot_id = store.add_snapshot(_snapshot())
     base = dict(snapshot_id=snapshot_id, evaluated_at=datetime(2026, 7, 24, tzinfo=UTC))
     store.add_evaluation(Evaluation(label="today", **base))
 
-    import sqlite3
-
-    with pytest.raises(sqlite3.IntegrityError):
+    with pytest.raises(DuplicateLabelError) as caught:
         store.add_evaluation(Evaluation(label="today", **base))
+    assert caught.value.label == "today"
+    assert "today" in str(caught.value)
+
+
+def test_unlabelled_evaluations_do_not_collide(store):
+    """The scheduled scanner omits the label; many nameless rows must coexist.
+
+    SQLite treats NULL as distinct from NULL under a UNIQUE constraint, which is
+    exactly the behaviour relied on here, but relied-upon behaviour deserves a
+    test that fails loudly if a future schema change breaks it.
+    """
+    snapshot_id = store.add_snapshot(_snapshot())
+    base = dict(snapshot_id=snapshot_id, evaluated_at=datetime(2026, 7, 24, tzinfo=UTC))
+
+    first = store.add_evaluation(Evaluation(label=None, **base))
+    second = store.add_evaluation(Evaluation(label=None, **base))
+    third = store.add_evaluation(Evaluation(label=None, **base))
+    assert len({first, second, third}) == 3
 
 
 def test_vuln_cache_upserts_and_reads_back(store):

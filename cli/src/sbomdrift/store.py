@@ -24,6 +24,20 @@ from pathlib import Path
 
 from .models import Component, Evaluation, Finding, Snapshot
 
+
+class DuplicateLabelError(ValueError):
+    """Raised when an evaluation label is already used.
+
+    A label names an evaluation for later reference in ``diff``, so it has to be
+    unique -- but the clash is a user-facing condition ("that name is taken"),
+    not an internal invariant, and deserves a message that says so.
+    """
+
+    def __init__(self, label: str) -> None:
+        super().__init__(f"evaluation label {label!r} is already in use")
+        self.label = label
+
+
 SCHEMA_VERSION = 2
 
 _SCHEMA = """
@@ -216,37 +230,53 @@ class Store:
     # -------------------------------------------------------------- evaluations
 
     def add_evaluation(self, evaluation: Evaluation) -> int:
-        """Persist an evaluation and its findings; returns the new evaluation id."""
-        with self._conn:
-            cursor = self._conn.execute(
-                """INSERT INTO evaluations (snapshot_id, evaluated_at, as_of, oracle, label)
-                   VALUES (?, ?, ?, ?, ?)""",
-                (
-                    evaluation.snapshot_id,
-                    to_iso(evaluation.evaluated_at),
-                    to_iso(evaluation.as_of),
-                    evaluation.oracle,
-                    evaluation.label,
-                ),
-            )
-            evaluation_id = int(cursor.lastrowid)
-            self._conn.executemany(
-                """INSERT OR IGNORE INTO findings
-                       (evaluation_id, purl, vuln_id, severity, summary, published, modified)
-                   VALUES (?, ?, ?, ?, ?, ?, ?)""",
-                [
+        """Persist an evaluation and its findings; returns the new evaluation id.
+
+        A label is unique across the database, so re-using one raises
+        :class:`DuplicateLabelError` rather than a bare ``sqlite3.IntegrityError``.
+        The distinction matters at a call site that cannot know in advance whether
+        a label is free -- a scheduled scan that labels by date and runs twice in
+        one day, for instance.
+        """
+        # The insert and the findings share one transaction: a half-written
+        # evaluation with no findings is worse than none. A label clash surfaces
+        # only on commit, so the whole block is what the except wraps.
+        try:
+            with self._conn:
+                cursor = self._conn.execute(
+                    """INSERT INTO evaluations (snapshot_id, evaluated_at, as_of, oracle, label)
+                       VALUES (?, ?, ?, ?, ?)""",
                     (
-                        evaluation_id,
-                        f.purl,
-                        f.vuln_id,
-                        f.severity,
-                        f.summary,
-                        to_iso(f.published),
-                        to_iso(f.modified),
-                    )
-                    for f in evaluation.findings
-                ],
-            )
+                        evaluation.snapshot_id,
+                        to_iso(evaluation.evaluated_at),
+                        to_iso(evaluation.as_of),
+                        evaluation.oracle,
+                        evaluation.label,
+                    ),
+                )
+                evaluation_id = int(cursor.lastrowid)
+                self._conn.executemany(
+                    """INSERT OR IGNORE INTO findings
+                           (evaluation_id, purl, vuln_id, severity, summary, published, modified)
+                       VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                    [
+                        (
+                            evaluation_id,
+                            f.purl,
+                            f.vuln_id,
+                            f.severity,
+                            f.summary,
+                            to_iso(f.published),
+                            to_iso(f.modified),
+                        )
+                        for f in evaluation.findings
+                    ],
+                )
+        except sqlite3.IntegrityError as exc:
+            if evaluation.label is not None and "evaluations.label" in str(exc):
+                raise DuplicateLabelError(evaluation.label) from exc
+            raise
+
         evaluation.id = evaluation_id
         return evaluation_id
 

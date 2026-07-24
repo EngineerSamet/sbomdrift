@@ -8,4 +8,4 @@ sbomdrift stores component inventories from SBOMs over time, re-evaluates them
 against a vulnerability oracle, and reports the diff between two evaluations.
 """
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
