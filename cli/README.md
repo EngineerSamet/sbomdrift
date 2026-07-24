@@ -49,6 +49,27 @@ In CI, `--fail-on HIGH` makes the command exit non-zero when drift introduces a 
 finding at or above that severity — so a pipeline breaks on *new* risk rather than on
 the accumulated backlog it already knew about.
 
+## Metrics
+
+```bash
+sbomdrift metrics                              # exposition format on stdout
+sbomdrift metrics -o /var/lib/node_exporter/sbomdrift.prom
+```
+
+A scheduled job cannot be scraped: by the time Prometheus calls, the process has exited.
+So `metrics` writes the numbers out instead, for the node exporter's textfile collector
+or a Pushgateway to carry.
+
+Everything emitted is a gauge. `sbomdrift_findings{artefact,severity}` publishes a zero
+for every severity rather than omitting empty ones, because an absent series cannot make
+an alert rule fire, and `sbomdrift_last_evaluation_timestamp_seconds` exists so you can
+alert on the scan having *stopped* — which is the failure you are least likely to notice
+on your own.
+
+Historical `--as-of` evaluations are excluded: they describe the past deliberately, and
+letting one set the current gauge would make a dashboard assert something about now that
+the tool never claimed.
+
 ## Two kinds of drift
 
 | Kind | What it answers | How |

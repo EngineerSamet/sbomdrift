@@ -398,6 +398,43 @@ def list_command(
             console.print(table)
 
 
+# ---------------------------------------------------------------------- metrics
+
+
+@app.command()
+def metrics(
+    db: DbOption = Path(DEFAULT_DB),
+    output: Annotated[
+        Path | None,
+        typer.Option("--output", "-o", help="Write to this file instead of stdout."),
+    ] = None,
+) -> None:
+    """Emit the current drift state as Prometheus metrics.
+
+    A scheduled job cannot be scraped -- it has exited by the time Prometheus
+    calls. Write this to the node exporter's textfile collector directory, or
+    pipe it to a Pushgateway.
+    """
+    from .metrics import render
+
+    with Store(db) as store:
+        document = render(store)
+
+    if output is None:
+        # Deliberately not console.print: Rich would wrap long lines and treat
+        # the braces as markup, and the exposition format is whitespace-sensitive.
+        sys.stdout.write(document)
+        return
+
+    # Written atomically. A textfile collector reads this directory on its own
+    # schedule, and a half-written file is a parse error that silently drops
+    # every metric in it.
+    temporary = output.with_suffix(output.suffix + ".tmp")
+    temporary.write_text(document, encoding="utf-8")
+    temporary.replace(output)
+    err_console.print(f"[dim]wrote {output}[/dim]")
+
+
 # ----------------------------------------------------------------------- remote
 
 
