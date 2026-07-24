@@ -236,6 +236,46 @@ sbomdrift/
    the check caught it.
 6. Added: CI OIDC role is **prefix-scoped** on the shared bucket (`drift/*` yes, `tfstate/*` no).
 
+**2026-07-24 — implementation pass (6 corrections, all found by building the thing):**
+
+1. **Region changed `us-east-1` → `eu-central-1`.** §2.3 justified us-east-1 with "the account
+   already defaults here." Checked during infrastructure work: the account's configured region is
+   **eu-central-1** and its only pre-existing bucket is in eu-north-1. The stated reason was simply
+   false. Under this file's own rule the conclusion could not be inherited, so the choice was
+   re-made: eu-central-1 is nearest to the operator and carries ECR, Inspector and OIDC. Rejected:
+   keeping us-east-1 for marginal price and feature-lead — real, but not worth a decision resting on
+   a premise that does not hold.
+2. **Findings are keyed on the *versionless* PURL, not the full one.** The first real comparison of
+   two `python:3.11-slim` releases reported *115 components added, 114 removed, 0 unchanged* — every
+   finding simultaneously new and fixed, because `openssl@1.1.1n` and `openssl@3.5.6` are different
+   strings. Identity is the package; version is an attribute of it. Same data, after the fix: 22
+   newly vulnerable, 101 newly fixed, 59 unchanged, 76 upgraded. **105 green tests did not catch
+   this**, because the tests were written from the same wrong model.
+3. **PURL type and namespace are lower-cased on ingest.** One Syft document contains both
+   `pkg:deb/debian/...` and `pkg:deb/Debian/...`; the purl spec makes those the same package and
+   string equality did not, so one package was counted twice.
+4. **Non-package SBOM entries are skipped, not counted as unmapped.** Syft catalogues 483 *files*
+   beside 130 packages in `python:3.11-slim`; treating a file entry as "a package we failed to
+   identify" reported 22% PURL coverage for an ingest that had actually mapped 92%.
+5. **OSV `aliases` are stored and used for matching (schema v2).** Comparing against a second oracle
+   by raw identifier scored 70 agreements / 90 OSV-only — a chasm that was largely an artefact,
+   since the same flaw is `GHSA-…`, `PYSEC-…` and `CVE-…` to three different databases. With aliases
+   resolved: 80 / 70 / 3, Jaccard 0.52. *A measurement that flattered the tool was wrong; that is
+   the one to distrust first.*
+6. **Oracle referee changed: Inspector → Trivy over identical SBOMs.** §2.3 planned an
+   OSV-vs-Inspector agreement measurement. Running Trivy against the *same SBOM files* isolates the
+   variable properly — both oracles see an identical component list, so any difference is the
+   vulnerability database and not what each tool detected in the image. Inspector remains in
+   `infra/` behind `enable_inspector`, defaulting to off; it was the documented first cut and it was
+   cut. Also: the ECR pull-through cache is now opt-in, because it is the one place in the project
+   that requires a stored long-lived credential (Docker Hub offers no OIDC), and a default
+   `terraform apply` should create neither a charge nor a secret.
+
+**Still outstanding (not done, not pretended):** the state bucket has not been bootstrapped and no
+MFA device is registered on the IAM user, so `terraform apply` has not been run — `validate` passes
+and that is all that is claimed. The user remains in the account's `admin` group; §2.3's identity
+model is written but not yet in force.
+
 **2026-07-15 (later, before the console session) — identity model corrected a SECOND time (my error, caught before the click):**
 I had chosen IAM Identity Center. On a new Free-plan account, enabling it creates an **AWS Organization**,
 and AWS's own Free Tier docs are explicit: joining an Organization **expires the $200 credits immediately,
