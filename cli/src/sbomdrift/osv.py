@@ -29,6 +29,7 @@ from dataclasses import dataclass
 import httpx
 
 from .cvss import severity_from_vector
+from .models import normalise_severity
 from .store import from_iso
 
 DEFAULT_BASE_URL = "https://api.osv.dev"
@@ -171,7 +172,8 @@ def extract_severity(record: dict) -> str:
 
     1. a **CVSS v3 vector** — computed locally, so the number is reproducible and
        does not depend on which database happened to summarise it;
-    2. ``database_specific.severity`` — what GitHub advisories carry;
+    2. ``database_specific.severity`` — what GitHub advisories carry, normalised
+       onto the CVSS bands because GitHub says MODERATE where CVSS says MEDIUM;
     3. ``UNKNOWN`` — most Debian and Alpine advisories genuinely have no severity,
        and inventing one would put a fabricated number in a CI gate.
     """
@@ -185,13 +187,13 @@ def extract_severity(record: dict) -> str:
     database_specific = record.get("database_specific") or {}
     declared = database_specific.get("severity")
     if isinstance(declared, str) and declared.strip():
-        return declared.strip().upper()
+        return normalise_severity(declared)
 
     for affected in record.get("affected") or []:
         specific = affected.get("database_specific") or {}
         declared = specific.get("severity")
         if isinstance(declared, str) and declared.strip():
-            return declared.strip().upper()
+            return normalise_severity(declared)
 
     return "UNKNOWN"
 

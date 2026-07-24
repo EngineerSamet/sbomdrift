@@ -118,3 +118,40 @@ def test_bad_date_is_rejected_before_any_network_call(tmp_path, sbom_path):
 
     result = _run("eval", "--db", db, "--as-of", "last tuesday")
     assert result.exit_code != 0
+
+
+def test_diff_renders_a_github_advisory_severity_without_crashing(tmp_path, monkeypatch):
+    """Regression: `diff` died with a Rich MarkupError on any report containing a
+    severity outside the CVSS vocabulary.
+
+    The printer built `f"[{style}]{severity}[/]"`, and the style lookup missed for
+    MODERATE, so the markup came out as `[]MODERATE[/]` -- a closing tag with
+    nothing to close. The suite never caught it because every fixture severity was
+    already a CVSS band.
+    """
+    from rich.console import Console
+
+    from sbomdrift import cli as cli_module
+    from sbomdrift.diff import DriftReport
+    from sbomdrift.models import Evaluation, Finding
+    from sbomdrift.store import utcnow
+
+    recorded = Console(file=open(tmp_path / "out.txt", "w", encoding="utf-8"), width=100)
+    monkeypatch.setattr(cli_module, "console", recorded)
+
+    now = utcnow()
+    report = DriftReport(
+        from_evaluation=Evaluation(snapshot_id=1, evaluated_at=now, label="before", id=1),
+        to_evaluation=Evaluation(snapshot_id=1, evaluated_at=now, label="after", id=2),
+        newly_vulnerable=[
+            Finding(purl="pkg:pypi/wheel", vuln_id="GHSA-qwer-tyui-opas", severity="MODERATE"),
+            Finding(purl="pkg:deb/debian/openssl", vuln_id="DEBIAN-CVE-2026-1", severity="HIGH"),
+        ],
+    )
+
+    cli_module._print_report(report)  # must not raise
+    recorded.file.close()
+
+    rendered = (tmp_path / "out.txt").read_text(encoding="utf-8")
+    assert "MEDIUM" in rendered, "MODERATE should be shown under its CVSS band"
+    assert "MODERATE" not in rendered

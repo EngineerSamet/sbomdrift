@@ -21,13 +21,42 @@ from datetime import datetime
 
 SEVERITY_ORDER = ["UNKNOWN", "NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]
 
+# Advisory databases do not share a severity vocabulary. GitHub advisories say
+# MODERATE where CVSS says MEDIUM; Red Hat says IMPORTANT where CVSS says HIGH.
+# OSV passes each database's own word through untouched, so both reach us.
+#
+# This table exists because leaving them untranslated was a real defect, and a
+# dangerous one. ``severity_rank`` used to fall through to 0 -- the rank of
+# UNKNOWN -- for any word it did not recognise, so a MODERATE finding ranked
+# lowest and ``--fail-on MEDIUM`` passed it silently. A gate that fails open is
+# worse than no gate at all, because a gate is trusted.
+SEVERITY_ALIASES = {
+    "MODERATE": "MEDIUM",
+    "IMPORTANT": "HIGH",
+}
+
+
+def normalise_severity(severity: str | None) -> str:
+    """Map whatever word a database used onto the CVSS rating bands.
+
+    Anything still unrecognised becomes ``UNKNOWN`` rather than being ranked by
+    accident: an absent severity is visible to whoever reads the report, while a
+    misranked one is silently trusted.
+    """
+    if not severity or not severity.strip():
+        return "UNKNOWN"
+    label = severity.strip().upper()
+    label = SEVERITY_ALIASES.get(label, label)
+    return label if label in SEVERITY_ORDER else "UNKNOWN"
+
 
 def severity_rank(severity: str) -> int:
-    """Order severities so they can be compared and thresholded."""
-    try:
-        return SEVERITY_ORDER.index(severity.upper())
-    except ValueError:
-        return 0
+    """Order severities so they can be compared and thresholded.
+
+    Normalises first, so a database's own vocabulary and a pre-existing database
+    written before normalisation both rank correctly.
+    """
+    return SEVERITY_ORDER.index(normalise_severity(severity))
 
 
 def purl_identity(purl: str) -> str:

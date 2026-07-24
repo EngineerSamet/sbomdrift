@@ -7,9 +7,9 @@ from datetime import UTC, datetime
 
 import pytest
 
-from sbomdrift.diff import compute_drift
+from sbomdrift.diff import DriftReport, compute_drift
 from sbomdrift.evaluate import evaluate_snapshot
-from sbomdrift.models import Component, Snapshot
+from sbomdrift.models import Component, Evaluation, Finding, Snapshot
 from sbomdrift.osv import OSVClient
 from sbomdrift.store import utcnow
 
@@ -125,3 +125,38 @@ def test_diffing_a_missing_evaluation_is_an_explicit_error(store):
 
 def test_severity_histogram(time_drift):
     assert time_drift.counts_by_severity() == {"CRITICAL": 1, "MEDIUM": 1}
+
+
+# ------------------------------------------------- severity vocabulary and the gate
+#
+# A GitHub advisory reports MODERATE, not MEDIUM. Until those were reconciled a
+# MODERATE finding ranked alongside UNKNOWN, so `--fail-on MEDIUM` let it past --
+# and rendering it crashed the report outright. Both are regression-tested here
+# because the failure mode is a gate that is trusted and does nothing.
+
+
+def _report_with(severity: str) -> DriftReport:
+    now = utcnow()
+    before = Evaluation(snapshot_id=1, evaluated_at=now, label="before", id=1)
+    after = Evaluation(snapshot_id=1, evaluated_at=now, label="after", id=2)
+    return DriftReport(
+        from_evaluation=before,
+        to_evaluation=after,
+        newly_vulnerable=[
+            Finding(purl="pkg:pypi/wheel", vuln_id="GHSA-qwer-tyui-opas", severity=severity)
+        ],
+    )
+
+
+def test_the_gate_fires_on_a_github_moderate_finding():
+    report = _report_with("MODERATE")
+    assert report.exceeds("MEDIUM"), "a MODERATE finding must trip a MEDIUM gate"
+    assert not report.exceeds("HIGH")
+
+
+def test_moderate_is_counted_as_medium_in_the_histogram():
+    assert _report_with("MODERATE").counts_by_severity() == {"MEDIUM": 1}
+
+
+def test_max_new_severity_understands_the_github_vocabulary():
+    assert _report_with("MODERATE").max_new_severity() == "MEDIUM"

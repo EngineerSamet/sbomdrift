@@ -84,8 +84,17 @@ def test_cvss_vector_is_preferred_over_a_declared_label():
 
 
 def test_database_specific_severity_is_the_fallback():
+    """Note the expected value: MEDIUM, not MODERATE.
+
+    This assertion used to read ``== "MODERATE"``, faithfully pinning what the
+    code did -- pass GitHub's own word straight through. That was the defect, not
+    the contract: downstream, MODERATE matched no CVSS band, ranked alongside
+    UNKNOWN, and let a MEDIUM gate pass a moderate finding. The test was green
+    throughout, because it had been written from the same misunderstanding as the
+    code it was checking.
+    """
     record = {"id": "X", "database_specific": {"severity": "moderate"}}
-    assert extract_severity(record) == "MODERATE"
+    assert extract_severity(record) == "MEDIUM"
 
 
 def test_affected_level_severity_is_read_when_the_top_level_has_none():

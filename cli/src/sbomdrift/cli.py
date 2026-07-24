@@ -25,7 +25,7 @@ from . import __version__
 from .diff import DriftReport, compute_drift
 from .evaluate import evaluate_snapshot
 from .ingest import ingest_directory, ingest_file
-from .models import SEVERITY_ORDER
+from .models import SEVERITY_ORDER, normalise_severity
 from .osv import OSVClient
 from .store import Store
 
@@ -199,10 +199,27 @@ def evaluate_command(
         _print_severity_summary(evaluation.findings)
 
 
+def _severity_cell(severity: str) -> str:
+    """Render a severity with its colour, and without inventing empty markup.
+
+    The naive form -- ``f"[{style}]{severity}[/]"`` -- produces ``[]MODERATE[/]``
+    when the style lookup misses, and Rich rejects that with a MarkupError: the
+    closing tag has nothing to close. That crashed ``diff`` outright on any report
+    containing a GitHub-advisory severity.
+    """
+    label = normalise_severity(severity)
+    style = SEVERITY_STYLE.get(label, "")
+    return f"[{style}]{label}[/]" if style else label
+
+
 def _print_severity_summary(findings: list) -> None:
+    # Counted under the normalised label, so a database's own vocabulary lands in
+    # the right bucket instead of being dropped: this loop only prints severities
+    # it finds in SEVERITY_ORDER, so an untranslated MODERATE vanished silently.
     counts: dict[str, int] = {}
     for finding in findings:
-        counts[finding.severity] = counts.get(finding.severity, 0) + 1
+        label = normalise_severity(finding.severity)
+        counts[label] = counts.get(label, 0) + 1
     if not counts:
         return
     parts = [
@@ -319,8 +336,7 @@ def _print_report(report: DriftReport) -> None:
         table.add_column("vulnerability")
         table.add_column("component", overflow="fold")
         for finding in report.newly_vulnerable:
-            style = SEVERITY_STYLE.get(finding.severity, "")
-            table.add_row(f"[{style}]{finding.severity}[/]", finding.vuln_id, finding.purl)
+            table.add_row(_severity_cell(finding.severity), finding.vuln_id, finding.purl)
         console.print(table)
 
     if report.newly_fixed:
@@ -329,7 +345,7 @@ def _print_report(report: DriftReport) -> None:
         table.add_column("vulnerability")
         table.add_column("component", overflow="fold")
         for finding in report.newly_fixed:
-            table.add_row(finding.severity, finding.vuln_id, finding.purl)
+            table.add_row(normalise_severity(finding.severity), finding.vuln_id, finding.purl)
         console.print(table)
 
     if report.added_components or report.removed_components or report.upgraded_components:

@@ -9,6 +9,7 @@ from sbomdrift.models import (
     Component,
     Finding,
     normalise_purl_case,
+    normalise_severity,
     purl_identity,
     purl_version,
     severity_rank,
@@ -71,3 +72,36 @@ def test_component_ecosystem():
 )
 def test_severity_rank_is_case_insensitive(severity, expected):
     assert severity_rank(severity) == expected
+
+
+# --------------------------------------------------------- severity vocabulary
+#
+# Found by trying to screenshot the tool, not by the test suite. `diff` crashed
+# outright on a real time-drift report, and the cause was that advisory
+# databases do not agree on a severity vocabulary: GitHub says MODERATE where
+# CVSS says MEDIUM. The test above pins "nonsense" -> 0, which is correct and
+# was never the problem; what was missing is that MODERATE is not nonsense.
+
+
+def test_github_advisory_severity_maps_onto_the_cvss_bands():
+    assert normalise_severity("MODERATE") == "MEDIUM"
+    assert normalise_severity("moderate") == "MEDIUM"
+    assert normalise_severity("IMPORTANT") == "HIGH"
+
+
+def test_moderate_ranks_as_medium_not_as_unknown():
+    """The security-relevant assertion: MODERATE used to rank 0, so a gate set
+    to MEDIUM passed it silently. A gate that fails open is worse than no gate."""
+    assert severity_rank("MODERATE") == severity_rank("MEDIUM")
+    assert severity_rank("MODERATE") > severity_rank("LOW")
+
+
+@pytest.mark.parametrize("absent", [None, "", "   "])
+def test_absent_severity_is_unknown_rather_than_invented(absent):
+    assert normalise_severity(absent) == "UNKNOWN"
+
+
+def test_an_unrecognised_word_becomes_unknown_rather_than_being_ranked_by_accident():
+    """An absent severity is visible to a reader; a misranked one is trusted."""
+    assert normalise_severity("SPICY") == "UNKNOWN"
+    assert severity_rank("SPICY") == 0

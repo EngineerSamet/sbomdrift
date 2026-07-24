@@ -16,7 +16,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from .models import Evaluation, Finding, severity_rank
+from .models import Evaluation, Finding, normalise_severity, severity_rank
 from .store import Store
 
 
@@ -54,10 +54,17 @@ class DriftReport:
         return "version drift"
 
     def max_new_severity(self) -> str:
-        """Highest severity among *newly* vulnerable findings."""
+        """Highest severity among *newly* vulnerable findings, as a CVSS band.
+
+        Normalised on the way out: this string is printed and compared against
+        thresholds, so returning a database's own word here would reintroduce the
+        vocabulary mismatch one layer further up.
+        """
         if not self.newly_vulnerable:
             return "NONE"
-        return max((f.severity for f in self.newly_vulnerable), key=severity_rank)
+        return normalise_severity(
+            max((f.severity for f in self.newly_vulnerable), key=severity_rank)
+        )
 
     def exceeds(self, threshold: str) -> bool:
         """Whether new drift reaches a severity threshold — the CI gate condition.
@@ -70,11 +77,16 @@ class DriftReport:
         return any(severity_rank(f.severity) >= limit for f in self.newly_vulnerable)
 
     def counts_by_severity(self, findings: list[Finding] | None = None) -> dict[str, int]:
-        """Severity histogram, used by the terminal table and the report figures."""
+        """Severity histogram, used by the terminal table and the report figures.
+
+        Bucketed under the normalised label so that a GitHub advisory's MODERATE
+        is counted as MEDIUM rather than opening a seventh column nobody reads.
+        """
         source = self.newly_vulnerable if findings is None else findings
         counts: dict[str, int] = {}
         for finding in source:
-            counts[finding.severity] = counts.get(finding.severity, 0) + 1
+            label = normalise_severity(finding.severity)
+            counts[label] = counts.get(label, 0) + 1
         return counts
 
 
