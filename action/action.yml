@@ -1,9 +1,8 @@
 # SPDX-License-Identifier: Apache-2.0
 name: sealed-build
-description: >-
-  Build a container image, produce an SBOM, gate on vulnerabilities before the
-  image can reach a registry, and sign the result with keyless attestation —
-  with every tool in the chain pinned to an immutable commit SHA.
+# The GitHub Marketplace rejects a description of 125 characters or more, so the
+# full rationale lives in the README and this stays a single sentence.
+description: Build a container image, block it on a vulnerability gate before push, and sign it keylessly. Every step SHA-pinned.
 author: Samet Sanlikan
 branding:
   icon: lock
