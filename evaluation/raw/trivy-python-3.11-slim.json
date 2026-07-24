@@ -1,0 +1,4336 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.72.0"
+  },
+  "ReportID": "019f9432-c2b1-7eb3-87c8-0a3e698c5b58",
+  "CreatedAt": "2026-07-24T15:56:22.4499634+03:00",
+  "ArtifactName": "samples\\python-3.11-slim.cdx.json",
+  "ArtifactType": "cyclonedx",
+  "Metadata": {
+    "OS": {
+      "Family": "debian",
+      "Name": "13.6"
+    }
+  },
+  "Results": [
+    {
+      "Target": "samples\\python-3.11-slim.cdx.json (debian 13.6)",
+      "Class": "os-pkgs",
+      "Type": "debian",
+      "Packages": [
+        {
+          "ID": "adduser@3.152",
+          "Name": "adduser",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/adduser@3.152?arch=all\u0026distro=debian-13.6",
+            "UID": "2d14efb3ce973d1a",
+            "BOMRef": "pkg:deb/debian/adduser@3.152?arch=all\u0026distro=debian-13.6\u0026package-id=28c3c1bd0d4f48db"
+          },
+          "Version": "3.152",
+          "Arch": "all",
+          "SrcName": "adduser",
+          "SrcVersion": "3.152",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later"
+          ],
+          "DependsOn": [
+            "passwd@1:4.17.4-2"
+          ]
+        },
+        {
+          "ID": "apt@3.0.3",
+          "Name": "apt",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/apt@3.0.3?arch=amd64\u0026distro=debian-13.6",
+            "UID": "7905c21f2b961764",
+            "BOMRef": "pkg:deb/debian/apt@3.0.3?arch=amd64\u0026distro=debian-13.6\u0026package-id=538a004ef5cf1609"
+          },
+          "Version": "3.0.3",
+          "Arch": "amd64",
+          "SrcName": "apt",
+          "SrcVersion": "3.0.3",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "curl",
+            "Expat"
+          ],
+          "DependsOn": [
+            "adduser@3.152",
+            "base-passwd@3.6.7",
+            "debian-archive-keyring@2025.1",
+            "libapt-pkg7.0@3.0.3",
+            "libc6@2.41-12+deb13u3",
+            "libgcc-s1@14.2.0-19",
+            "libseccomp2@2.6.0-2",
+            "libssl3t64@3.5.6-1~deb13u2",
+            "libstdc++6@14.2.0-19",
+            "libsystemd0@257.13-1~deb13u1",
+            "sqv@1.3.0-3+b2"
+          ]
+        },
+        {
+          "ID": "base-files@13.8+deb13u6",
+          "Name": "base-files",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/base-files@13.8%2Bdeb13u6?arch=amd64\u0026distro=debian-13.6",
+            "UID": "dc4eb921bc551a92",
+            "BOMRef": "pkg:deb/debian/base-files@13.8%2Bdeb13u6?arch=amd64\u0026distro=debian-13.6\u0026package-id=bbc3bd5d80e9cca1"
+          },
+          "Version": "13.8+deb13u6",
+          "Arch": "amd64",
+          "SrcName": "base-files",
+          "SrcVersion": "13.8+deb13u6",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL",
+            "verbatim"
+          ],
+          "DependsOn": [
+            "mawk@1.3.4.20250131-1"
+          ]
+        },
+        {
+          "ID": "base-passwd@3.6.7",
+          "Name": "base-passwd",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/base-passwd@3.6.7?arch=amd64\u0026distro=debian-13.6",
+            "UID": "849304bb123d8d89",
+            "BOMRef": "pkg:deb/debian/base-passwd@3.6.7?arch=amd64\u0026distro=debian-13.6\u0026package-id=2e32fd1cf9077c07"
+          },
+          "Version": "3.6.7",
+          "Arch": "amd64",
+          "SrcName": "base-passwd",
+          "SrcVersion": "3.6.7",
+          "Licenses": [
+            "GPL-2.0-only",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libdebconfclient0@0.280",
+            "libselinux1@3.8.1-1"
+          ]
+        },
+        {
+          "ID": "bash@5.2.37-2+b9",
+          "Name": "bash",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/bash@5.2.37-2%2Bb9?arch=amd64\u0026distro=debian-13.6\u0026upstream=bash%405.2.37-2",
+            "UID": "3d5523a6771dca09",
+            "BOMRef": "pkg:deb/debian/bash@5.2.37-2%2Bb9?arch=amd64\u0026distro=debian-13.6\u0026package-id=60123ae03925c7e5\u0026upstream=bash%405.2.37-2"
+          },
+          "Version": "5.2.37-2+b9",
+          "Arch": "amd64",
+          "SrcName": "bash",
+          "SrcVersion": "5.2.37-2+b9",
+          "Licenses": [
+            "BSD-4-Clause-UC",
+            "GFDL-1.3-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "Latex2e",
+            "GFDL-NIV-1.3",
+            "MIT-like",
+            "permissive"
+          ],
+          "DependsOn": [
+            "base-files@13.8+deb13u6",
+            "debianutils@5.23.2",
+            "libc6@2.41-12+deb13u3",
+            "libtinfo6@6.5+20250216-2"
+          ]
+        },
+        {
+          "ID": "bsdutils@1:2.41-5",
+          "Name": "bsdutils",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/bsdutils@1:2.41-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=util-linux%402.41-5",
+            "UID": "64b2de8348f02bf1",
+            "BOMRef": "pkg:deb/debian/bsdutils@1%3A2.41-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=fd6adc443bc5f69e\u0026upstream=util-linux%402.41-5"
+          },
+          "Version": "1:2.41-5",
+          "Arch": "amd64",
+          "SrcName": "bsdutils",
+          "SrcVersion": "1:2.41-5",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "BSLA",
+            "Expat",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libsystemd0@257.13-1~deb13u1"
+          ]
+        },
+        {
+          "ID": "ca-certificates@20250419",
+          "Name": "ca-certificates",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/ca-certificates@20250419?arch=all\u0026distro=debian-13.6",
+            "UID": "7160884d9c69acac",
+            "BOMRef": "pkg:deb/debian/ca-certificates@20250419?arch=all\u0026distro=debian-13.6\u0026package-id=f6456b5b8094efda"
+          },
+          "Version": "20250419",
+          "Arch": "all",
+          "SrcName": "ca-certificates",
+          "SrcVersion": "20250419",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "MPL-2.0"
+          ],
+          "DependsOn": [
+            "debconf@1.5.91",
+            "openssl@3.5.6-1~deb13u2"
+          ]
+        },
+        {
+          "ID": "coreutils@9.7-3",
+          "Name": "coreutils",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/coreutils@9.7-3?arch=amd64\u0026distro=debian-13.6",
+            "UID": "40f6e4081f8b5316",
+            "BOMRef": "pkg:deb/debian/coreutils@9.7-3?arch=amd64\u0026distro=debian-13.6\u0026package-id=c987947b9ce08bac"
+          },
+          "Version": "9.7-3",
+          "Arch": "amd64",
+          "SrcName": "coreutils",
+          "SrcVersion": "9.7-3",
+          "Licenses": [
+            "BSD-4-Clause-UC",
+            "FSFULLR",
+            "GFDL-1.3-only",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "GFDL-NIV-1.3"
+          ],
+          "DependsOn": [
+            "libacl1@2.3.2-2+b1",
+            "libattr1@1:2.5.2-3",
+            "libc6@2.41-12+deb13u3",
+            "libcap2@1:2.75-10+deb13u1+b1",
+            "libgmp10@2:6.3.0+dfsg-3",
+            "libselinux1@3.8.1-1",
+            "libssl3t64@3.5.6-1~deb13u2",
+            "libsystemd0@257.13-1~deb13u1"
+          ]
+        },
+        {
+          "ID": "dash@0.5.12-12",
+          "Name": "dash",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/dash@0.5.12-12?arch=amd64\u0026distro=debian-13.6",
+            "UID": "e852bfce8f5d9994",
+            "BOMRef": "pkg:deb/debian/dash@0.5.12-12?arch=amd64\u0026distro=debian-13.6\u0026package-id=c6f2fed47a8443e5"
+          },
+          "Version": "0.5.12-12",
+          "Arch": "amd64",
+          "SrcName": "dash",
+          "SrcVersion": "0.5.12-12",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "debianutils@5.23.2",
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "debconf@1.5.91",
+          "Name": "debconf",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/debconf@1.5.91?arch=all\u0026distro=debian-13.6",
+            "UID": "4075fa153a9f8f89",
+            "BOMRef": "pkg:deb/debian/debconf@1.5.91?arch=all\u0026distro=debian-13.6\u0026package-id=f011f81acb62e016"
+          },
+          "Version": "1.5.91",
+          "Arch": "all",
+          "SrcName": "debconf",
+          "SrcVersion": "1.5.91",
+          "Licenses": [
+            "BSD-2-Clause"
+          ]
+        },
+        {
+          "ID": "debian-archive-keyring@2025.1",
+          "Name": "debian-archive-keyring",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/debian-archive-keyring@2025.1?arch=all\u0026distro=debian-13.6",
+            "UID": "fa5c40466f2b5ce1",
+            "BOMRef": "pkg:deb/debian/debian-archive-keyring@2025.1?arch=all\u0026distro=debian-13.6\u0026package-id=933201b57aa11d8b"
+          },
+          "Version": "2025.1",
+          "Arch": "all",
+          "SrcName": "debian-archive-keyring",
+          "SrcVersion": "2025.1",
+          "Licenses": [
+            "sha256:8f918c0bebd1454a084698a95c09d9a03cec8453dad1fc6eab9e6427da9d33a9"
+          ]
+        },
+        {
+          "ID": "debianutils@5.23.2",
+          "Name": "debianutils",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/debianutils@5.23.2?arch=amd64\u0026distro=debian-13.6",
+            "UID": "e3f4357f0b3b4c8d",
+            "BOMRef": "pkg:deb/debian/debianutils@5.23.2?arch=amd64\u0026distro=debian-13.6\u0026package-id=c97657be7c9aee7b"
+          },
+          "Version": "5.23.2",
+          "Arch": "amd64",
+          "SrcName": "debianutils",
+          "SrcVersion": "5.23.2",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "SMAIL-GPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "diffutils@1:3.10-4",
+          "Name": "diffutils",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/diffutils@1:3.10-4?arch=amd64\u0026distro=debian-13.6",
+            "UID": "8c31192a7577ac2a",
+            "BOMRef": "pkg:deb/debian/diffutils@1%3A3.10-4?arch=amd64\u0026distro=debian-13.6\u0026package-id=ea595a45b61caefc"
+          },
+          "Version": "1:3.10-4",
+          "Arch": "amd64",
+          "SrcName": "diffutils",
+          "SrcVersion": "1:3.10-4",
+          "Licenses": [
+            "FSFAP",
+            "FSFULLR",
+            "GFDL-1.3-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "X11",
+            "GFDL-NIV-1.3",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "dpkg@1.22.22",
+          "Name": "dpkg",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/dpkg@1.22.22?arch=amd64\u0026distro=debian-13.6",
+            "UID": "9b80800e2656e8ba",
+            "BOMRef": "pkg:deb/debian/dpkg@1.22.22?arch=amd64\u0026distro=debian-13.6\u0026package-id=8a94ed9926312190"
+          },
+          "Version": "1.22.22",
+          "Arch": "amd64",
+          "SrcName": "dpkg",
+          "SrcVersion": "1.22.22",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "public-domain-s-s-d"
+          ],
+          "DependsOn": [
+            "libbz2-1.0@1.0.8-6",
+            "libc6@2.41-12+deb13u3",
+            "liblzma5@5.8.1-1+deb13u1",
+            "libmd0@1.1.0-2+b1",
+            "libselinux1@3.8.1-1",
+            "libzstd1@1.5.7+dfsg-1",
+            "tar@1.35+dfsg-3.1",
+            "zlib1g@1:1.3.dfsg+really1.3.1-1+b1"
+          ]
+        },
+        {
+          "ID": "findutils@4.10.0-3",
+          "Name": "findutils",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/findutils@4.10.0-3?arch=amd64\u0026distro=debian-13.6",
+            "UID": "4ab7189b9f34ee9d",
+            "BOMRef": "pkg:deb/debian/findutils@4.10.0-3?arch=amd64\u0026distro=debian-13.6\u0026package-id=3198759110f49c0d"
+          },
+          "Version": "4.10.0-3",
+          "Arch": "amd64",
+          "SrcName": "findutils",
+          "SrcVersion": "4.10.0-3",
+          "Licenses": [
+            "BSD-3-Clause",
+            "FSFAP",
+            "FSFULLR",
+            "GFDL-1.3-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "X11",
+            "GFDL-NIV-1.3+",
+            "GPL",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libselinux1@3.8.1-1"
+          ]
+        },
+        {
+          "ID": "gcc-14@14.2.0-19",
+          "Name": "gcc-14",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/gcc-14@14.2.0-19?distro=debian",
+            "UID": "86d63cb14ad7cf2f",
+            "BOMRef": "pkg:deb/debian/gcc-14@14.2.0-19?distro=debian\u0026package-id=07fa1a0b8a548c80"
+          },
+          "Version": "14.2.0-19",
+          "SrcName": "gcc-14",
+          "SrcVersion": "14.2.0-19"
+        },
+        {
+          "ID": "gcc-14-base@14.2.0-19",
+          "Name": "gcc-14-base",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/gcc-14-base@14.2.0-19?arch=amd64\u0026distro=debian-13.6\u0026upstream=gcc-14",
+            "UID": "52b4e0d91f571413",
+            "BOMRef": "pkg:deb/debian/gcc-14-base@14.2.0-19?arch=amd64\u0026distro=debian-13.6\u0026package-id=71dae45f7ecf2e3f\u0026upstream=gcc-14"
+          },
+          "Version": "14.2.0-19",
+          "Arch": "amd64",
+          "SrcName": "gcc-14-base",
+          "SrcVersion": "14.2.0-19",
+          "Licenses": [
+            "sha256:20390f8a6f3b1e4d7cb45dd8652dabb259bbef688cbad839bcdb0b9ba7252f79"
+          ]
+        },
+        {
+          "ID": "grep@3.11-4",
+          "Name": "grep",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/grep@3.11-4?arch=amd64\u0026distro=debian-13.6",
+            "UID": "723da2c4f20473c9",
+            "BOMRef": "pkg:deb/debian/grep@3.11-4?arch=amd64\u0026distro=debian-13.6\u0026package-id=cb9ce8107b78d7fa"
+          },
+          "Version": "3.11-4",
+          "Arch": "amd64",
+          "SrcName": "grep",
+          "SrcVersion": "3.11-4",
+          "Licenses": [
+            "GPL-3.0-only",
+            "GPL-3.0-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libpcre2-8-0@10.46-1~deb13u1"
+          ]
+        },
+        {
+          "ID": "gzip@1.13-1",
+          "Name": "gzip",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "7ad4e72e59e1ee79",
+            "BOMRef": "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=a64be93d9f87fbcd"
+          },
+          "Version": "1.13-1",
+          "Arch": "amd64",
+          "SrcName": "gzip",
+          "SrcVersion": "1.13-1",
+          "Licenses": [
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "FSF-manpages",
+            "GFDL-1.3+-no-invariant",
+            "GFDL-3"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "hostname@3.25",
+          "Name": "hostname",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/hostname@3.25?arch=amd64\u0026distro=debian-13.6",
+            "UID": "695e14deecf8e578",
+            "BOMRef": "pkg:deb/debian/hostname@3.25?arch=amd64\u0026distro=debian-13.6\u0026package-id=51ae407d4963ba91"
+          },
+          "Version": "3.25",
+          "Arch": "amd64",
+          "SrcName": "hostname",
+          "SrcVersion": "3.25",
+          "Licenses": [
+            "GPL-2.0-only"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "init-system-helpers@1.69~deb13u1",
+          "Name": "init-system-helpers",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/init-system-helpers@1.69~deb13u1?arch=all\u0026distro=debian-13.6",
+            "UID": "ac32c7a9ad7a57fe",
+            "BOMRef": "pkg:deb/debian/init-system-helpers@1.69~deb13u1?arch=all\u0026distro=debian-13.6\u0026package-id=8453b883eb99cedb"
+          },
+          "Version": "1.69~deb13u1",
+          "Arch": "all",
+          "SrcName": "init-system-helpers",
+          "SrcVersion": "1.69~deb13u1",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later"
+          ]
+        },
+        {
+          "ID": "libacl1@2.3.2-2+b1",
+          "Name": "libacl1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libacl1@2.3.2-2%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026upstream=acl%402.3.2-2",
+            "UID": "daf6192cb29ad8b7",
+            "BOMRef": "pkg:deb/debian/libacl1@2.3.2-2%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026package-id=a0c5cfd432ac282a\u0026upstream=acl%402.3.2-2"
+          },
+          "Version": "2.3.2-2+b1",
+          "Arch": "amd64",
+          "SrcName": "libacl1",
+          "SrcVersion": "2.3.2-2+b1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libapt-pkg7.0@3.0.3",
+          "Name": "libapt-pkg7.0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libapt-pkg7.0@3.0.3?arch=amd64\u0026distro=debian-13.6\u0026upstream=apt",
+            "UID": "56d32bf943fe52d6",
+            "BOMRef": "pkg:deb/debian/libapt-pkg7.0@3.0.3?arch=amd64\u0026distro=debian-13.6\u0026package-id=84e8e77e6f4f3083\u0026upstream=apt"
+          },
+          "Version": "3.0.3",
+          "Arch": "amd64",
+          "SrcName": "libapt-pkg7.0",
+          "SrcVersion": "3.0.3",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "curl",
+            "Expat"
+          ],
+          "DependsOn": [
+            "libbz2-1.0@1.0.8-6",
+            "libc6@2.41-12+deb13u3",
+            "libgcc-s1@14.2.0-19",
+            "liblz4-1@1.10.0-4",
+            "liblzma5@5.8.1-1+deb13u1",
+            "libssl3t64@3.5.6-1~deb13u2",
+            "libstdc++6@14.2.0-19",
+            "libsystemd0@257.13-1~deb13u1",
+            "libudev1@257.13-1~deb13u1",
+            "libxxhash0@0.8.3-2",
+            "libzstd1@1.5.7+dfsg-1",
+            "zlib1g@1:1.3.dfsg+really1.3.1-1+b1"
+          ]
+        },
+        {
+          "ID": "libattr1@1:2.5.2-3",
+          "Name": "libattr1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libattr1@1:2.5.2-3?arch=amd64\u0026distro=debian-13.6\u0026upstream=attr",
+            "UID": "52dfa75176a4567b",
+            "BOMRef": "pkg:deb/debian/libattr1@1%3A2.5.2-3?arch=amd64\u0026distro=debian-13.6\u0026package-id=8ec39d13dacf9031\u0026upstream=attr"
+          },
+          "Version": "1:2.5.2-3",
+          "Arch": "amd64",
+          "SrcName": "libattr1",
+          "SrcVersion": "1:2.5.2-3",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libaudit-common@1:4.0.2-2",
+          "Name": "libaudit-common",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libaudit-common@1:4.0.2-2?arch=all\u0026distro=debian-13.6\u0026upstream=audit",
+            "UID": "7e33e3bfe29b583f",
+            "BOMRef": "pkg:deb/debian/libaudit-common@1%3A4.0.2-2?arch=all\u0026distro=debian-13.6\u0026package-id=eef5da3edef785f7\u0026upstream=audit"
+          },
+          "Version": "1:4.0.2-2",
+          "Arch": "all",
+          "SrcName": "libaudit-common",
+          "SrcVersion": "1:4.0.2-2",
+          "Licenses": [
+            "GPL-1.0-only",
+            "GPL-2.0-only",
+            "LGPL-2.1-only"
+          ]
+        },
+        {
+          "ID": "libaudit1@1:4.0.2-2+b2",
+          "Name": "libaudit1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libaudit1@1:4.0.2-2%2Bb2?arch=amd64\u0026distro=debian-13.6\u0026upstream=audit%401:4.0.2-2",
+            "UID": "810b269210a40b04",
+            "BOMRef": "pkg:deb/debian/libaudit1@1%3A4.0.2-2%2Bb2?arch=amd64\u0026distro=debian-13.6\u0026package-id=8322eb9563674f97\u0026upstream=audit%401%3A4.0.2-2"
+          },
+          "Version": "1:4.0.2-2+b2",
+          "Arch": "amd64",
+          "SrcName": "libaudit1",
+          "SrcVersion": "1:4.0.2-2+b2",
+          "Licenses": [
+            "GPL-1.0-only",
+            "GPL-2.0-only",
+            "LGPL-2.1-only"
+          ],
+          "DependsOn": [
+            "libaudit-common@1:4.0.2-2",
+            "libc6@2.41-12+deb13u3",
+            "libcap-ng0@0.8.5-4+b1"
+          ]
+        },
+        {
+          "ID": "libblkid1@2.41-5",
+          "Name": "libblkid1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libblkid1@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=util-linux",
+            "UID": "5c0e101032123f82",
+            "BOMRef": "pkg:deb/debian/libblkid1@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=1705e33d4cefd79f\u0026upstream=util-linux"
+          },
+          "Version": "2.41-5",
+          "Arch": "amd64",
+          "SrcName": "libblkid1",
+          "SrcVersion": "2.41-5",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "BSLA",
+            "Expat",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libbsd0@0.12.2-2",
+          "Name": "libbsd0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libbsd0@0.12.2-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=libbsd",
+            "UID": "cf4509652ee5983",
+            "BOMRef": "pkg:deb/debian/libbsd0@0.12.2-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=56b6b372cf30f77a\u0026upstream=libbsd"
+          },
+          "Version": "0.12.2-2",
+          "Arch": "amd64",
+          "SrcName": "libbsd0",
+          "SrcVersion": "0.12.2-2",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "Beerware",
+            "ISC",
+            "BSD-2-clause-author",
+            "BSD-2-clause-verbatim",
+            "BSD-3-clause-John-Birrell",
+            "BSD-3-clause-Regents",
+            "BSD-3-clause-author",
+            "BSD-5-clause-Peter-Wemm",
+            "Expat",
+            "ISC-Original",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libmd0@1.1.0-2+b1"
+          ]
+        },
+        {
+          "ID": "libbz2-1.0@1.0.8-6",
+          "Name": "libbz2-1.0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libbz2-1.0@1.0.8-6?arch=amd64\u0026distro=debian-13.6\u0026upstream=bzip2",
+            "UID": "f110565f39f711f2",
+            "BOMRef": "pkg:deb/debian/libbz2-1.0@1.0.8-6?arch=amd64\u0026distro=debian-13.6\u0026package-id=30ac329196d786bd\u0026upstream=bzip2"
+          },
+          "Version": "1.0.8-6",
+          "Arch": "amd64",
+          "SrcName": "libbz2-1.0",
+          "SrcVersion": "1.0.8-6",
+          "Licenses": [
+            "GPL-2.0-only",
+            "BSD-variant"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libc-bin@2.41-12+deb13u3",
+          "Name": "libc-bin",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libc-bin@2.41-12%2Bdeb13u3?arch=amd64\u0026distro=debian-13.6\u0026upstream=glibc",
+            "UID": "bd87c7bd3eb3adb6",
+            "BOMRef": "pkg:deb/debian/libc-bin@2.41-12%2Bdeb13u3?arch=amd64\u0026distro=debian-13.6\u0026package-id=e9815c407da4458a\u0026upstream=glibc"
+          },
+          "Version": "2.41-12+deb13u3",
+          "Arch": "amd64",
+          "SrcName": "libc-bin",
+          "SrcVersion": "2.41-12+deb13u3",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSL-1.0",
+            "FSFAP",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "SunPro",
+            "Unicode-DFS-2016",
+            "BSD-3-clause-Berkeley",
+            "BSD-3-clause-Carnegie",
+            "BSD-3-clause-Oracle",
+            "BSD-3-clause-WIDE",
+            "BSD-like-Spencer",
+            "CORE-MATH",
+            "Carnegie",
+            "DEC",
+            "GPL-2+-with-link-exception",
+            "IBM",
+            "Inner-Net",
+            "LGPL-2.1+-with-link-exception",
+            "MIT-like-Lord",
+            "PCRE",
+            "Univ-Coimbra",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libc6@2.41-12+deb13u3",
+          "Name": "libc6",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libc6@2.41-12%2Bdeb13u3?arch=amd64\u0026distro=debian-13.6\u0026upstream=glibc",
+            "UID": "c5794a07e9f12c49",
+            "BOMRef": "pkg:deb/debian/libc6@2.41-12%2Bdeb13u3?arch=amd64\u0026distro=debian-13.6\u0026package-id=bf34c26d3589ca38\u0026upstream=glibc"
+          },
+          "Version": "2.41-12+deb13u3",
+          "Arch": "amd64",
+          "SrcName": "libc6",
+          "SrcVersion": "2.41-12+deb13u3",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSL-1.0",
+            "FSFAP",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "SunPro",
+            "Unicode-DFS-2016",
+            "BSD-3-clause-Berkeley",
+            "BSD-3-clause-Carnegie",
+            "BSD-3-clause-Oracle",
+            "BSD-3-clause-WIDE",
+            "BSD-like-Spencer",
+            "CORE-MATH",
+            "Carnegie",
+            "DEC",
+            "GPL-2+-with-link-exception",
+            "IBM",
+            "Inner-Net",
+            "LGPL-2.1+-with-link-exception",
+            "MIT-like-Lord",
+            "PCRE",
+            "Univ-Coimbra",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libgcc-s1@14.2.0-19"
+          ]
+        },
+        {
+          "ID": "libcap-ng0@0.8.5-4+b1",
+          "Name": "libcap-ng0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libcap-ng0@0.8.5-4%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026upstream=libcap-ng%400.8.5-4",
+            "UID": "4f3fe9cce61b6303",
+            "BOMRef": "pkg:deb/debian/libcap-ng0@0.8.5-4%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026package-id=c6c70d770e28c409\u0026upstream=libcap-ng%400.8.5-4"
+          },
+          "Version": "0.8.5-4+b1",
+          "Arch": "amd64",
+          "SrcName": "libcap-ng0",
+          "SrcVersion": "0.8.5-4+b1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libcap2@1:2.75-10+deb13u1+b1",
+          "Name": "libcap2",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libcap2@1:2.75-10%2Bdeb13u1%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026upstream=libcap2%401:2.75-10%2Bdeb13u1",
+            "UID": "72eb0edbfd074f4d",
+            "BOMRef": "pkg:deb/debian/libcap2@1%3A2.75-10%2Bdeb13u1%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026package-id=71f3f4e5764642bc\u0026upstream=libcap2%401%3A2.75-10%2Bdeb13u1"
+          },
+          "Version": "1:2.75-10+deb13u1+b1",
+          "Arch": "amd64",
+          "SrcName": "libcap2",
+          "SrcVersion": "1:2.75-10+deb13u1+b1",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libcrypt1@1:4.4.38-1",
+          "Name": "libcrypt1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libcrypt1@1:4.4.38-1?arch=amd64\u0026distro=debian-13.6\u0026upstream=libxcrypt",
+            "UID": "8960e9d445a44d8c",
+            "BOMRef": "pkg:deb/debian/libcrypt1@1%3A4.4.38-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=e777ca9b25bb6601\u0026upstream=libxcrypt"
+          },
+          "Version": "1:4.4.38-1",
+          "Arch": "amd64",
+          "SrcName": "libcrypt1",
+          "SrcVersion": "1:4.4.38-1",
+          "Licenses": [
+            "sha256:5a5e7ca0e9f3f9679977e3a3e9ede45ad92885a3297ea78e766979f9866c5a16"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libdb5.3t64@5.3.28+dfsg2-9",
+          "Name": "libdb5.3t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libdb5.3t64@5.3.28%2Bdfsg2-9?arch=amd64\u0026distro=debian-13.6\u0026upstream=db5.3",
+            "UID": "678561aec5d38c9",
+            "BOMRef": "pkg:deb/debian/libdb5.3t64@5.3.28%2Bdfsg2-9?arch=amd64\u0026distro=debian-13.6\u0026package-id=4ee787eff2cbb8e2\u0026upstream=db5.3"
+          },
+          "Version": "5.3.28+dfsg2-9",
+          "Arch": "amd64",
+          "SrcName": "libdb5.3t64",
+          "SrcVersion": "5.3.28+dfsg2-9",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-3.0-only",
+            "MS-PL",
+            "Sleepycat",
+            "X11",
+            "Zlib",
+            "Artistic",
+            "BSD-3-clause-fjord",
+            "GPL",
+            "MIT-old",
+            "TCL-like"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libdebconfclient0@0.280",
+          "Name": "libdebconfclient0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libdebconfclient0@0.280?arch=amd64\u0026distro=debian-13.6\u0026upstream=cdebconf",
+            "UID": "ec57781514c2221",
+            "BOMRef": "pkg:deb/debian/libdebconfclient0@0.280?arch=amd64\u0026distro=debian-13.6\u0026package-id=727351d07713526d\u0026upstream=cdebconf"
+          },
+          "Version": "0.280",
+          "Arch": "amd64",
+          "SrcName": "libdebconfclient0",
+          "SrcVersion": "0.280",
+          "Licenses": [
+            "BSD-2-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libffi8@3.4.8-2",
+          "Name": "libffi8",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libffi8@3.4.8-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=libffi",
+            "UID": "58cea58d8b463446",
+            "BOMRef": "pkg:deb/debian/libffi8@3.4.8-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=ffcef1a6e96c02fb\u0026upstream=libffi"
+          },
+          "Version": "3.4.8-2",
+          "Arch": "amd64",
+          "SrcName": "libffi8",
+          "SrcVersion": "3.4.8-2",
+          "Licenses": [
+            "GPL-2.0-or-later",
+            "GPL-3.0-or-later",
+            "MPL-1.1",
+            "X11",
+            "Expat",
+            "GPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libgcc-s1@14.2.0-19",
+          "Name": "libgcc-s1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=amd64\u0026distro=debian-13.6\u0026upstream=gcc-14",
+            "UID": "938073acb14dba9d",
+            "BOMRef": "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=amd64\u0026distro=debian-13.6\u0026package-id=68c3d280092e75ee\u0026upstream=gcc-14"
+          },
+          "Version": "14.2.0-19",
+          "Arch": "amd64",
+          "SrcName": "libgcc-s1",
+          "SrcVersion": "14.2.0-19",
+          "Licenses": [
+            "sha256:20390f8a6f3b1e4d7cb45dd8652dabb259bbef688cbad839bcdb0b9ba7252f79"
+          ],
+          "DependsOn": [
+            "gcc-14-base@14.2.0-19",
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libgdbm6t64@1.24-2",
+          "Name": "libgdbm6t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libgdbm6t64@1.24-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=gdbm",
+            "UID": "db30b9aa005e2814",
+            "BOMRef": "pkg:deb/debian/libgdbm6t64@1.24-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=6ecb1b67c6033a25\u0026upstream=gdbm"
+          },
+          "Version": "1.24-2",
+          "Arch": "amd64",
+          "SrcName": "libgdbm6t64",
+          "SrcVersion": "1.24-2",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "GFDL-NIV-1.3+"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libgmp10@2:6.3.0+dfsg-3",
+          "Name": "libgmp10",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libgmp10@2:6.3.0%2Bdfsg-3?arch=amd64\u0026distro=debian-13.6\u0026upstream=gmp",
+            "UID": "f864cfd5fc12f59",
+            "BOMRef": "pkg:deb/debian/libgmp10@2%3A6.3.0%2Bdfsg-3?arch=amd64\u0026distro=debian-13.6\u0026package-id=f6d690ad39c16cb6\u0026upstream=gmp"
+          },
+          "Version": "2:6.3.0+dfsg-3",
+          "Arch": "amd64",
+          "SrcName": "libgmp10",
+          "SrcVersion": "2:6.3.0+dfsg-3",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libhogweed6t64@3.10.1-1",
+          "Name": "libhogweed6t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libhogweed6t64@3.10.1-1?arch=amd64\u0026distro=debian-13.6\u0026upstream=nettle",
+            "UID": "ada31b0990246ed2",
+            "BOMRef": "pkg:deb/debian/libhogweed6t64@3.10.1-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=dc26f7727f970127\u0026upstream=nettle"
+          },
+          "Version": "3.10.1-1",
+          "Arch": "amd64",
+          "SrcName": "libhogweed6t64",
+          "SrcVersion": "3.10.1-1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-or-later",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-3.0-or-later",
+            "Expat",
+            "GAP",
+            "GPL",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libgmp10@2:6.3.0+dfsg-3",
+            "libnettle8t64@3.10.1-1"
+          ]
+        },
+        {
+          "ID": "liblastlog2-2@2.41-5",
+          "Name": "liblastlog2-2",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/liblastlog2-2@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=util-linux",
+            "UID": "3f0ad673983e9be7",
+            "BOMRef": "pkg:deb/debian/liblastlog2-2@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=6c25ac12576646f1\u0026upstream=util-linux"
+          },
+          "Version": "2.41-5",
+          "Arch": "amd64",
+          "SrcName": "liblastlog2-2",
+          "SrcVersion": "2.41-5",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "BSLA",
+            "Expat",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libsqlite3-0@3.46.1-7+deb13u1"
+          ]
+        },
+        {
+          "ID": "liblz4-1@1.10.0-4",
+          "Name": "liblz4-1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/liblz4-1@1.10.0-4?arch=amd64\u0026distro=debian-13.6\u0026upstream=lz4",
+            "UID": "b0ca126f3e06c848",
+            "BOMRef": "pkg:deb/debian/liblz4-1@1.10.0-4?arch=amd64\u0026distro=debian-13.6\u0026package-id=a2a22c03e2ffa921\u0026upstream=lz4"
+          },
+          "Version": "1.10.0-4",
+          "Arch": "amd64",
+          "SrcName": "liblz4-1",
+          "SrcVersion": "1.10.0-4",
+          "Licenses": [
+            "BSD-2-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libxxhash0@0.8.3-2"
+          ]
+        },
+        {
+          "ID": "liblzma5@5.8.1-1+deb13u1",
+          "Name": "liblzma5",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/liblzma5@5.8.1-1%2Bdeb13u1?arch=amd64\u0026distro=debian-13.6\u0026upstream=xz-utils",
+            "UID": "7d031063658bc761",
+            "BOMRef": "pkg:deb/debian/liblzma5@5.8.1-1%2Bdeb13u1?arch=amd64\u0026distro=debian-13.6\u0026package-id=acd4215725c7e13b\u0026upstream=xz-utils"
+          },
+          "Version": "5.8.1-1+deb13u1",
+          "Arch": "amd64",
+          "SrcName": "liblzma5",
+          "SrcVersion": "5.8.1-1+deb13u1",
+          "Licenses": [
+            "0BSD",
+            "FSFUL",
+            "FSFULLR",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "GPL-3.0-or-later-WITH-Autoconf-exception-macro",
+            "PD",
+            "PD-debian",
+            "noderivs",
+            "permissive-nowarranty"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libmd0@1.1.0-2+b1",
+          "Name": "libmd0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libmd0@1.1.0-2%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026upstream=libmd%401.1.0-2",
+            "UID": "6d98f734e56652c",
+            "BOMRef": "pkg:deb/debian/libmd0@1.1.0-2%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026package-id=665cba397b4acd8c\u0026upstream=libmd%401.1.0-2"
+          },
+          "Version": "1.1.0-2+b1",
+          "Arch": "amd64",
+          "SrcName": "libmd0",
+          "SrcVersion": "1.1.0-2+b1",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "Beerware",
+            "ISC",
+            "BSD-3-clause-Aaron-D-Gifford",
+            "public-domain-md4",
+            "public-domain-md5",
+            "public-domain-sha1"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libmount1@2.41-5",
+          "Name": "libmount1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libmount1@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=util-linux",
+            "UID": "65289bed19d64aa3",
+            "BOMRef": "pkg:deb/debian/libmount1@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=ac3669b855b94f3b\u0026upstream=util-linux"
+          },
+          "Version": "2.41-5",
+          "Arch": "amd64",
+          "SrcName": "libmount1",
+          "SrcVersion": "2.41-5",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "BSLA",
+            "Expat",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libblkid1@2.41-5",
+            "libc6@2.41-12+deb13u3",
+            "libselinux1@3.8.1-1"
+          ]
+        },
+        {
+          "ID": "libncursesw6@6.5+20250216-2",
+          "Name": "libncursesw6",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libncursesw6@6.5%2B20250216-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=ncurses",
+            "UID": "f4a6a93e678fbcd3",
+            "BOMRef": "pkg:deb/debian/libncursesw6@6.5%2B20250216-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=9bb69ca41dad08ec\u0026upstream=ncurses"
+          },
+          "Version": "6.5+20250216-2",
+          "Arch": "amd64",
+          "SrcName": "libncursesw6",
+          "SrcVersion": "6.5+20250216-2",
+          "Licenses": [
+            "BSD-3-Clause",
+            "X11",
+            "MIT/X11"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libtinfo6@6.5+20250216-2"
+          ]
+        },
+        {
+          "ID": "libnettle8t64@3.10.1-1",
+          "Name": "libnettle8t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libnettle8t64@3.10.1-1?arch=amd64\u0026distro=debian-13.6\u0026upstream=nettle",
+            "UID": "ff3541033ce5a6c3",
+            "BOMRef": "pkg:deb/debian/libnettle8t64@3.10.1-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=945de4ad3c149fda\u0026upstream=nettle"
+          },
+          "Version": "3.10.1-1",
+          "Arch": "amd64",
+          "SrcName": "libnettle8t64",
+          "SrcVersion": "3.10.1-1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-or-later",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-3.0-or-later",
+            "Expat",
+            "GAP",
+            "GPL",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libpam-modules@1.7.0-5",
+          "Name": "libpam-modules",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libpam-modules@1.7.0-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=pam",
+            "UID": "9f326856c813f272",
+            "BOMRef": "pkg:deb/debian/libpam-modules@1.7.0-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=9929f2bbbd5e7f80\u0026upstream=pam"
+          },
+          "Version": "1.7.0-5",
+          "Arch": "amd64",
+          "SrcName": "libpam-modules",
+          "SrcVersion": "1.7.0-5",
+          "Licenses": [
+            "BSD-3-Clause",
+            "Beerware",
+            "GPL-1.0-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "BSD-tcp_wrappers",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "debconf@1.5.91",
+            "libaudit1@1:4.0.2-2+b2",
+            "libc6@2.41-12+deb13u3",
+            "libcrypt1@1:4.4.38-1",
+            "libdb5.3t64@5.3.28+dfsg2-9",
+            "libpam-modules-bin@1.7.0-5",
+            "libpam0g@1.7.0-5",
+            "libselinux1@3.8.1-1",
+            "libsystemd0@257.13-1~deb13u1"
+          ]
+        },
+        {
+          "ID": "libpam-modules-bin@1.7.0-5",
+          "Name": "libpam-modules-bin",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libpam-modules-bin@1.7.0-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=pam",
+            "UID": "f073e3e47adc850a",
+            "BOMRef": "pkg:deb/debian/libpam-modules-bin@1.7.0-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=38779006bd511d26\u0026upstream=pam"
+          },
+          "Version": "1.7.0-5",
+          "Arch": "amd64",
+          "SrcName": "libpam-modules-bin",
+          "SrcVersion": "1.7.0-5",
+          "Licenses": [
+            "BSD-3-Clause",
+            "Beerware",
+            "GPL-1.0-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "BSD-tcp_wrappers",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libaudit1@1:4.0.2-2+b2",
+            "libc6@2.41-12+deb13u3",
+            "libcrypt1@1:4.4.38-1",
+            "libpam0g@1.7.0-5",
+            "libselinux1@3.8.1-1",
+            "libsystemd0@257.13-1~deb13u1"
+          ]
+        },
+        {
+          "ID": "libpam-runtime@1.7.0-5",
+          "Name": "libpam-runtime",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libpam-runtime@1.7.0-5?arch=all\u0026distro=debian-13.6\u0026upstream=pam",
+            "UID": "fac24e50fab9f43e",
+            "BOMRef": "pkg:deb/debian/libpam-runtime@1.7.0-5?arch=all\u0026distro=debian-13.6\u0026package-id=3087d6eb1616bce5\u0026upstream=pam"
+          },
+          "Version": "1.7.0-5",
+          "Arch": "all",
+          "SrcName": "libpam-runtime",
+          "SrcVersion": "1.7.0-5",
+          "Licenses": [
+            "BSD-3-Clause",
+            "Beerware",
+            "GPL-1.0-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "BSD-tcp_wrappers",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "debconf@1.5.91",
+            "libpam-modules@1.7.0-5"
+          ]
+        },
+        {
+          "ID": "libpam0g@1.7.0-5",
+          "Name": "libpam0g",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libpam0g@1.7.0-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=pam",
+            "UID": "ef200272f0b72a39",
+            "BOMRef": "pkg:deb/debian/libpam0g@1.7.0-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=c69eced9aed15fb0\u0026upstream=pam"
+          },
+          "Version": "1.7.0-5",
+          "Arch": "amd64",
+          "SrcName": "libpam0g",
+          "SrcVersion": "1.7.0-5",
+          "Licenses": [
+            "BSD-3-Clause",
+            "Beerware",
+            "GPL-1.0-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "BSD-tcp_wrappers",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "debconf@1.5.91",
+            "libaudit1@1:4.0.2-2+b2",
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libpcre2-8-0@10.46-1~deb13u1",
+          "Name": "libpcre2-8-0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libpcre2-8-0@10.46-1~deb13u1?arch=amd64\u0026distro=debian-13.6\u0026upstream=pcre2",
+            "UID": "17e0edc6607b978",
+            "BOMRef": "pkg:deb/debian/libpcre2-8-0@10.46-1~deb13u1?arch=amd64\u0026distro=debian-13.6\u0026package-id=2795c06683b51579\u0026upstream=pcre2"
+          },
+          "Version": "10.46-1~deb13u1",
+          "Arch": "amd64",
+          "SrcName": "libpcre2-8-0",
+          "SrcVersion": "10.46-1~deb13u1",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "X11",
+            "BSD-3-clause-Cambridge",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libreadline8t64@8.2-6",
+          "Name": "libreadline8t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libreadline8t64@8.2-6?arch=amd64\u0026distro=debian-13.6\u0026upstream=readline",
+            "UID": "8811abcbf1a9841c",
+            "BOMRef": "pkg:deb/debian/libreadline8t64@8.2-6?arch=amd64\u0026distro=debian-13.6\u0026package-id=e76ae41c79af4d57\u0026upstream=readline"
+          },
+          "Version": "8.2-6",
+          "Arch": "amd64",
+          "SrcName": "libreadline8t64",
+          "SrcVersion": "8.2-6",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "GFDL",
+            "GFDL-NIV-1.3+",
+            "ISC-no-attribution"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libtinfo6@6.5+20250216-2",
+            "readline-common@8.2-6"
+          ]
+        },
+        {
+          "ID": "libseccomp2@2.6.0-2",
+          "Name": "libseccomp2",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libseccomp2@2.6.0-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=libseccomp",
+            "UID": "e3650973acc14719",
+            "BOMRef": "pkg:deb/debian/libseccomp2@2.6.0-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=e5c669a09c4b1622\u0026upstream=libseccomp"
+          },
+          "Version": "2.6.0-2",
+          "Arch": "amd64",
+          "SrcName": "libseccomp2",
+          "SrcVersion": "2.6.0-2",
+          "Licenses": [
+            "LGPL-2.1-only"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libselinux1@3.8.1-1",
+          "Name": "libselinux1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libselinux1@3.8.1-1?arch=amd64\u0026distro=debian-13.6\u0026upstream=libselinux",
+            "UID": "7ba37d49f58e489d",
+            "BOMRef": "pkg:deb/debian/libselinux1@3.8.1-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=e603e5b7b941fd7e\u0026upstream=libselinux"
+          },
+          "Version": "3.8.1-1",
+          "Arch": "amd64",
+          "SrcName": "libselinux1",
+          "SrcVersion": "3.8.1-1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libpcre2-8-0@10.46-1~deb13u1"
+          ]
+        },
+        {
+          "ID": "libsemanage-common@3.8.1-1",
+          "Name": "libsemanage-common",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libsemanage-common@3.8.1-1?arch=all\u0026distro=debian-13.6\u0026upstream=libsemanage",
+            "UID": "9bda690afdc297",
+            "BOMRef": "pkg:deb/debian/libsemanage-common@3.8.1-1?arch=all\u0026distro=debian-13.6\u0026package-id=b9e0637eeae0a24b\u0026upstream=libsemanage"
+          },
+          "Version": "3.8.1-1",
+          "Arch": "all",
+          "SrcName": "libsemanage-common",
+          "SrcVersion": "3.8.1-1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later"
+          ]
+        },
+        {
+          "ID": "libsemanage2@3.8.1-1",
+          "Name": "libsemanage2",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libsemanage2@3.8.1-1?arch=amd64\u0026distro=debian-13.6\u0026upstream=libsemanage",
+            "UID": "962e041230d62324",
+            "BOMRef": "pkg:deb/debian/libsemanage2@3.8.1-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=6467cb47e5dc4468\u0026upstream=libsemanage"
+          },
+          "Version": "3.8.1-1",
+          "Arch": "amd64",
+          "SrcName": "libsemanage2",
+          "SrcVersion": "3.8.1-1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later"
+          ],
+          "DependsOn": [
+            "libaudit1@1:4.0.2-2+b2",
+            "libbz2-1.0@1.0.8-6",
+            "libc6@2.41-12+deb13u3",
+            "libselinux1@3.8.1-1",
+            "libsemanage-common@3.8.1-1",
+            "libsepol2@3.8.1-1"
+          ]
+        },
+        {
+          "ID": "libsepol2@3.8.1-1",
+          "Name": "libsepol2",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libsepol2@3.8.1-1?arch=amd64\u0026distro=debian-13.6\u0026upstream=libsepol",
+            "UID": "84c631ad856a9e78",
+            "BOMRef": "pkg:deb/debian/libsepol2@3.8.1-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=d6dbbab62734e079\u0026upstream=libsepol"
+          },
+          "Version": "3.8.1-1",
+          "Arch": "amd64",
+          "SrcName": "libsepol2",
+          "SrcVersion": "3.8.1-1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "Zlib"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libsmartcols1@2.41-5",
+          "Name": "libsmartcols1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libsmartcols1@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=util-linux",
+            "UID": "c09be7967175ccfc",
+            "BOMRef": "pkg:deb/debian/libsmartcols1@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=7916e70d989ffec4\u0026upstream=util-linux"
+          },
+          "Version": "2.41-5",
+          "Arch": "amd64",
+          "SrcName": "libsmartcols1",
+          "SrcVersion": "2.41-5",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "BSLA",
+            "Expat",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libsqlite3-0@3.46.1-7+deb13u1",
+          "Name": "libsqlite3-0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libsqlite3-0@3.46.1-7%2Bdeb13u1?arch=amd64\u0026distro=debian-13.6\u0026upstream=sqlite3",
+            "UID": "b114cccdcfd479d7",
+            "BOMRef": "pkg:deb/debian/libsqlite3-0@3.46.1-7%2Bdeb13u1?arch=amd64\u0026distro=debian-13.6\u0026package-id=d742d68ce6b5553f\u0026upstream=sqlite3"
+          },
+          "Version": "3.46.1-7+deb13u1",
+          "Arch": "amd64",
+          "SrcName": "libsqlite3-0",
+          "SrcVersion": "3.46.1-7+deb13u1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libssl3t64@3.5.6-1~deb13u2",
+          "Name": "libssl3t64",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libssl3t64@3.5.6-1~deb13u2?arch=amd64\u0026distro=debian-13.6\u0026upstream=openssl",
+            "UID": "2a5960beb50fffcc",
+            "BOMRef": "pkg:deb/debian/libssl3t64@3.5.6-1~deb13u2?arch=amd64\u0026distro=debian-13.6\u0026package-id=a38782e13cc33f18\u0026upstream=openssl"
+          },
+          "Version": "3.5.6-1~deb13u2",
+          "Arch": "amd64",
+          "SrcName": "libssl3t64",
+          "SrcVersion": "3.5.6-1~deb13u2",
+          "Licenses": [
+            "Apache-2.0",
+            "GPL-1.0-only",
+            "GPL-1.0-or-later",
+            "Artistic"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libzstd1@1.5.7+dfsg-1",
+            "openssl-provider-legacy@3.5.6-1~deb13u2",
+            "zlib1g@1:1.3.dfsg+really1.3.1-1+b1"
+          ]
+        },
+        {
+          "ID": "libstdc++6@14.2.0-19",
+          "Name": "libstdc++6",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libstdc%2B%2B6@14.2.0-19?arch=amd64\u0026distro=debian-13.6\u0026upstream=gcc-14",
+            "UID": "4e0e6d9fb827d1db",
+            "BOMRef": "pkg:deb/debian/libstdc%2B%2B6@14.2.0-19?arch=amd64\u0026distro=debian-13.6\u0026package-id=bd3fabf2ddddf6c7\u0026upstream=gcc-14"
+          },
+          "Version": "14.2.0-19",
+          "Arch": "amd64",
+          "SrcName": "libstdc++6",
+          "SrcVersion": "14.2.0-19",
+          "Licenses": [
+            "sha256:20390f8a6f3b1e4d7cb45dd8652dabb259bbef688cbad839bcdb0b9ba7252f79"
+          ],
+          "DependsOn": [
+            "gcc-14-base@14.2.0-19",
+            "libc6@2.41-12+deb13u3",
+            "libgcc-s1@14.2.0-19"
+          ]
+        },
+        {
+          "ID": "libsystemd0@257.13-1~deb13u1",
+          "Name": "libsystemd0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libsystemd0@257.13-1~deb13u1?arch=amd64\u0026distro=debian-13.6\u0026upstream=systemd",
+            "UID": "5bf8e1f598332767",
+            "BOMRef": "pkg:deb/debian/libsystemd0@257.13-1~deb13u1?arch=amd64\u0026distro=debian-13.6\u0026package-id=78c884d1079773e5\u0026upstream=systemd"
+          },
+          "Version": "257.13-1~deb13u1",
+          "Arch": "amd64",
+          "SrcName": "libsystemd0",
+          "SrcVersion": "257.13-1~deb13u1",
+          "Licenses": [
+            "CC0-1.0",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "Expat",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libcap2@1:2.75-10+deb13u1+b1"
+          ]
+        },
+        {
+          "ID": "libtinfo6@6.5+20250216-2",
+          "Name": "libtinfo6",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libtinfo6@6.5%2B20250216-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=ncurses",
+            "UID": "4aef9b96c6ca14f3",
+            "BOMRef": "pkg:deb/debian/libtinfo6@6.5%2B20250216-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=076e63135e5dbf84\u0026upstream=ncurses"
+          },
+          "Version": "6.5+20250216-2",
+          "Arch": "amd64",
+          "SrcName": "libtinfo6",
+          "SrcVersion": "6.5+20250216-2",
+          "Licenses": [
+            "BSD-3-Clause",
+            "X11",
+            "MIT/X11"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libudev1@257.13-1~deb13u1",
+          "Name": "libudev1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libudev1@257.13-1~deb13u1?arch=amd64\u0026distro=debian-13.6\u0026upstream=systemd",
+            "UID": "dd869566771bdf19",
+            "BOMRef": "pkg:deb/debian/libudev1@257.13-1~deb13u1?arch=amd64\u0026distro=debian-13.6\u0026package-id=468c3404323a7d7d\u0026upstream=systemd"
+          },
+          "Version": "257.13-1~deb13u1",
+          "Arch": "amd64",
+          "SrcName": "libudev1",
+          "SrcVersion": "257.13-1~deb13u1",
+          "Licenses": [
+            "CC0-1.0",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "Expat",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libcap2@1:2.75-10+deb13u1+b1"
+          ]
+        },
+        {
+          "ID": "libuuid1@2.41-5",
+          "Name": "libuuid1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libuuid1@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=util-linux",
+            "UID": "55aead8ed0337d8b",
+            "BOMRef": "pkg:deb/debian/libuuid1@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=be7873ca62ec12e2\u0026upstream=util-linux"
+          },
+          "Version": "2.41-5",
+          "Arch": "amd64",
+          "SrcName": "libuuid1",
+          "SrcVersion": "2.41-5",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "BSLA",
+            "Expat",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libxxhash0@0.8.3-2",
+          "Name": "libxxhash0",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libxxhash0@0.8.3-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=xxhash",
+            "UID": "39cece219e5a11ab",
+            "BOMRef": "pkg:deb/debian/libxxhash0@0.8.3-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=8e5214006f720f18\u0026upstream=xxhash"
+          },
+          "Version": "0.8.3-2",
+          "Arch": "amd64",
+          "SrcName": "libxxhash0",
+          "SrcVersion": "0.8.3-2",
+          "Licenses": [
+            "BSD-2-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "libzstd@1.5.7+dfsg-1",
+          "Name": "libzstd",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libzstd@1.5.7%2Bdfsg-1?distro=Debian",
+            "UID": "4a2d77c3c9916c3c",
+            "BOMRef": "pkg:deb/debian/libzstd@1.5.7%2Bdfsg-1?distro=Debian\u0026package-id=81799196ffdbbf0b"
+          },
+          "Version": "1.5.7+dfsg-1",
+          "SrcName": "libzstd",
+          "SrcVersion": "1.5.7+dfsg-1"
+        },
+        {
+          "ID": "libzstd1@1.5.7+dfsg-1",
+          "Name": "libzstd1",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/libzstd1@1.5.7%2Bdfsg-1?arch=amd64\u0026distro=debian-13.6\u0026upstream=libzstd",
+            "UID": "7250749f29d044a1",
+            "BOMRef": "pkg:deb/debian/libzstd1@1.5.7%2Bdfsg-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=8dd12c3682d52545\u0026upstream=libzstd"
+          },
+          "Version": "1.5.7+dfsg-1",
+          "Arch": "amd64",
+          "SrcName": "libzstd1",
+          "SrcVersion": "1.5.7+dfsg-1",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-2.0-only",
+            "Zlib",
+            "Expat"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "login@1:4.16.0-2+really2.41-5",
+          "Name": "login",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/login@1:4.16.0-2%2Breally2.41-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=util-linux%402.41-5",
+            "UID": "b62ea46a87b37526",
+            "BOMRef": "pkg:deb/debian/login@1%3A4.16.0-2%2Breally2.41-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=6c070b5fd90837d2\u0026upstream=util-linux%402.41-5"
+          },
+          "Version": "1:4.16.0-2+really2.41-5",
+          "Arch": "amd64",
+          "SrcName": "login",
+          "SrcVersion": "1:4.16.0-2+really2.41-5",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "BSLA",
+            "Expat",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libaudit1@1:4.0.2-2+b2",
+            "libc6@2.41-12+deb13u3",
+            "libcrypt1@1:4.4.38-1",
+            "libpam-modules@1.7.0-5",
+            "libpam-runtime@1.7.0-5",
+            "libpam0g@1.7.0-5",
+            "login.defs@1:4.17.4-2"
+          ]
+        },
+        {
+          "ID": "login.defs@1:4.17.4-2",
+          "Name": "login.defs",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/login.defs@1:4.17.4-2?arch=all\u0026distro=debian-13.6\u0026upstream=shadow",
+            "UID": "97f263a4e04aca21",
+            "BOMRef": "pkg:deb/debian/login.defs@1%3A4.17.4-2?arch=all\u0026distro=debian-13.6\u0026package-id=617344f48a16ebfe\u0026upstream=shadow"
+          },
+          "Version": "1:4.17.4-2",
+          "Arch": "all",
+          "SrcName": "login.defs",
+          "SrcVersion": "1:4.17.4-2",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-1.0-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later"
+          ]
+        },
+        {
+          "ID": "mawk@1.3.4.20250131-1",
+          "Name": "mawk",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/mawk@1.3.4.20250131-1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "223d9657bd7a9c9e",
+            "BOMRef": "pkg:deb/debian/mawk@1.3.4.20250131-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=270f71d4bc852b94"
+          },
+          "Version": "1.3.4.20250131-1",
+          "Arch": "amd64",
+          "SrcName": "mawk",
+          "SrcVersion": "1.3.4.20250131-1",
+          "Licenses": [
+            "CC-BY-3.0",
+            "GPL-2.0-only",
+            "X11"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "mount@2.41-5",
+          "Name": "mount",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/mount@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026upstream=util-linux",
+            "UID": "73129da484a3a98a",
+            "BOMRef": "pkg:deb/debian/mount@2.41-5?arch=amd64\u0026distro=debian-13.6\u0026package-id=c65a00e0e5468b3a\u0026upstream=util-linux"
+          },
+          "Version": "2.41-5",
+          "Arch": "amd64",
+          "SrcName": "mount",
+          "SrcVersion": "2.41-5",
+          "Licenses": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later",
+            "BSLA",
+            "Expat",
+            "LGPL",
+            "public-domain"
+          ],
+          "DependsOn": [
+            "libblkid1@2.41-5",
+            "libc6@2.41-12+deb13u3",
+            "libmount1@2.41-5",
+            "libselinux1@3.8.1-1",
+            "libsmartcols1@2.41-5"
+          ]
+        },
+        {
+          "ID": "ncurses-base@6.5+20250216-2",
+          "Name": "ncurses-base",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/ncurses-base@6.5%2B20250216-2?arch=all\u0026distro=debian-13.6\u0026upstream=ncurses",
+            "UID": "aca260437f1dcdd8",
+            "BOMRef": "pkg:deb/debian/ncurses-base@6.5%2B20250216-2?arch=all\u0026distro=debian-13.6\u0026package-id=b0dfabdefd117dcf\u0026upstream=ncurses"
+          },
+          "Version": "6.5+20250216-2",
+          "Arch": "all",
+          "SrcName": "ncurses-base",
+          "SrcVersion": "6.5+20250216-2",
+          "Licenses": [
+            "BSD-3-Clause",
+            "X11",
+            "MIT/X11"
+          ]
+        },
+        {
+          "ID": "ncurses-bin@6.5+20250216-2",
+          "Name": "ncurses-bin",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/ncurses-bin@6.5%2B20250216-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=ncurses",
+            "UID": "c324cef6537250bd",
+            "BOMRef": "pkg:deb/debian/ncurses-bin@6.5%2B20250216-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=7c3e53c4b6846ac5\u0026upstream=ncurses"
+          },
+          "Version": "6.5+20250216-2",
+          "Arch": "amd64",
+          "SrcName": "ncurses-bin",
+          "SrcVersion": "6.5+20250216-2",
+          "Licenses": [
+            "BSD-3-Clause",
+            "X11",
+            "MIT/X11"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libtinfo6@6.5+20250216-2"
+          ]
+        },
+        {
+          "ID": "netbase@6.5",
+          "Name": "netbase",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/netbase@6.5?arch=all\u0026distro=debian-13.6",
+            "UID": "8195b40c1bc1f121",
+            "BOMRef": "pkg:deb/debian/netbase@6.5?arch=all\u0026distro=debian-13.6\u0026package-id=b57f54a20b373a5e"
+          },
+          "Version": "6.5",
+          "Arch": "all",
+          "SrcName": "netbase",
+          "SrcVersion": "6.5",
+          "Licenses": [
+            "GPL-2.0-only"
+          ]
+        },
+        {
+          "ID": "openssl@3.5.6-1~deb13u2",
+          "Name": "openssl",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/openssl@3.5.6-1~deb13u2?arch=amd64\u0026distro=debian-13.6",
+            "UID": "7b98ab8e3edc09e0",
+            "BOMRef": "pkg:deb/debian/openssl@3.5.6-1~deb13u2?arch=amd64\u0026distro=debian-13.6\u0026package-id=fa6d8abbfff89e1b"
+          },
+          "Version": "3.5.6-1~deb13u2",
+          "Arch": "amd64",
+          "SrcName": "openssl",
+          "SrcVersion": "3.5.6-1~deb13u2",
+          "Licenses": [
+            "Apache-2.0",
+            "GPL-1.0-only",
+            "GPL-1.0-or-later",
+            "Artistic"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libssl3t64@3.5.6-1~deb13u2"
+          ]
+        },
+        {
+          "ID": "openssl-provider-legacy@3.5.6-1~deb13u2",
+          "Name": "openssl-provider-legacy",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/openssl-provider-legacy@3.5.6-1~deb13u2?arch=amd64\u0026distro=debian-13.6\u0026upstream=openssl",
+            "UID": "7bc93e50900d8d6c",
+            "BOMRef": "pkg:deb/debian/openssl-provider-legacy@3.5.6-1~deb13u2?arch=amd64\u0026distro=debian-13.6\u0026package-id=6292cc60717167f0\u0026upstream=openssl"
+          },
+          "Version": "3.5.6-1~deb13u2",
+          "Arch": "amd64",
+          "SrcName": "openssl-provider-legacy",
+          "SrcVersion": "3.5.6-1~deb13u2",
+          "Licenses": [
+            "Apache-2.0",
+            "GPL-1.0-only",
+            "GPL-1.0-or-later",
+            "Artistic"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libssl3t64@3.5.6-1~deb13u2"
+          ]
+        },
+        {
+          "ID": "passwd@1:4.17.4-2",
+          "Name": "passwd",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/passwd@1:4.17.4-2?arch=amd64\u0026distro=debian-13.6\u0026upstream=shadow",
+            "UID": "f95c06dff967b24",
+            "BOMRef": "pkg:deb/debian/passwd@1%3A4.17.4-2?arch=amd64\u0026distro=debian-13.6\u0026package-id=2dc04ad0d787826c\u0026upstream=shadow"
+          },
+          "Version": "1:4.17.4-2",
+          "Arch": "amd64",
+          "SrcName": "passwd",
+          "SrcVersion": "1:4.17.4-2",
+          "Licenses": [
+            "BSD-3-Clause",
+            "GPL-1.0-only",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later"
+          ],
+          "DependsOn": [
+            "base-passwd@3.6.7",
+            "libacl1@2.3.2-2+b1",
+            "libattr1@1:2.5.2-3",
+            "libaudit1@1:4.0.2-2+b2",
+            "libbsd0@0.12.2-2",
+            "libc6@2.41-12+deb13u3",
+            "libcrypt1@1:4.4.38-1",
+            "libpam-modules@1.7.0-5",
+            "libpam0g@1.7.0-5",
+            "libselinux1@3.8.1-1",
+            "libsemanage2@3.8.1-1",
+            "login.defs@1:4.17.4-2"
+          ]
+        },
+        {
+          "ID": "perl-base@5.40.1-6",
+          "Name": "perl-base",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/perl-base@5.40.1-6?arch=amd64\u0026distro=debian-13.6\u0026upstream=perl",
+            "UID": "cd851a1e1d09d4dd",
+            "BOMRef": "pkg:deb/debian/perl-base@5.40.1-6?arch=amd64\u0026distro=debian-13.6\u0026package-id=1941e8265caae8e4\u0026upstream=perl"
+          },
+          "Version": "5.40.1-6",
+          "Arch": "amd64",
+          "SrcName": "perl-base",
+          "SrcVersion": "5.40.1-6",
+          "Licenses": [
+            "Artistic-2.0",
+            "Artistic-dist",
+            "BSD-3-Clause",
+            "FSFAP",
+            "GPL-1.0-only",
+            "GPL-1.0-or-later",
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "LGPL-2.1-only",
+            "Zlib",
+            "Artistic",
+            "BSD-3-clause-GENERIC",
+            "BSD-3-clause-with-weird-numbering",
+            "BSD-4-clause-POWERDOG",
+            "BZIP",
+            "DONT-CHANGE-THE-GPL",
+            "Expat",
+            "GPL-3+-WITH-BISON-EXCEPTION",
+            "REGCOMP",
+            "REGCOMP,",
+            "SDBM-PUBLIC-DOMAIN",
+            "TEXT-TABS",
+            "Unicode"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libcrypt1@1:4.4.38-1"
+          ]
+        },
+        {
+          "ID": "readline-common@8.2-6",
+          "Name": "readline-common",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/readline-common@8.2-6?arch=all\u0026distro=debian-13.6\u0026upstream=readline",
+            "UID": "969563c9aa058ea1",
+            "BOMRef": "pkg:deb/debian/readline-common@8.2-6?arch=all\u0026distro=debian-13.6\u0026package-id=20aaa01387162e02\u0026upstream=readline"
+          },
+          "Version": "8.2-6",
+          "Arch": "all",
+          "SrcName": "readline-common",
+          "SrcVersion": "8.2-6",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "GFDL",
+            "GFDL-NIV-1.3+",
+            "ISC-no-attribution"
+          ]
+        },
+        {
+          "ID": "sed@4.9-2+deb13u1",
+          "Name": "sed",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/sed@4.9-2%2Bdeb13u1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "f437f6f94ae01a49",
+            "BOMRef": "pkg:deb/debian/sed@4.9-2%2Bdeb13u1?arch=amd64\u0026distro=debian-13.6\u0026package-id=64356d4eca65610b"
+          },
+          "Version": "4.9-2+deb13u1",
+          "Arch": "amd64",
+          "SrcName": "sed",
+          "SrcVersion": "4.9-2+deb13u1",
+          "Licenses": [
+            "BSD-4-Clause-UC",
+            "BSL-1.0",
+            "GFDL-1.3-only",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "ISC",
+            "X11",
+            "GFDL-NIV-1.3+",
+            "pcre"
+          ],
+          "DependsOn": [
+            "libacl1@2.3.2-2+b1",
+            "libc6@2.41-12+deb13u3",
+            "libselinux1@3.8.1-1"
+          ]
+        },
+        {
+          "ID": "shadow@1:4.17.4-2",
+          "Name": "shadow",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/shadow@1:4.17.4-2?distro=Debian",
+            "UID": "da759faf1f4bbfab",
+            "BOMRef": "pkg:deb/debian/shadow@1%3A4.17.4-2?distro=Debian\u0026package-id=931080f3ce1f37c8"
+          },
+          "Version": "1:4.17.4-2",
+          "SrcName": "shadow",
+          "SrcVersion": "1:4.17.4-2"
+        },
+        {
+          "ID": "sqv@1.3.0-3+b2",
+          "Name": "sqv",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/sqv@1.3.0-3%2Bb2?arch=amd64\u0026distro=debian-13.6\u0026upstream=rust-sequoia-sqv%401.3.0-3",
+            "UID": "15ad7b2c72ac76a",
+            "BOMRef": "pkg:deb/debian/sqv@1.3.0-3%2Bb2?arch=amd64\u0026distro=debian-13.6\u0026package-id=deff04959eb2f26a\u0026upstream=rust-sequoia-sqv%401.3.0-3"
+          },
+          "Version": "1.3.0-3+b2",
+          "Arch": "amd64",
+          "SrcName": "sqv",
+          "SrcVersion": "1.3.0-3+b2",
+          "Licenses": [
+            "LGPL-2.0-only",
+            "LGPL-2.0-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3",
+            "libgcc-s1@14.2.0-19",
+            "libgmp10@2:6.3.0+dfsg-3",
+            "libhogweed6t64@3.10.1-1",
+            "libnettle8t64@3.10.1-1"
+          ]
+        },
+        {
+          "ID": "systemd@257.13-1~deb13u1",
+          "Name": "systemd",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian",
+            "UID": "3d32821afa2d636",
+            "BOMRef": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian\u0026package-id=2876839f0ac45077"
+          },
+          "Version": "257.13-1~deb13u1",
+          "SrcName": "systemd",
+          "SrcVersion": "257.13-1~deb13u1"
+        },
+        {
+          "ID": "sysvinit-utils@3.14-4",
+          "Name": "sysvinit-utils",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/sysvinit-utils@3.14-4?arch=amd64\u0026distro=debian-13.6\u0026upstream=sysvinit",
+            "UID": "10a2438a34ea8871",
+            "BOMRef": "pkg:deb/debian/sysvinit-utils@3.14-4?arch=amd64\u0026distro=debian-13.6\u0026package-id=8b03762d7e0639e7\u0026upstream=sysvinit"
+          },
+          "Version": "3.14-4",
+          "Arch": "amd64",
+          "SrcName": "sysvinit-utils",
+          "SrcVersion": "3.14-4",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        },
+        {
+          "ID": "tar@1.35+dfsg-3.1",
+          "Name": "tar",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/tar@1.35%2Bdfsg-3.1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "310af3bd7235e7bb",
+            "BOMRef": "pkg:deb/debian/tar@1.35%2Bdfsg-3.1?arch=amd64\u0026distro=debian-13.6\u0026package-id=6a8b1637d4d79c1b"
+          },
+          "Version": "1.35+dfsg-3.1",
+          "Arch": "amd64",
+          "SrcName": "tar",
+          "SrcVersion": "1.35+dfsg-3.1",
+          "Licenses": [
+            "GPL-2.0-only",
+            "GPL-2.0-or-later",
+            "GPL-3.0-only",
+            "GPL-3.0-or-later",
+            "LGPL-2.1-only",
+            "LGPL-2.1-or-later",
+            "LGPL-3.0-only",
+            "LGPL-3.0-or-later"
+          ],
+          "DependsOn": [
+            "libacl1@2.3.2-2+b1",
+            "libc6@2.41-12+deb13u3",
+            "libselinux1@3.8.1-1"
+          ]
+        },
+        {
+          "ID": "tzdata@2026b-0+deb13u1",
+          "Name": "tzdata",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/tzdata@2026b-0%2Bdeb13u1?arch=all\u0026distro=debian-13.6",
+            "UID": "b853b6633705cf97",
+            "BOMRef": "pkg:deb/debian/tzdata@2026b-0%2Bdeb13u1?arch=all\u0026distro=debian-13.6\u0026package-id=afa90ce770eba149"
+          },
+          "Version": "2026b-0+deb13u1",
+          "Arch": "all",
+          "SrcName": "tzdata",
+          "SrcVersion": "2026b-0+deb13u1",
+          "Licenses": [
+            "public-domain"
+          ],
+          "DependsOn": [
+            "debconf@1.5.91"
+          ]
+        },
+        {
+          "ID": "util-linux@2.41-5",
+          "Name": "util-linux",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "Version": "2.41-5",
+          "SrcName": "util-linux",
+          "SrcVersion": "2.41-5"
+        },
+        {
+          "ID": "zlib1g@1:1.3.dfsg+really1.3.1-1+b1",
+          "Name": "zlib1g",
+          "Identifier": {
+            "PURL": "pkg:deb/debian/zlib1g@1:1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026upstream=zlib%401:1.3.dfsg%2Breally1.3.1-1",
+            "UID": "a80743016693ab67",
+            "BOMRef": "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64\u0026distro=debian-13.6\u0026package-id=fe2e024865008db2\u0026upstream=zlib%401%3A1.3.dfsg%2Breally1.3.1-1"
+          },
+          "Version": "1:1.3.dfsg+really1.3.1-1+b1",
+          "Arch": "amd64",
+          "SrcName": "zlib1g",
+          "SrcVersion": "1:1.3.dfsg+really1.3.1-1+b1",
+          "Licenses": [
+            "Zlib"
+          ],
+          "DependsOn": [
+            "libc6@2.41-12+deb13u3"
+          ]
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2011-3374",
+          "PkgID": "apt@3.0.3",
+          "PkgName": "apt",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/apt@3.0.3?arch=amd64\u0026distro=debian-13.6",
+            "UID": "7905c21f2b961764",
+            "BOMRef": "pkg:deb/debian/apt@3.0.3?arch=amd64\u0026distro=debian-13.6\u0026package-id=538a004ef5cf1609"
+          },
+          "InstalledVersion": "3.0.3",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2011-3374",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:a7c4b2a01eec709468f50f18c765b7f6f6f45eb42fc3c0ca2f495b81eee1328f",
+          "Title": "It was found that apt-key in apt, all versions, do not correctly valid ...",
+          "Description": "It was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-347"
+          ],
+          "VendorSeverity": {
+            "debian": 1,
+            "nvd": 1
+          },
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V2Score": 4.3,
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/cve-2011-3374",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480",
+            "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html",
+            "https://seclists.org/fulldisclosure/2011/Sep/221",
+            "https://security-tracker.debian.org/tracker/CVE-2011-3374",
+            "https://snyk.io/vuln/SNYK-LINUX-APT-116518",
+            "https://ubuntu.com/security/CVE-2011-3374"
+          ],
+          "PublishedDate": "2019-11-26T00:15:11.03Z",
+          "LastModifiedDate": "2024-11-21T01:30:22.61Z"
+        },
+        {
+          "VulnerabilityID": "TEMP-0841856-B18BAF",
+          "PkgID": "bash@5.2.37-2+b9",
+          "PkgName": "bash",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/bash@5.2.37-2%2Bb9?arch=amd64\u0026distro=debian-13.6\u0026upstream=bash%405.2.37-2",
+            "UID": "3d5523a6771dca09",
+            "BOMRef": "pkg:deb/debian/bash@5.2.37-2%2Bb9?arch=amd64\u0026distro=debian-13.6\u0026package-id=60123ae03925c7e5\u0026upstream=bash%405.2.37-2"
+          },
+          "InstalledVersion": "5.2.37-2+b9",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0841856-B18BAF",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:80c0c0d0893bcbedbab869b3398c2b1d1a1228f0e563c5ee19e478dd65b5ce52",
+          "Title": "[Privilege escalation possible to other user than root]",
+          "Severity": "LOW",
+          "VendorSeverity": {
+            "debian": 1
+          }
+        },
+        {
+          "VulnerabilityID": "CVE-2017-18018",
+          "PkgID": "coreutils@9.7-3",
+          "PkgName": "coreutils",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/coreutils@9.7-3?arch=amd64\u0026distro=debian-13.6",
+            "UID": "40f6e4081f8b5316",
+            "BOMRef": "pkg:deb/debian/coreutils@9.7-3?arch=amd64\u0026distro=debian-13.6\u0026package-id=c987947b9ce08bac"
+          },
+          "InstalledVersion": "9.7-3",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-18018",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:1f62e7fc45793555facb0c8299f73e0740a5d8618dd080088d5354b7fae7f727",
+          "Title": "coreutils: race condition vulnerability in chown and chgrp",
+          "Description": "In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent replacement of a plain file with a symlink during use of the POSIX \"-R -L\" options, which allows local users to modify the ownership of arbitrary files by leveraging a race condition.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-362"
+          ],
+          "VendorSeverity": {
+            "debian": 1,
+            "nvd": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:N/I:P/A:N",
+              "V3Vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V2Score": 1.9,
+              "V3Score": 4.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:L",
+              "V3Score": 4.2
+            }
+          },
+          "References": [
+            "http://lists.gnu.org/archive/html/coreutils/2017-12/msg00045.html",
+            "https://access.redhat.com/security/cve/CVE-2017-18018",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-18018",
+            "https://www.cve.org/CVERecord?id=CVE-2017-18018"
+          ],
+          "PublishedDate": "2018-01-04T04:29:00.19Z",
+          "LastModifiedDate": "2026-06-17T01:12:02.94Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-5278",
+          "PkgID": "coreutils@9.7-3",
+          "PkgName": "coreutils",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/coreutils@9.7-3?arch=amd64\u0026distro=debian-13.6",
+            "UID": "40f6e4081f8b5316",
+            "BOMRef": "pkg:deb/debian/coreutils@9.7-3?arch=amd64\u0026distro=debian-13.6\u0026package-id=c987947b9ce08bac"
+          },
+          "InstalledVersion": "9.7-3",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-5278",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:93ca5eb12cdbf4b11ff9709a228c0ff70ec08d929f6a9acd1626a03c895d0326",
+          "Title": "coreutils: Heap Buffer Under-Read in GNU Coreutils sort via Key Specification",
+          "Description": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "debian": 1,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L",
+              "V3Score": 4.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/05/27/2",
+            "http://www.openwall.com/lists/oss-security/2025/05/29/1",
+            "http://www.openwall.com/lists/oss-security/2025/05/29/2",
+            "https://access.redhat.com/errata/RHSA-2026:28911",
+            "https://access.redhat.com/errata/RHSA-2026:33124",
+            "https://access.redhat.com/errata/RHSA-2026:33313",
+            "https://access.redhat.com/errata/RHSA-2026:33612",
+            "https://access.redhat.com/errata/RHSA-2026:34102",
+            "https://access.redhat.com/errata/RHSA-2026:39981",
+            "https://access.redhat.com/errata/RHSA-2026:44481",
+            "https://access.redhat.com/security/cve/CVE-2025-5278",
+            "https://bugzilla.redhat.com/2368764",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2368764",
+            "https://cgit.git.savannah.gnu.org/cgit/coreutils.git/commit/?id=8c9602e3a145e9596dc1a63c6ed67865814b6633",
+            "https://cgit.git.savannah.gnu.org/cgit/coreutils.git/tree/NEWS?id=8c9602e3a145e9596dc1a63c6ed67865814b6633#n14",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-5278",
+            "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=78507",
+            "https://errata.almalinux.org/9/ALSA-2026-28911.html",
+            "https://errata.rockylinux.org/RLSA-2026:28911",
+            "https://linux.oracle.com/cve/CVE-2025-5278.html",
+            "https://linux.oracle.com/errata/ELSA-2026-33124.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-5278",
+            "https://security-tracker.debian.org/tracker/CVE-2025-5278",
+            "https://www.cve.org/CVERecord?id=CVE-2025-5278"
+          ],
+          "PublishedDate": "2025-05-27T21:15:23.197Z",
+          "LastModifiedDate": "2026-07-23T14:16:58.293Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53910",
+          "PkgID": "diffutils@1:3.10-4",
+          "PkgName": "diffutils",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/diffutils@1:3.10-4?arch=amd64\u0026distro=debian-13.6",
+            "UID": "8c31192a7577ac2a",
+            "BOMRef": "pkg:deb/debian/diffutils@1%3A3.10-4?arch=amd64\u0026distro=debian-13.6\u0026package-id=ea595a45b61caefc"
+          },
+          "InstalledVersion": "1:3.10-4",
+          "Status": "affected",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53910",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:9e907dffa72db4b93881afb3f3ab48d7651def2144cae6b8741b543adf29590d",
+          "Title": "diff3tool from GNU diffutilsis vulnerable to a heap\\u2011based buffer  ...",
+          "Description": "diff3 tool from GNU diffutils is vulnerable to a heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations. Incorrect arithmetic in mapping line ranges can result in corrupted values being used for memory allocation and loop bounds.\nWhen processing crafted diff output, these overflows may cause the application to allocate insufficient memory and subsequently perform out‑of‑bounds writes during internal processing. \nAn attacker who can control the output of the diff program used by diff3 (e.g. via --diff-program pointing to a malicious script) can trigger out-of-bounds writes, resulting in a crash and potentially remote code execution depending on the environment.\n\n\nThis issue has been fixed in commit 9ff04d5b84743e331e80b589335a52c5480d1815",
+          "Severity": "UNKNOWN",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "References": [
+            "https://cert.pl/en/posts/2026/07/CVE-2026-53910",
+            "https://cgit.git.savannah.gnu.org/cgit/diffutils.git/commit/?id=73ed7ce85cc78effb94daf028c9af6b4e5252e50",
+            "https://cgit.git.savannah.gnu.org/cgit/diffutils.git/commit/?id=9ff04d5b84743e331e80b589335a52c5480d1815",
+            "https://git.savannah.gnu.org/cgit/diffutils.git/"
+          ],
+          "PublishedDate": "2026-07-22T14:17:21.03Z",
+          "LastModifiedDate": "2026-07-22T20:54:15.757Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-41992",
+          "PkgID": "gzip@1.13-1",
+          "PkgName": "gzip",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "7ad4e72e59e1ee79",
+            "BOMRef": "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=a64be93d9f87fbcd"
+          },
+          "InstalledVersion": "1.13-1",
+          "Status": "affected",
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-41992",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:4316cbb7e9d0f247d8c069a9a2fd3708457633fe62b99ae6d8dc117d113eff3a",
+          "Title": "GNU gzip contains a global buffer overflow vulnerability in the LZH de ...",
+          "Description": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation.\nBy decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.\n\nThis issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-126"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "nvd": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cert.pl/en/posts/2026/04/CVE-2026-41991/",
+            "https://cgit.git.savannah.gnu.org/cgit/gzip.git/commit/?id=63dbf6b3b9e6e781df1a6a64e609b10e23969681",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-41992",
+            "https://ubuntu.com/security/notices/USN-8512-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-41992",
+            "https://www.gnu.org/software/gzip/"
+          ],
+          "PublishedDate": "2026-06-29T12:16:29.94Z",
+          "LastModifiedDate": "2026-07-01T14:02:20.173Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-41991",
+          "PkgID": "gzip@1.13-1",
+          "PkgName": "gzip",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "7ad4e72e59e1ee79",
+            "BOMRef": "pkg:deb/debian/gzip@1.13-1?arch=amd64\u0026distro=debian-13.6\u0026package-id=a64be93d9f87fbcd"
+          },
+          "InstalledVersion": "1.13-1",
+          "Status": "affected",
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-41991",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:548fa8bb3888131c9952495325a83e93cb587eebecbeff8a59f0c4ff8027c659",
+          "Title": "gzip: gzip: Arbitrary file overwrite via insecure temporary file handling in gzexe utility",
+          "Description": "GNU gzip contains a vulnerability in the gzexe utility related to insecure temporary file handling. When the mktemp utility is not available in the user’s PATH, gzexe falls back to constructing a temporary file path based solely on the process ID (PID). This predictable filename is created without exclusive access or existence checks.\nA local attacker can pre‑create the predicted temporary file path as a symbolic link pointing to an arbitrary file writable by the victim. When gzexe runs, it follows the symlink and overwrites the target file, resulting in a time‑of‑check to time‑of‑use (TOCTOU) condition that allows arbitrary file overwrite.\n\nThis issue has been fixed in the commit 4e6f8b24ab823146ab8776f0b7fe486ab34d4269",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-377"
+          ],
+          "VendorSeverity": {
+            "nvd": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 4.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-41991",
+            "https://cert.pl/en/posts/2026/04/CVE-2026-41991/",
+            "https://cgit.git.savannah.gnu.org/cgit/gzip.git/commit/?id=4e6f8b24ab823146ab8776f0b7fe486ab34d4269",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-41991",
+            "https://ubuntu.com/security/notices/USN-8512-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-41991",
+            "https://www.gnu.org/software/gzip/"
+          ],
+          "PublishedDate": "2026-06-29T12:16:29.77Z",
+          "LastModifiedDate": "2026-07-01T14:02:24.45Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2007-5686",
+          "PkgID": "shadow@1:4.17.4-2",
+          "PkgName": "shadow",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/shadow@1:4.17.4-2?distro=Debian",
+            "UID": "da759faf1f4bbfab",
+            "BOMRef": "pkg:deb/debian/shadow@1%3A4.17.4-2?distro=Debian\u0026package-id=931080f3ce1f37c8"
+          },
+          "InstalledVersion": "1:4.17.4-2",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2007-5686",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:f8b2e710a3d5d2d708b89a8249f1ecd89ab55930a3e74ca88c3a1d7d2d4f0eba",
+          "Title": "initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...",
+          "Description": "initscripts in rPath Linux 1 sets insecure permissions for the /var/log/btmp file, which allows local users to obtain sensitive information regarding authentication attempts.  NOTE: because sshd detects the insecure permissions and does not log certain events, this also prevents sshd from logging failed authentication attempts by remote attackers.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-264"
+          ],
+          "VendorSeverity": {
+            "debian": 1,
+            "nvd": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:L/Au:N/C:C/I:N/A:N",
+              "V2Score": 4.9
+            }
+          },
+          "References": [
+            "http://secunia.com/advisories/27215",
+            "http://www.securityfocus.com/archive/1/482129/100/100/threaded",
+            "http://www.securityfocus.com/archive/1/482857/100/0/threaded",
+            "http://www.securityfocus.com/bid/26048",
+            "http://www.vupen.com/english/advisories/2007/3474",
+            "https://issues.rpath.com/browse/RPL-1825"
+          ],
+          "PublishedDate": "2007-10-28T17:08:00Z",
+          "LastModifiedDate": "2026-04-23T00:35:47.467Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56433",
+          "PkgID": "shadow@1:4.17.4-2",
+          "PkgName": "shadow",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/shadow@1:4.17.4-2?distro=Debian",
+            "UID": "da759faf1f4bbfab",
+            "BOMRef": "pkg:deb/debian/shadow@1%3A4.17.4-2?distro=Debian\u0026package-id=931080f3ce1f37c8"
+          },
+          "InstalledVersion": "1:4.17.4-2",
+          "Status": "affected",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56433",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:51bc0409b3d6dbfbc1da03f542e33f850a7ef1c9c854704dd26b824f6a901eff",
+          "Title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise",
+          "Description": "shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid behavior (e.g., uid 100000 through 165535 for the first user account) that can realistically conflict with the uids of users defined on locally administered networks, potentially leading to account takeover, e.g., by leveraging newuidmap for access to an NFS home directory (or same-host resources in the case of remote logins by these local network users). NOTE: it may also be argued that system administrators should not have assigned uids, within local networks, that are within the range that can occur in /etc/subuid.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-1188"
+          ],
+          "VendorSeverity": {
+            "alma": 1,
+            "azure": 1,
+            "oracle-oval": 1,
+            "redhat": 1,
+            "rocky": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 3.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:20559",
+            "https://access.redhat.com/security/cve/CVE-2024-56433",
+            "https://bugzilla.redhat.com/2334165",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2334165",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-56433",
+            "https://errata.almalinux.org/9/ALSA-2025-20559.html",
+            "https://errata.rockylinux.org/RLSA-2025:20559",
+            "https://github.com/shadow-maint/shadow/blob/e2512d5741d4a44bdd81a8c2d0029b6222728cf0/etc/login.defs#L238-L241",
+            "https://github.com/shadow-maint/shadow/issues/1157",
+            "https://github.com/shadow-maint/shadow/releases/tag/4.4",
+            "https://linux.oracle.com/cve/CVE-2024-56433.html",
+            "https://linux.oracle.com/errata/ELSA-2025-20559-0.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56433",
+            "https://www.cve.org/CVERecord?id=CVE-2024-56433"
+          ],
+          "PublishedDate": "2024-12-26T09:15:07.267Z",
+          "LastModifiedDate": "2026-06-17T08:12:10.903Z"
+        },
+        {
+          "VulnerabilityID": "TEMP-0628843-DBAD28",
+          "PkgID": "shadow@1:4.17.4-2",
+          "PkgName": "shadow",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/shadow@1:4.17.4-2?distro=Debian",
+            "UID": "da759faf1f4bbfab",
+            "BOMRef": "pkg:deb/debian/shadow@1%3A4.17.4-2?distro=Debian\u0026package-id=931080f3ce1f37c8"
+          },
+          "InstalledVersion": "1:4.17.4-2",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0628843-DBAD28",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:abab6f4f9731eca6ff8df7e17185fa12af62f43af950de957f156bd3229ddcbe",
+          "Title": "[more related to CVE-2005-4890]",
+          "Severity": "LOW",
+          "VendorSeverity": {
+            "debian": 1
+          }
+        },
+        {
+          "VulnerabilityID": "CVE-2013-4392",
+          "PkgID": "systemd@257.13-1~deb13u1",
+          "PkgName": "systemd",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian",
+            "UID": "3d32821afa2d636",
+            "BOMRef": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian\u0026package-id=2876839f0ac45077"
+          },
+          "InstalledVersion": "257.13-1~deb13u1",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2013-4392",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:aa286e10ddcdb12f3722f2bf33ef3c039ea81bbb1fa39b2eaaa1709c718d2b8a",
+          "Title": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+          "Description": "systemd, when updating file permissions, allows local users to change the permissions and SELinux security contexts for arbitrary files via a symlink attack on unspecified files.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-59"
+          ],
+          "VendorSeverity": {
+            "debian": 1,
+            "nvd": 1,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:P/I:P/A:N",
+              "V2Score": 3.3
+            },
+            "redhat": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:P/I:P/A:N",
+              "V2Score": 3.3
+            }
+          },
+          "References": [
+            "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=725357",
+            "http://www.openwall.com/lists/oss-security/2013/10/01/9",
+            "https://access.redhat.com/security/cve/CVE-2013-4392",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=859060",
+            "https://nvd.nist.gov/vuln/detail/CVE-2013-4392",
+            "https://www.cve.org/CVERecord?id=CVE-2013-4392"
+          ],
+          "PublishedDate": "2013-10-28T22:55:03.773Z",
+          "LastModifiedDate": "2026-04-29T01:13:23.04Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-31437",
+          "PkgID": "systemd@257.13-1~deb13u1",
+          "PkgName": "systemd",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian",
+            "UID": "3d32821afa2d636",
+            "BOMRef": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian\u0026package-id=2876839f0ac45077"
+          },
+          "InstalledVersion": "257.13-1~deb13u1",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31437",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:aaf46b9ebca43e7f21feec188533b43b5136b7b1dbedd63ab6db6e60a1d17b55",
+          "Title": "An issue was discovered in systemd 253. An attacker can modify a seale ...",
+          "Description": "An issue was discovered in systemd 253. An attacker can modify a sealed log file such that, in some views, not all existing and sealed log messages are displayed. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-354"
+          ],
+          "VendorSeverity": {
+            "debian": 1,
+            "nvd": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://github.com/kastel-security/Journald",
+            "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+            "https://github.com/systemd/systemd/releases"
+          ],
+          "PublishedDate": "2023-06-13T17:15:14.657Z",
+          "LastModifiedDate": "2026-06-17T05:56:57.143Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-31438",
+          "PkgID": "systemd@257.13-1~deb13u1",
+          "PkgName": "systemd",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian",
+            "UID": "3d32821afa2d636",
+            "BOMRef": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian\u0026package-id=2876839f0ac45077"
+          },
+          "InstalledVersion": "257.13-1~deb13u1",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31438",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:39fc9967e122e8d881215dc6af7bd4a955444edfd4a20ae74be0ec9abdd01956",
+          "Title": "An issue was discovered in systemd 253. An attacker can truncate a sea ...",
+          "Description": "An issue was discovered in systemd 253. An attacker can truncate a sealed log file and then resume log sealing such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-354"
+          ],
+          "VendorSeverity": {
+            "debian": 1,
+            "nvd": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://github.com/kastel-security/Journald",
+            "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+            "https://github.com/systemd/systemd/pull/28886",
+            "https://github.com/systemd/systemd/releases"
+          ],
+          "PublishedDate": "2023-06-13T17:15:14.707Z",
+          "LastModifiedDate": "2026-06-17T05:56:57.36Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-31439",
+          "PkgID": "systemd@257.13-1~deb13u1",
+          "PkgName": "systemd",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian",
+            "UID": "3d32821afa2d636",
+            "BOMRef": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian\u0026package-id=2876839f0ac45077"
+          },
+          "InstalledVersion": "257.13-1~deb13u1",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31439",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:b8aec8bd41a613e115845894544d20059b7fe841e4c3b4031f0e35ea99f4e332",
+          "Title": "An issue was discovered in systemd 253. An attacker can modify the con ...",
+          "Description": "An issue was discovered in systemd 253. An attacker can modify the contents of past events in a sealed log file and then adjust the file such that checking the integrity shows no error, despite modifications. NOTE: the vendor reportedly sent \"a reply denying that any of the finding was a security vulnerability.\"",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-354"
+          ],
+          "VendorSeverity": {
+            "amazon": 1,
+            "bottlerocket": 2,
+            "debian": 1,
+            "nvd": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-31439",
+            "https://github.com/bottlerocket-os/bottlerocket/security/advisories/GHSA-c8rh-5r8v-5w68",
+            "https://github.com/kastel-security/Journald",
+            "https://github.com/kastel-security/Journald/blob/main/journald-publication.pdf",
+            "https://github.com/systemd/systemd/pull/28885",
+            "https://github.com/systemd/systemd/releases"
+          ],
+          "PublishedDate": "2023-06-13T17:15:14.753Z",
+          "LastModifiedDate": "2026-06-17T05:56:57.503Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-40228",
+          "PkgID": "systemd@257.13-1~deb13u1",
+          "PkgName": "systemd",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian",
+            "UID": "3d32821afa2d636",
+            "BOMRef": "pkg:deb/debian/systemd@257.13-1~deb13u1?distro=Debian\u0026package-id=2876839f0ac45077"
+          },
+          "InstalledVersion": "257.13-1~deb13u1",
+          "Status": "affected",
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40228",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:54883700cb52a49239a327eac5acffc5f5cfe93eb32eab7725d94e89d2482c69",
+          "Title": "systemd: systemd-journald: Unintended output to user terminals via logger command",
+          "Description": "In systemd 259, systemd-journald can send ANSI escape sequences to the terminals of arbitrary users when a \"logger -p emerg\" command is executed, if ForwardToWall=yes is set.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-669"
+          ],
+          "VendorSeverity": {
+            "nvd": 1,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 3.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 2.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/05/05/1",
+            "https://access.redhat.com/security/cve/CVE-2026-40228",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-40228",
+            "https://www.cve.org/CVERecord?id=CVE-2026-40228",
+            "https://www.openwall.com/lists/oss-security/2026/04/08/1"
+          ],
+          "PublishedDate": "2026-04-10T16:16:33.753Z",
+          "LastModifiedDate": "2026-06-17T10:44:53.31Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-5704",
+          "PkgID": "tar@1.35+dfsg-3.1",
+          "PkgName": "tar",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tar@1.35%2Bdfsg-3.1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "310af3bd7235e7bb",
+            "BOMRef": "pkg:deb/debian/tar@1.35%2Bdfsg-3.1?arch=amd64\u0026distro=debian-13.6\u0026package-id=6a8b1637d4d79c1b"
+          },
+          "InstalledVersion": "1.35+dfsg-3.1",
+          "Status": "affected",
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5704",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:5d69017e793e8539f84c25a3dca4a7a5af45ca06c8e41a8f3dcc697d95a22475",
+          "Title": "tar: tar: Hidden file injection via crafted archives",
+          "Description": "A flaw was found in tar. A remote attacker could exploit this vulnerability by crafting a malicious archive, leading to hidden file injection with fully attacker-controlled content. This bypasses pre-extraction inspection mechanisms, potentially allowing an attacker to introduce malicious files onto a system without detection.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-434"
+          ],
+          "VendorSeverity": {
+            "nvd": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N",
+              "V3Score": 5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/11/10",
+            "http://www.openwall.com/lists/oss-security/2026/04/11/11",
+            "http://www.openwall.com/lists/oss-security/2026/04/12/2",
+            "https://access.redhat.com/security/cve/CVE-2026-5704",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2455360",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5704",
+            "https://ubuntu.com/security/notices/USN-8477-1",
+            "https://ubuntu.com/security/notices/USN-8477-2",
+            "https://ubuntu.com/security/notices/USN-8477-3",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5704"
+          ],
+          "PublishedDate": "2026-04-06T16:16:42.14Z",
+          "LastModifiedDate": "2026-06-17T10:59:31.78Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2005-2541",
+          "PkgID": "tar@1.35+dfsg-3.1",
+          "PkgName": "tar",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tar@1.35%2Bdfsg-3.1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "310af3bd7235e7bb",
+            "BOMRef": "pkg:deb/debian/tar@1.35%2Bdfsg-3.1?arch=amd64\u0026distro=debian-13.6\u0026package-id=6a8b1637d4d79c1b"
+          },
+          "InstalledVersion": "1.35+dfsg-3.1",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2005-2541",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:46dcbe22a257a812115c0873ffbf785dcdfe2f778a77eb9248150cb698f1330c",
+          "Title": "tar: does not properly warn the user when extracting setuid or setgid files",
+          "Description": "Tar 1.15.1 does not properly warn the user when extracting setuid or setgid files, which may allow local users or remote attackers to gain privileges.",
+          "Severity": "LOW",
+          "VendorSeverity": {
+            "debian": 1,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+              "V2Score": 10
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "http://marc.info/?l=bugtraq\u0026m=112327628230258\u0026w=2",
+            "https://access.redhat.com/security/cve/CVE-2005-2541",
+            "https://lists.apache.org/thread.html/rc713534b10f9daeee2e0990239fa407e2118e4aa9e88a7041177497c@%3Cissues.guacamole.apache.org%3E",
+            "https://nvd.nist.gov/vuln/detail/CVE-2005-2541",
+            "https://www.cve.org/CVERecord?id=CVE-2005-2541"
+          ],
+          "PublishedDate": "2005-08-10T04:00:00Z",
+          "LastModifiedDate": "2026-04-16T00:27:16.627Z"
+        },
+        {
+          "VulnerabilityID": "TEMP-0290435-0B57B5",
+          "PkgID": "tar@1.35+dfsg-3.1",
+          "PkgName": "tar",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tar@1.35%2Bdfsg-3.1?arch=amd64\u0026distro=debian-13.6",
+            "UID": "310af3bd7235e7bb",
+            "BOMRef": "pkg:deb/debian/tar@1.35%2Bdfsg-3.1?arch=amd64\u0026distro=debian-13.6\u0026package-id=6a8b1637d4d79c1b"
+          },
+          "InstalledVersion": "1.35+dfsg-3.1",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0290435-0B57B5",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:ac56ae05fa67c331416090c5d5a5d286a00467937b7f386059eafdfcfa60b14f",
+          "Title": "[tar's rmt command may have undesired side effects]",
+          "Severity": "LOW",
+          "VendorSeverity": {
+            "debian": 1
+          }
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53615",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:4a3279cec3a871d9e9958f282116fbc999b7659e5e558d43792fd1e2df6c179d",
+          "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "amazon": 3
+          }
+        },
+        {
+          "VulnerabilityID": "CVE-2026-13595",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13595",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:f0ab83ab4b83654605823b30a4d2d3f0add4b52e642fb4852a954cedbffdeae5",
+          "Title": "util-linux: util-linux: heap use-after-free in libblkid nested partition probing",
+          "Description": "A flaw was found in the libblkid library of util-linux. During nested partition probing, the BSD, Minix, Solaris x86, and UnixWare partition probers cache a raw pointer to a parent partition entry in a dynamically allocated array. When subsequent partition additions cause the array to be reallocated, this pointer becomes stale, leading to a heap use-after-free read. An attacker who can present a crafted block device image (for example, via USB insertion or a loop-mounted disk image) can trigger this flaw without user interaction, as libblkid is invoked automatically by udev/udisks as root on block-device hot-plug events. This could lead to limited information disclosure or denial of service.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "nvd": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:26573",
+            "https://access.redhat.com/security/cve/CVE-2026-13595",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2494101",
+            "https://github.com/util-linux/util-linux/commit/c0186f14fbdb02f64c8e0ba701ce727ea764ff4c",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-13595",
+            "https://www.cve.org/CVERecord?id=CVE-2026-13595"
+          ],
+          "PublishedDate": "2026-06-29T09:16:28.303Z",
+          "LastModifiedDate": "2026-07-08T03:37:21.637Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-27456",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27456",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:8d2cc0e1c0d292dcf838013226b9a4cdbb38814f8479e9f983d756cd50c12665",
+          "Title": "util-linux: TOCTOU in the mount program when setting up loop devices",
+          "Description": "util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-59",
+            "CWE-269",
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "bottlerocket": 2,
+            "julia": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 4.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27456",
+            "https://access.redhat.com/security/cve/CVE-2026-27456",
+            "https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/advisories/14.5.0/BRSA-jgcxwcxt3sxd.toml",
+            "https://github.com/util-linux/util-linux/commit/5e390467b26a3cf3fecc04e1a0d482dff3162fc4",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-qq4x-vfq4-9h9g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-27456",
+            "https://www.cve.org/CVERecord?id=CVE-2026-27456"
+          ],
+          "PublishedDate": "2026-04-03T22:16:25.4Z",
+          "LastModifiedDate": "2026-06-17T10:27:11.017Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3184",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:37f312713f0118e0f7574c1d86775e70a7e7a8f20424f8c210dba6dfd6024885",
+          "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "Description": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-289"
+          ],
+          "VendorSeverity": {
+            "azure": 1,
+            "nvd": 2,
+            "photon": 2,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:7180",
+            "https://access.redhat.com/security/cve/CVE-2026-3184",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2442570",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3184",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3184"
+          ],
+          "PublishedDate": "2026-04-03T19:17:23.377Z",
+          "LastModifiedDate": "2026-07-21T19:10:00.107Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-0563",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:17e7ad6b6ea03f353ec286f561ea5a3023cb2b29f225a399a2f63bb63293f87e",
+          "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "Description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-209"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "bottlerocket": 2,
+            "cbl-mariner": 2,
+            "debian": 1,
+            "julia": 2,
+            "nvd": 2,
+            "photon": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.5
+            },
+            "nvd": {
+              "V2Vector": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V2Score": 1.9,
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0563",
+            "https://access.redhat.com/security/cve/CVE-2022-0563",
+            "https://blog.trailofbits.com/2023/02/16/suid-logic-bug-linux-readline/",
+            "https://github.com/bottlerocket-os/bottlerocket/security/advisories/GHSA-mv4q-wq4c-5xmg",
+            "https://lore.kernel.org/util-linux/20220214110609.msiwlm457ngoic6w@ws.net.home/T/#u",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-0563",
+            "https://security.gentoo.org/glsa/202401-08",
+            "https://security.netapp.com/advisory/ntap-20220331-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2022-0563"
+          ],
+          "PublishedDate": "2022-02-21T19:15:08.393Z",
+          "LastModifiedDate": "2026-06-17T04:20:51.053Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-14104",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14104",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:2ae497db5edce4799be94d9c99735b1177e371ab008af53b54c997b60da5c6e8",
+          "Title": "util-linux: util-linux: Heap buffer overread in setpwnam() when processing 256-byte usernames",
+          "Description": "A flaw was found in util-linux. This vulnerability allows a heap buffer overread when processing 256-byte usernames, specifically within the `setpwnam()` function, affecting SUID (Set User ID) login-utils utilities writing to the password database.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "debian": 1,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 6.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:1696",
+            "https://access.redhat.com/errata/RHSA-2026:1852",
+            "https://access.redhat.com/errata/RHSA-2026:1913",
+            "https://access.redhat.com/errata/RHSA-2026:2485",
+            "https://access.redhat.com/errata/RHSA-2026:2563",
+            "https://access.redhat.com/errata/RHSA-2026:2737",
+            "https://access.redhat.com/errata/RHSA-2026:2800",
+            "https://access.redhat.com/errata/RHSA-2026:3406",
+            "https://access.redhat.com/errata/RHSA-2026:4943",
+            "https://access.redhat.com/errata/RHSA-2026:7180",
+            "https://access.redhat.com/security/cve/CVE-2025-14104",
+            "https://bugzilla.redhat.com/2419369",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
+            "https://errata.rockylinux.org/RLSA-2026:1913",
+            "https://linux.oracle.com/cve/CVE-2025-14104.html",
+            "https://linux.oracle.com/errata/ELSA-2026-1913.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14104",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14104"
+          ],
+          "PublishedDate": "2025-12-05T17:16:03.117Z",
+          "LastModifiedDate": "2026-06-30T00:16:53.04Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53612",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53612",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:6e2ca9728906180f866752e033b4555623c04b556a7ac2d78a77fdcb83d5869e",
+          "Title": "[Local Privilege Escalation via TOCTOU in mount(8) hook_owner.c chmod/chown]",
+          "Severity": "UNKNOWN"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53613",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:efcdaf6898271e96810806e7beb5c8762df08b4dbba3110e892512c371982026",
+          "Title": "[Local Privilege Escalation via TOCTOU in mount(8) - Target Path Redirection]",
+          "Severity": "UNKNOWN"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53614",
+          "PkgID": "util-linux@2.41-5",
+          "PkgName": "util-linux",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/util-linux@2.41-5?distro=Debian",
+            "UID": "893a3de146f7191a",
+            "BOMRef": "pkg:deb/debian/util-linux@2.41-5?distro=Debian\u0026package-id=38df40b78bc8d85f"
+          },
+          "InstalledVersion": "2.41-5",
+          "Status": "affected",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53614",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:e6141d102d030d7e976413034aa62a84b0b67f838e1d2f3d022fa79f2865a3d6",
+          "Title": "[Local Privilege Escalation via LIBMOUNT_FORCE_MOUNT2 Environment Variable - nosuid/noexec Bypass in SUID mount(8)]",
+          "Severity": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "Target": "Python",
+      "Class": "lang-pkgs",
+      "Type": "python-pkg",
+      "Packages": [
+        {
+          "ID": "autocommand@2.2.2",
+          "Name": "autocommand",
+          "Identifier": {
+            "PURL": "pkg:pypi/autocommand@2.2.2",
+            "UID": "caa0d471a3fb374d",
+            "BOMRef": "pkg:pypi/autocommand@2.2.2?package-id=e256ae065b203971"
+          },
+          "Version": "2.2.2",
+          "Licenses": [
+            "LGPLv3"
+          ]
+        },
+        {
+          "ID": "backports-tarfile@1.2.0",
+          "Name": "backports-tarfile",
+          "Identifier": {
+            "PURL": "pkg:pypi/backports-tarfile@1.2.0",
+            "UID": "d78c9f4b161ec61e",
+            "BOMRef": "pkg:pypi/backports-tarfile@1.2.0?package-id=60367209f973ebc6"
+          },
+          "Version": "1.2.0"
+        },
+        {
+          "ID": "importlib-metadata@8.0.0",
+          "Name": "importlib-metadata",
+          "Identifier": {
+            "PURL": "pkg:pypi/importlib-metadata@8.0.0",
+            "UID": "10b112407f456cb0",
+            "BOMRef": "pkg:pypi/importlib-metadata@8.0.0?package-id=b46029ac4b2576b4"
+          },
+          "Version": "8.0.0",
+          "DependsOn": [
+            "packaging@24.2",
+            "typing-extensions@4.12.2",
+            "zipp@3.19.2"
+          ]
+        },
+        {
+          "ID": "inflect@7.3.1",
+          "Name": "inflect",
+          "Identifier": {
+            "PURL": "pkg:pypi/inflect@7.3.1",
+            "UID": "69e40ef4aa6053cf",
+            "BOMRef": "pkg:pypi/inflect@7.3.1?package-id=a66d14e6f712fcbd"
+          },
+          "Version": "7.3.1",
+          "DependsOn": [
+            "more-itertools@10.3.0",
+            "typeguard@4.3.0",
+            "typing-extensions@4.12.2"
+          ]
+        },
+        {
+          "ID": "jaraco-collections@5.1.0",
+          "Name": "jaraco-collections",
+          "Identifier": {
+            "PURL": "pkg:pypi/jaraco-collections@5.1.0",
+            "UID": "9c390d1b21a9bc3e",
+            "BOMRef": "pkg:pypi/jaraco-collections@5.1.0?package-id=32734acafc13f1ab"
+          },
+          "Version": "5.1.0",
+          "DependsOn": [
+            "jaraco-text@3.12.1"
+          ]
+        },
+        {
+          "ID": "jaraco-context@5.3.0",
+          "Name": "jaraco-context",
+          "Identifier": {
+            "PURL": "pkg:pypi/jaraco-context@5.3.0",
+            "UID": "53a46e1bab0787ce",
+            "BOMRef": "pkg:pypi/jaraco-context@5.3.0?package-id=0d31e005f6e2d113"
+          },
+          "Version": "5.3.0",
+          "DependsOn": [
+            "backports-tarfile@1.2.0"
+          ]
+        },
+        {
+          "ID": "jaraco-functools@4.0.1",
+          "Name": "jaraco-functools",
+          "Identifier": {
+            "PURL": "pkg:pypi/jaraco-functools@4.0.1",
+            "UID": "7660636fe02071c5",
+            "BOMRef": "pkg:pypi/jaraco-functools@4.0.1?package-id=e73ef52264bb53e3"
+          },
+          "Version": "4.0.1",
+          "DependsOn": [
+            "more-itertools@10.3.0"
+          ]
+        },
+        {
+          "ID": "jaraco-text@3.12.1",
+          "Name": "jaraco-text",
+          "Identifier": {
+            "PURL": "pkg:pypi/jaraco-text@3.12.1",
+            "UID": "f04062a2cc953ba4",
+            "BOMRef": "pkg:pypi/jaraco-text@3.12.1?package-id=26aa3c62d84e60ff"
+          },
+          "Version": "3.12.1",
+          "DependsOn": [
+            "autocommand@2.2.2",
+            "inflect@7.3.1",
+            "jaraco-context@5.3.0",
+            "jaraco-functools@4.0.1",
+            "more-itertools@10.3.0"
+          ]
+        },
+        {
+          "ID": "more-itertools@10.3.0",
+          "Name": "more-itertools",
+          "Identifier": {
+            "PURL": "pkg:pypi/more-itertools@10.3.0",
+            "UID": "e601981a1a5aed0d",
+            "BOMRef": "pkg:pypi/more-itertools@10.3.0?package-id=7883dbd1fdb99752"
+          },
+          "Version": "10.3.0"
+        },
+        {
+          "ID": "packaging@24.2",
+          "Name": "packaging",
+          "Identifier": {
+            "PURL": "pkg:pypi/packaging@24.2",
+            "UID": "7182ce0f1842d375",
+            "BOMRef": "pkg:pypi/packaging@24.2?package-id=5d0686b6057a8137"
+          },
+          "Version": "24.2"
+        },
+        {
+          "ID": "packaging@26.2",
+          "Name": "packaging",
+          "Identifier": {
+            "PURL": "pkg:pypi/packaging@26.2",
+            "UID": "c442beac39462707",
+            "BOMRef": "pkg:pypi/packaging@26.2?package-id=ce8546779906297a"
+          },
+          "Version": "26.2",
+          "Licenses": [
+            "Apache-2.0 OR BSD-2-Clause"
+          ]
+        },
+        {
+          "ID": "pip@24.0",
+          "Name": "pip",
+          "Identifier": {
+            "PURL": "pkg:pypi/pip@24.0",
+            "UID": "be40b3619e48b95c",
+            "BOMRef": "pkg:pypi/pip@24.0?package-id=03d979f815a18400"
+          },
+          "Version": "24.0",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "platformdirs@4.2.2",
+          "Name": "platformdirs",
+          "Identifier": {
+            "PURL": "pkg:pypi/platformdirs@4.2.2",
+            "UID": "597564fc1905ff16",
+            "BOMRef": "pkg:pypi/platformdirs@4.2.2?package-id=2b65d0186abb83cc"
+          },
+          "Version": "4.2.2",
+          "Licenses": [
+            "MIT"
+          ]
+        },
+        {
+          "ID": "setuptools@79.0.1",
+          "Name": "setuptools",
+          "Identifier": {
+            "PURL": "pkg:pypi/setuptools@79.0.1",
+            "UID": "826345a3c6571866",
+            "BOMRef": "pkg:pypi/setuptools@79.0.1?package-id=035237ecfd4cae8b"
+          },
+          "Version": "79.0.1",
+          "DependsOn": [
+            "importlib-metadata@8.0.0",
+            "jaraco-functools@4.0.1",
+            "jaraco-text@3.12.1",
+            "more-itertools@10.3.0",
+            "packaging@24.2",
+            "pip@24.0",
+            "platformdirs@4.2.2",
+            "tomli@2.0.1",
+            "wheel@0.46.3"
+          ]
+        },
+        {
+          "ID": "tomli@2.0.1",
+          "Name": "tomli",
+          "Identifier": {
+            "PURL": "pkg:pypi/tomli@2.0.1",
+            "UID": "a0be8b30b73fd1f9",
+            "BOMRef": "pkg:pypi/tomli@2.0.1?package-id=36fb429a01f1d780"
+          },
+          "Version": "2.0.1"
+        },
+        {
+          "ID": "typeguard@4.3.0",
+          "Name": "typeguard",
+          "Identifier": {
+            "PURL": "pkg:pypi/typeguard@4.3.0",
+            "UID": "589b4b2d9093dc38",
+            "BOMRef": "pkg:pypi/typeguard@4.3.0?package-id=78f6a65ba2ee6acd"
+          },
+          "Version": "4.3.0",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "importlib-metadata@8.0.0",
+            "packaging@24.2",
+            "typing-extensions@4.12.2"
+          ]
+        },
+        {
+          "ID": "typing-extensions@4.12.2",
+          "Name": "typing-extensions",
+          "Identifier": {
+            "PURL": "pkg:pypi/typing-extensions@4.12.2",
+            "UID": "cd554f53be096e31",
+            "BOMRef": "pkg:pypi/typing-extensions@4.12.2?package-id=d02e00883d355714"
+          },
+          "Version": "4.12.2"
+        },
+        {
+          "ID": "wheel@0.45.1",
+          "Name": "wheel",
+          "Identifier": {
+            "PURL": "pkg:pypi/wheel@0.45.1",
+            "UID": "6783630c48a8a96e",
+            "BOMRef": "pkg:pypi/wheel@0.45.1?package-id=b69eb8a7f8979ab5"
+          },
+          "Version": "0.45.1"
+        },
+        {
+          "ID": "wheel@0.46.3",
+          "Name": "wheel",
+          "Identifier": {
+            "PURL": "pkg:pypi/wheel@0.46.3",
+            "UID": "4aa55071598ebce2",
+            "BOMRef": "pkg:pypi/wheel@0.46.3?package-id=cda12f5e2ae7af73"
+          },
+          "Version": "0.46.3",
+          "Licenses": [
+            "MIT"
+          ],
+          "DependsOn": [
+            "packaging@24.2",
+            "setuptools@79.0.1"
+          ]
+        },
+        {
+          "ID": "zipp@3.19.2",
+          "Name": "zipp",
+          "Identifier": {
+            "PURL": "pkg:pypi/zipp@3.19.2",
+            "UID": "461c1914cf233773",
+            "BOMRef": "pkg:pypi/zipp@3.19.2?package-id=1de274ae1423e714"
+          },
+          "Version": "3.19.2",
+          "DependsOn": [
+            "jaraco-functools@4.0.1",
+            "more-itertools@10.3.0"
+          ]
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-8869",
+          "VendorIDs": [
+            "GHSA-4xh5-x5gv-qwph"
+          ],
+          "PkgID": "pip@24.0",
+          "PkgName": "pip",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pip@24.0",
+            "UID": "be40b3619e48b95c",
+            "BOMRef": "pkg:pypi/pip@24.0?package-id=03d979f815a18400"
+          },
+          "InstalledVersion": "24.0",
+          "FixedVersion": "25.3",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-8869",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:d4615899b21ffa520131e974a0887321cc2cb1b4128bc89c0addcf5e07c5477e",
+          "Title": "pip: pip missing checks on symbolic link extraction",
+          "Description": "When extracting a tar archive pip may not check symbolic links point into the extraction directory if the tarfile module doesn't implement PEP 706.\nNote that upgrading pip to a \"fixed\" version for this vulnerability doesn't fix all known vulnerabilities that are remediated by using a Python version that implements PEP 706.\n\nNote that this is a vulnerability in pip's fallback implementation of tar extraction for Python versions that don't implement PEP 706\nand therefore are not secure to all vulnerabilities in the Python 'tarfile' module. If you're using a Python version that implements PEP 706\nthen pip doesn't use the \"vulnerable\" fallback code.\n\nMitigations include upgrading to a version of pip that includes the fix, upgrading to a Python version that implements PEP 706 (Python \u003e=3.9.17, \u003e=3.10.12, \u003e=3.11.4, or \u003e=3.12),\napplying the linked patch, or inspecting source distributions (sdists) before installation as is already a best-practice.",
+          "Severity": "MEDIUM",
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "ghsa": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-8869",
+            "https://github.com/pypa/pip",
+            "https://github.com/pypa/pip/commit/f2b92314da012b9fffa36b3f3e67748a37ef464a",
+            "https://github.com/pypa/pip/pull/13550",
+            "https://lists.debian.org/debian-lts-announce/2025/10/msg00028.html",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-8869",
+            "https://pip.pypa.io/en/stable/news/#v25-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-8869"
+          ],
+          "PublishedDate": "2025-09-24T15:15:41.293Z",
+          "LastModifiedDate": "2026-06-17T10:07:49.133Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3219",
+          "VendorIDs": [
+            "GHSA-58qw-9mgm-455v"
+          ],
+          "PkgID": "pip@24.0",
+          "PkgName": "pip",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pip@24.0",
+            "UID": "be40b3619e48b95c",
+            "BOMRef": "pkg:pypi/pip@24.0?package-id=03d979f815a18400"
+          },
+          "InstalledVersion": "24.0",
+          "FixedVersion": "26.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3219",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:a87518253384c488c6c40a5658ece2d85b6803cfa37c66fba2fc478bede2b9e7",
+          "Title": "pip: pip: Incorrect file installation due to improper archive handling",
+          "Description": "pip handles concatenated tar and ZIP files as ZIP files regardless of filename or whether a file is both a tar and ZIP file. This behavior could result in confusing installation behavior, such as installing \"incorrect\" files according to the filename of the archive. New behavior only proceeds with installation if the file identifies uniquely as a ZIP or tar archive, not as both.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-434"
+          ],
+          "VendorSeverity": {
+            "amazon": 1,
+            "azure": 2,
+            "ghsa": 2,
+            "photon": 1,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:A/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 4.6
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N",
+              "V3Score": 5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/20/8",
+            "https://access.redhat.com/security/cve/CVE-2026-3219",
+            "https://github.com/pypa/pip",
+            "https://github.com/pypa/pip/issues/13867",
+            "https://github.com/pypa/pip/pull/13870",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/QAJ5JIVWWCAJ4EZL2FP5MOOW35JS7LRJ",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/QAJ5JIVWWCAJ4EZL2FP5MOOW35JS7LRJ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3219",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3219"
+          ],
+          "PublishedDate": "2026-04-20T16:16:45.43Z",
+          "LastModifiedDate": "2026-06-17T10:43:14.243Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-6357",
+          "VendorIDs": [
+            "GHSA-jp4c-xjxw-mgf9"
+          ],
+          "PkgID": "pip@24.0",
+          "PkgName": "pip",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pip@24.0",
+            "UID": "be40b3619e48b95c",
+            "BOMRef": "pkg:pypi/pip@24.0?package-id=03d979f815a18400"
+          },
+          "InstalledVersion": "24.0",
+          "FixedVersion": "26.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6357",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:c20ac0fbaca7074eb107ac9125b1d0956298909e30eb1ab1a77e9bbffabbe2e3",
+          "Title": "pip: pip: Arbitrary code execution or information disclosure via malicious wheel package installation",
+          "Description": "pip prior to version 26.1 would run self-update check functionality after installing wheel files which required importing well-known Python modules names. These module imports were intentionally deferred to increase startup time of the pip CLI. The patch changes self-update functionality to run before wheels are installed to prevent newly-installed modules from being imported shortly after the installation of a wheel package. Users should still review package contents prior to installation.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-829"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "ghsa": 2,
+            "photon": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:A/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 5.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/27/7",
+            "https://access.redhat.com/security/cve/CVE-2026-6357",
+            "https://github.com/pypa/pip",
+            "https://github.com/pypa/pip/commit/b369bfc96cc524e00c267e1693290e6599c36bad",
+            "https://github.com/pypa/pip/pull/13923",
+            "https://ichard26.github.io/blog/2026/04/whats-new-in-pip-26.1/#security-fixes",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6357",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6357"
+          ],
+          "PublishedDate": "2026-04-27T15:16:20.857Z",
+          "LastModifiedDate": "2026-06-17T11:00:42.947Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-8643",
+          "VendorIDs": [
+            "GHSA-wf93-45jw-7689"
+          ],
+          "PkgID": "pip@24.0",
+          "PkgName": "pip",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pip@24.0",
+            "UID": "be40b3619e48b95c",
+            "BOMRef": "pkg:pypi/pip@24.0?package-id=03d979f815a18400"
+          },
+          "InstalledVersion": "24.0",
+          "FixedVersion": "26.1.2",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8643",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:16405a6f7f6b36dfefd62480727fa365fae3d41357b54db61c8fc7f41feb957e",
+          "Title": "python-pip: Path traversal via malicious entry point name in pip wheel installation allows arbitrary file overwrite",
+          "Description": "pip would treat console_scripts and gui_scripts as paths instead of file names without sanitizing the resolved absolute path to the installation directory, leading to entry points being installed outside the installation directory.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 2,
+            "ghsa": 2,
+            "nvd": 2,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V3Score": 8,
+              "V40Score": 4.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/06/01/5",
+            "https://access.redhat.com/errata/RHSA-2026:33313",
+            "https://access.redhat.com/errata/RHSA-2026:34374",
+            "https://access.redhat.com/errata/RHSA-2026:34456",
+            "https://access.redhat.com/errata/RHSA-2026:34739",
+            "https://access.redhat.com/errata/RHSA-2026:34740",
+            "https://access.redhat.com/errata/RHSA-2026:34741",
+            "https://access.redhat.com/errata/RHSA-2026:34748",
+            "https://access.redhat.com/errata/RHSA-2026:34749",
+            "https://access.redhat.com/errata/RHSA-2026:34750",
+            "https://access.redhat.com/errata/RHSA-2026:34752",
+            "https://access.redhat.com/errata/RHSA-2026:34756",
+            "https://access.redhat.com/errata/RHSA-2026:34758",
+            "https://access.redhat.com/errata/RHSA-2026:34760",
+            "https://access.redhat.com/errata/RHSA-2026:34765",
+            "https://access.redhat.com/errata/RHSA-2026:34772",
+            "https://access.redhat.com/errata/RHSA-2026:34773",
+            "https://access.redhat.com/errata/RHSA-2026:34774",
+            "https://access.redhat.com/errata/RHSA-2026:34775",
+            "https://access.redhat.com/errata/RHSA-2026:34776",
+            "https://access.redhat.com/errata/RHSA-2026:34777",
+            "https://access.redhat.com/errata/RHSA-2026:34778",
+            "https://access.redhat.com/errata/RHSA-2026:34780",
+            "https://access.redhat.com/errata/RHSA-2026:34891",
+            "https://access.redhat.com/errata/RHSA-2026:36193",
+            "https://access.redhat.com/errata/RHSA-2026:36315",
+            "https://access.redhat.com/errata/RHSA-2026:37275",
+            "https://access.redhat.com/errata/RHSA-2026:37283",
+            "https://access.redhat.com/errata/RHSA-2026:42078",
+            "https://access.redhat.com/errata/RHSA-2026:42079",
+            "https://access.redhat.com/errata/RHSA-2026:42132",
+            "https://access.redhat.com/errata/RHSA-2026:42144",
+            "https://access.redhat.com/errata/RHSA-2026:42644",
+            "https://access.redhat.com/security/cve/CVE-2026-8643",
+            "https://bugzilla.redhat.com/2460927",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2460927",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8643",
+            "https://errata.almalinux.org/9/ALSA-2026-36315.html",
+            "https://errata.rockylinux.org/RLSA-2026:36315",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pip/PYSEC-2026-196.yaml",
+            "https://github.com/pypa/pip",
+            "https://github.com/pypa/pip/commit/8eb178480bd1a2b223f509fc430796b265158dfb",
+            "https://github.com/pypa/pip/pull/14000",
+            "https://linux.oracle.com/cve/CVE-2026-8643.html",
+            "https://linux.oracle.com/errata/ELSA-2026-36315.html",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/YV63UET5D3OOJY7O4M5XCVYO2YM4NBYJ",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/YV63UET5D3OOJY7O4M5XCVYO2YM4NBYJ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8643",
+            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-8643.json",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8643"
+          ],
+          "PublishedDate": "2026-06-01T17:17:35.77Z",
+          "LastModifiedDate": "2026-07-22T12:18:22.663Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-1703",
+          "VendorIDs": [
+            "GHSA-6vgw-5pg2-w6jp"
+          ],
+          "PkgID": "pip@24.0",
+          "PkgName": "pip",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pip@24.0",
+            "UID": "be40b3619e48b95c",
+            "BOMRef": "pkg:pypi/pip@24.0?package-id=03d979f815a18400"
+          },
+          "InstalledVersion": "24.0",
+          "FixedVersion": "26.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-1703",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:20331d5bd076a2efab4ce903ed9e8676558c410ee152d53dc25546dd18a8dfb0",
+          "Title": "pip: pip: Information disclosure via path traversal when installing crafted wheel archives",
+          "Description": "When pip is installing and extracting a maliciously crafted wheel archive, files may be extracted outside the installation directory. The path traversal is limited to prefixes of the installation directory, thus isn't able to inject or overwrite executable files in typical situations.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "VendorSeverity": {
+            "amazon": 1,
+            "azure": 1,
+            "cbl-mariner": 1,
+            "ghsa": 1,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
+              "V3Score": 3.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-1703",
+            "https://github.com/pypa/pip",
+            "https://github.com/pypa/pip/commit/8e227a9be4faa9594e05d02ca05a413a2a4e7735",
+            "https://github.com/pypa/pip/pull/13777",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-1703",
+            "https://www.cve.org/CVERecord?id=CVE-2026-1703"
+          ],
+          "PublishedDate": "2026-02-02T15:16:30.51Z",
+          "LastModifiedDate": "2026-06-17T10:16:21.7Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-59890",
+          "VendorIDs": [
+            "GHSA-h35f-9h28-mq5c"
+          ],
+          "PkgID": "setuptools@79.0.1",
+          "PkgName": "setuptools",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/setuptools@79.0.1",
+            "UID": "826345a3c6571866",
+            "BOMRef": "pkg:pypi/setuptools@79.0.1?package-id=035237ecfd4cae8b"
+          },
+          "InstalledVersion": "79.0.1",
+          "FixedVersion": "83.0.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-59890",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:f0cc5d2c22a417c21f6019d74938ea1e6e5748c66fe7f6acb228a831fa112e82",
+          "Title": "setuptools: setuptools: MANIFEST.in exclusion bypass in sdist via Unicode normalization collision (NFC/NFD)",
+          "Description": "setuptools is a package that allows users to download, build, install, upgrade, and uninstall Python packages. Prior to 83.0.0, FileList applied MANIFEST.in exclude, global-exclude, recursive-exclude, and prune directives by matching compiled glob patterns against on-disk file names without Unicode normalization, so on macOS APFS or HFS+ an NFD file name could bypass an NFC exclusion rule and be packed into a source distribution. This issue is fixed in version 83.0.0.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-176",
+            "CWE-697"
+          ],
+          "VendorSeverity": {
+            "bitnami": 2,
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+              "V3Score": 6.1
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+              "V3Score": 6.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+              "V3Score": 6.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59890",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/setuptools/PYSEC-2026-3447.yaml",
+            "https://github.com/pypa/setuptools",
+            "https://github.com/pypa/setuptools/commit/dd9f436a36486b4cb8a4c70a2321548b0be09b8f",
+            "https://github.com/pypa/setuptools/releases/tag/v83.0.0",
+            "https://github.com/pypa/setuptools/security/advisories/GHSA-h35f-9h28-mq5c",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59890",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59890"
+          ],
+          "PublishedDate": "2026-07-08T17:17:27.02Z",
+          "LastModifiedDate": "2026-07-13T17:04:58.427Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-24049",
+          "VendorIDs": [
+            "GHSA-8rrh-rw8j-w5fx"
+          ],
+          "PkgID": "wheel@0.45.1",
+          "PkgName": "wheel",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/wheel@0.45.1",
+            "UID": "6783630c48a8a96e",
+            "BOMRef": "pkg:pypi/wheel@0.45.1?package-id=b69eb8a7f8979ab5"
+          },
+          "InstalledVersion": "0.45.1",
+          "FixedVersion": "0.46.2",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-24049",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:9bd2274f373815e4857576e13e360646d326808e6f29ef755b6e6870253dfd58",
+          "Title": "wheel: wheel: Privilege Escalation or Arbitrary Code Execution via malicious wheel file unpacking",
+          "Description": "wheel is a command line tool for manipulating Python wheel files, as defined in PEP 427. In versions 0.40.0 through 0.46.1, the unpack function is vulnerable to file permission modification through mishandling of file permissions after extraction. The logic blindly trusts the filename from the archive header for the chmod operation, even though the extraction process itself might have sanitized the path. Attackers can craft a malicious wheel file that, when unpacked, changes the permissions of critical system files (e.g., /etc/passwd, SSH keys, config files), allowing for Privilege Escalation or arbitrary code execution by modifying now-writable scripts. This issue has been fixed in version 0.46.2.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-22",
+            "CWE-732"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "ghsa": 3,
+            "nvd": 2,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:10184",
+            "https://access.redhat.com/errata/RHSA-2026:13545",
+            "https://access.redhat.com/errata/RHSA-2026:14020",
+            "https://access.redhat.com/errata/RHSA-2026:1504",
+            "https://access.redhat.com/errata/RHSA-2026:17599",
+            "https://access.redhat.com/errata/RHSA-2026:1902",
+            "https://access.redhat.com/errata/RHSA-2026:1939",
+            "https://access.redhat.com/errata/RHSA-2026:1942",
+            "https://access.redhat.com/errata/RHSA-2026:19712",
+            "https://access.redhat.com/errata/RHSA-2026:20089",
+            "https://access.redhat.com/errata/RHSA-2026:2090",
+            "https://access.redhat.com/errata/RHSA-2026:2106",
+            "https://access.redhat.com/errata/RHSA-2026:2139",
+            "https://access.redhat.com/errata/RHSA-2026:2675",
+            "https://access.redhat.com/errata/RHSA-2026:2681",
+            "https://access.redhat.com/errata/RHSA-2026:2694",
+            "https://access.redhat.com/errata/RHSA-2026:2695",
+            "https://access.redhat.com/errata/RHSA-2026:2710",
+            "https://access.redhat.com/errata/RHSA-2026:2754",
+            "https://access.redhat.com/errata/RHSA-2026:2762",
+            "https://access.redhat.com/errata/RHSA-2026:2823",
+            "https://access.redhat.com/errata/RHSA-2026:2865",
+            "https://access.redhat.com/errata/RHSA-2026:2866",
+            "https://access.redhat.com/errata/RHSA-2026:2900",
+            "https://access.redhat.com/errata/RHSA-2026:2925",
+            "https://access.redhat.com/errata/RHSA-2026:3461",
+            "https://access.redhat.com/errata/RHSA-2026:3462",
+            "https://access.redhat.com/errata/RHSA-2026:3713",
+            "https://access.redhat.com/errata/RHSA-2026:3782",
+            "https://access.redhat.com/errata/RHSA-2026:3958",
+            "https://access.redhat.com/errata/RHSA-2026:3959",
+            "https://access.redhat.com/errata/RHSA-2026:3960",
+            "https://access.redhat.com/errata/RHSA-2026:4185",
+            "https://access.redhat.com/errata/RHSA-2026:4215",
+            "https://access.redhat.com/errata/RHSA-2026:4271",
+            "https://access.redhat.com/errata/RHSA-2026:4942",
+            "https://access.redhat.com/errata/RHSA-2026:5119",
+            "https://access.redhat.com/errata/RHSA-2026:6192",
+            "https://access.redhat.com/errata/RHSA-2026:6555",
+            "https://access.redhat.com/errata/RHSA-2026:6562",
+            "https://access.redhat.com/errata/RHSA-2026:6565",
+            "https://access.redhat.com/errata/RHSA-2026:7250",
+            "https://access.redhat.com/security/cve/CVE-2026-24049",
+            "https://bugzilla.redhat.com/2431959",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2431959",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-24049",
+            "https://errata.almalinux.org/9/ALSA-2026-1939.html",
+            "https://errata.rockylinux.org/RLSA-2026:1939",
+            "https://github.com/pypa/wheel",
+            "https://github.com/pypa/wheel/commit/7a7d2de96b22a9adf9208afcc9547e1001569fef",
+            "https://github.com/pypa/wheel/commit/934fe177ff912c8e03d5ae951d3805e1fd90ba5e",
+            "https://github.com/pypa/wheel/releases/tag/0.46.2",
+            "https://github.com/pypa/wheel/security/advisories/GHSA-8rrh-rw8j-w5fx",
+            "https://linux.oracle.com/cve/CVE-2026-24049.html",
+            "https://linux.oracle.com/errata/ELSA-2026-2090.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-24049",
+            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-24049.json",
+            "https://ubuntu.com/security/notices/USN-8221-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-24049"
+          ],
+          "PublishedDate": "2026-01-22T05:16:23.157Z",
+          "LastModifiedDate": "2026-07-21T12:17:32.37Z"
+        }
+      ]
+    }
+  ]
+}

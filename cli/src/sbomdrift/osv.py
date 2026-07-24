@@ -197,11 +197,20 @@ def extract_severity(record: dict) -> str:
 
 
 def normalise_record(record: dict) -> dict:
-    """Flatten an OSV record into the handful of fields the store keeps."""
+    """Flatten an OSV record into the handful of fields the store keeps.
+
+    ``aliases`` earns its place: the same flaw is ``GHSA-8rrh-rw8j-w5fx`` to
+    GitHub, ``PYSEC-2026-1469`` to the Python advisory database and
+    ``CVE-2026-xxxxx`` to everyone else. Comparing two tools' output without
+    resolving those identifiers reports total disagreement between oracles that
+    in fact agree — which is a measurement artefact, not a finding.
+    """
+    aliases = [alias for alias in (record.get("aliases") or []) if isinstance(alias, str)]
     return {
         "vuln_id": record.get("id", ""),
         "severity": extract_severity(record),
         "summary": (record.get("summary") or record.get("details") or "")[:500],
         "published": from_iso(record.get("published")),
         "modified": from_iso(record.get("modified")),
+        "aliases": aliases,
     }

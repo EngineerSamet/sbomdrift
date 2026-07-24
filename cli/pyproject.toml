@@ -41,6 +41,8 @@ dev = [
     "pytest-cov>=5.0",
     "respx>=0.21",
     "ruff>=0.5",
+    # Used only by evaluation/run_evaluation.py to render the report figures.
+    "matplotlib>=3.9",
 ]
 
 [build-system]

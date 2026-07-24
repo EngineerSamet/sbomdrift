@@ -1,0 +1,32 @@
+[
+  {
+    "as_of": "2023-01-01",
+    "total": 9,
+    "high_or_above": 0
+  },
+  {
+    "as_of": "2024-01-01",
+    "total": 14,
+    "high_or_above": 2
+  },
+  {
+    "as_of": "2025-01-01",
+    "total": 15,
+    "high_or_above": 2
+  },
+  {
+    "as_of": "2026-01-01",
+    "total": 19,
+    "high_or_above": 2
+  },
+  {
+    "as_of": "2026-04-01",
+    "total": 26,
+    "high_or_above": 5
+  },
+  {
+    "as_of": "2026-07-24",
+    "total": 81,
+    "high_or_above": 28
+  }
+]

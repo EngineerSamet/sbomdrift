@@ -1,0 +1,20 @@
+[
+  {
+    "image": "python:3.11.0-slim",
+    "osv_only": 70,
+    "both": 80,
+    "trivy_only": 3,
+    "osv_total": 150,
+    "trivy_total": 83,
+    "jaccard": 0.523
+  },
+  {
+    "image": "python:3.11-slim",
+    "osv_only": 42,
+    "both": 31,
+    "trivy_only": 3,
+    "osv_total": 73,
+    "trivy_total": 34,
+    "jaccard": 0.408
+  }
+]

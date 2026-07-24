@@ -1,0 +1,22 @@
+{
+  "kind": "version drift",
+  "newly_vulnerable": {
+    "HIGH": 7,
+    "MEDIUM": 12,
+    "LOW": 2,
+    "UNKNOWN": 1
+  },
+  "newly_fixed": {
+    "CRITICAL": 4,
+    "HIGH": 33,
+    "MEDIUM": 40,
+    "LOW": 2,
+    "UNKNOWN": 22
+  },
+  "unchanged": 59,
+  "components": {
+    "added": 37,
+    "removed": 38,
+    "upgraded": 76
+  }
+}

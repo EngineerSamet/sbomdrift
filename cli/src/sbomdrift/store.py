@@ -15,6 +15,7 @@ wasted bandwidth — but more importantly, caching them is what makes
 
 from __future__ import annotations
 
+import json
 import sqlite3
 from collections.abc import Iterable, Iterator
 from contextlib import contextmanager
@@ -23,7 +24,7 @@ from pathlib import Path
 
 from .models import Component, Evaluation, Finding, Snapshot
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS schema_version (version INTEGER NOT NULL);
@@ -76,6 +77,7 @@ CREATE TABLE IF NOT EXISTS vuln_cache (
     summary    TEXT,
     published  TEXT,
     modified   TEXT,
+    aliases    TEXT,
     fetched_at TEXT NOT NULL
 );
 """
@@ -311,6 +313,7 @@ class Store:
                 r.get("summary", ""),
                 to_iso(r.get("published")),
                 to_iso(r.get("modified")),
+                json.dumps(r.get("aliases") or []),
                 now,
             )
             for r in records
@@ -318,13 +321,14 @@ class Store:
         with self._conn:
             self._conn.executemany(
                 """INSERT INTO vuln_cache
-                       (vuln_id, severity, summary, published, modified, fetched_at)
-                   VALUES (?, ?, ?, ?, ?, ?)
+                       (vuln_id, severity, summary, published, modified, aliases, fetched_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)
                    ON CONFLICT (vuln_id) DO UPDATE SET
                        severity   = excluded.severity,
                        summary    = excluded.summary,
                        published  = excluded.published,
                        modified   = excluded.modified,
+                       aliases    = excluded.aliases,
                        fetched_at = excluded.fetched_at""",
                 rows,
             )
@@ -345,6 +349,7 @@ class Store:
                 "summary": r["summary"],
                 "published": from_iso(r["published"]),
                 "modified": from_iso(r["modified"]),
+                "aliases": json.loads(r["aliases"]) if r["aliases"] else [],
             }
             for r in rows
         }
