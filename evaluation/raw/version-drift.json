@@ -1,0 +1,1218 @@
+{
+  "kind": "version drift",
+  "from": {
+    "id": 1,
+    "label": "old-image",
+    "as_of": null
+  },
+  "to": {
+    "id": 2,
+    "label": "current-image",
+    "as_of": null
+  },
+  "newly_vulnerable": [
+    {
+      "purl": "pkg:deb/debian/libcap2@1%3A2.75-10%2Bdeb13u1%2Bb1",
+      "vuln_id": "DEBIAN-CVE-2026-4878",
+      "severity": "HIGH",
+      "published": "2026-04-09T16:16:31.987000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libzstd@1.5.7%2Bdfsg-1",
+      "vuln_id": "DEBIAN-CVE-2022-4899",
+      "severity": "HIGH",
+      "published": "2023-03-31T20:15:07.213000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2026-40224",
+      "severity": "HIGH",
+      "published": "2026-04-10T16:16:33.113000+00:00"
+    },
+    {
+      "purl": "pkg:pypi/jaraco-context@5.3.0",
+      "vuln_id": "GHSA-58pv-8j8x-9vj2",
+      "severity": "HIGH",
+      "published": "2026-01-13T21:48:17+00:00"
+    },
+    {
+      "purl": "pkg:pypi/jaraco-context@5.3.0",
+      "vuln_id": "PYSEC-2026-1469",
+      "severity": "HIGH",
+      "published": "2026-07-07T16:03:18.501232+00:00"
+    },
+    {
+      "purl": "pkg:pypi/wheel@0.45.1",
+      "vuln_id": "GHSA-8rrh-rw8j-w5fx",
+      "severity": "HIGH",
+      "published": "2026-01-22T18:02:56+00:00"
+    },
+    {
+      "purl": "pkg:pypi/wheel@0.45.1",
+      "vuln_id": "PYSEC-2026-2047",
+      "severity": "HIGH",
+      "published": "2026-07-07T16:03:19.867108+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/shadow@1%3A4.17.4-2",
+      "vuln_id": "DEBIAN-CVE-2013-4235",
+      "severity": "MEDIUM",
+      "published": "2019-12-03T15:15:10.963000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2013-4392",
+      "severity": "MEDIUM",
+      "published": "2013-10-28T22:55:03.773000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2020-13529",
+      "severity": "MEDIUM",
+      "published": "2021-05-10T16:15:07.373000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2023-31437",
+      "severity": "MEDIUM",
+      "published": "2023-06-13T17:15:14.657000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2023-31438",
+      "severity": "MEDIUM",
+      "published": "2023-06-13T17:15:14.707000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2023-31439",
+      "severity": "MEDIUM",
+      "published": "2023-06-13T17:15:14.753000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2026-29111",
+      "severity": "MEDIUM",
+      "published": "2026-03-23T22:16:26.267000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2026-40223",
+      "severity": "MEDIUM",
+      "published": "2026-04-10T16:16:32.930000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2026-40225",
+      "severity": "MEDIUM",
+      "published": "2026-04-10T16:16:33.287000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2026-40226",
+      "severity": "MEDIUM",
+      "published": "2026-04-10T16:16:33.447000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2026-40227",
+      "severity": "MEDIUM",
+      "published": "2026-04-10T16:16:33.607000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2026-4105",
+      "severity": "MEDIUM",
+      "published": "2026-03-13T19:55:13.673000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/shadow@1%3A4.17.4-2",
+      "vuln_id": "DEBIAN-CVE-2024-56433",
+      "severity": "LOW",
+      "published": "2024-12-26T09:15:07.267000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/systemd@257.13-1~deb13u1",
+      "vuln_id": "DEBIAN-CVE-2026-40228",
+      "severity": "LOW",
+      "published": "2026-04-10T16:16:33.753000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/shadow@1%3A4.17.4-2",
+      "vuln_id": "DEBIAN-CVE-2007-5686",
+      "severity": "UNKNOWN",
+      "published": "2007-10-28T17:08:00+00:00"
+    }
+  ],
+  "newly_fixed": [
+    {
+      "purl": "pkg:deb/debian/dpkg@1.20.12",
+      "vuln_id": "DEBIAN-CVE-2022-1664",
+      "severity": "CRITICAL",
+      "published": "2022-05-26T14:15:08.010000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libtasn1-6@4.16.0-2",
+      "vuln_id": "DEBIAN-CVE-2021-46848",
+      "severity": "CRITICAL",
+      "published": "2022-10-24T14:15:49.973000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-2274",
+      "severity": "CRITICAL",
+      "published": "2022-07-01T08:15:07.687000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-5535",
+      "severity": "CRITICAL",
+      "published": "2024-06-27T11:15:24.447000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/dpkg@1.20.12",
+      "vuln_id": "DEBIAN-CVE-2025-6297",
+      "severity": "HIGH",
+      "published": "2025-07-01T17:15:30.177000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/e2fsprogs@1.46.2-2",
+      "vuln_id": "DEBIAN-CVE-2022-1304",
+      "severity": "HIGH",
+      "published": "2022-04-14T21:15:08.490000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/gzip@1.10-4%2Bdeb11u1",
+      "vuln_id": "DEBIAN-CVE-2022-1271",
+      "severity": "HIGH",
+      "published": "2022-08-31T16:15:09.347000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libgcrypt20@1.8.7-6",
+      "vuln_id": "DEBIAN-CVE-2018-6829",
+      "severity": "HIGH",
+      "published": "2018-02-07T23:29:01.703000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libgcrypt20@1.8.7-6",
+      "vuln_id": "DEBIAN-CVE-2021-33560",
+      "severity": "HIGH",
+      "published": "2021-06-08T11:15:07.767000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libtasn1-6@4.16.0-2",
+      "vuln_id": "DEBIAN-CVE-2025-13151",
+      "severity": "HIGH",
+      "published": "2026-01-07T22:15:43.200000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-0778",
+      "severity": "HIGH",
+      "published": "2022-03-15T17:15:08.513000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-1292",
+      "severity": "HIGH",
+      "published": "2022-05-03T16:15:18.823000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-2068",
+      "severity": "HIGH",
+      "published": "2022-06-21T15:15:09.060000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-3358",
+      "severity": "HIGH",
+      "published": "2022-10-11T15:15:10.233000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-3602",
+      "severity": "HIGH",
+      "published": "2022-11-01T18:15:10.983000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-3786",
+      "severity": "HIGH",
+      "published": "2022-11-01T18:15:11.047000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-3996",
+      "severity": "HIGH",
+      "published": "2022-12-13T16:15:22.007000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-4450",
+      "severity": "HIGH",
+      "published": "2023-02-08T20:15:23.973000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-0215",
+      "severity": "HIGH",
+      "published": "2023-02-08T20:15:24.107000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-0216",
+      "severity": "HIGH",
+      "published": "2023-02-08T20:15:24.160000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-0217",
+      "severity": "HIGH",
+      "published": "2023-02-08T20:15:24.213000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-0286",
+      "severity": "HIGH",
+      "published": "2023-02-08T20:15:24.267000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-0401",
+      "severity": "HIGH",
+      "published": "2023-02-08T20:15:24.323000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-0464",
+      "severity": "HIGH",
+      "published": "2023-03-22T17:15:13.130000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-5363",
+      "severity": "HIGH",
+      "published": "2023-10-25T18:17:43.613000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-4741",
+      "severity": "HIGH",
+      "published": "2024-11-13T11:15:04.480000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-6119",
+      "severity": "HIGH",
+      "published": "2024-09-03T16:15:07.177000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-15467",
+      "severity": "HIGH",
+      "published": "2026-01-27T16:16:14.257000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-69419",
+      "severity": "HIGH",
+      "published": "2026-01-27T16:16:34.113000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-69420",
+      "severity": "HIGH",
+      "published": "2026-01-27T16:16:34.317000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-69421",
+      "severity": "HIGH",
+      "published": "2026-01-27T16:16:34.437000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-9230",
+      "severity": "HIGH",
+      "published": "2025-09-30T14:15:41.050000+00:00"
+    },
+    {
+      "purl": "pkg:pypi/setuptools@65.5.0",
+      "vuln_id": "GHSA-5rjg-fvgr-3xxf",
+      "severity": "HIGH",
+      "published": "2025-05-19T16:52:43+00:00"
+    },
+    {
+      "purl": "pkg:pypi/setuptools@65.5.0",
+      "vuln_id": "GHSA-cx63-2mw6-8hw5",
+      "severity": "HIGH",
+      "published": "2024-07-15T03:30:57+00:00"
+    },
+    {
+      "purl": "pkg:pypi/setuptools@65.5.0",
+      "vuln_id": "GHSA-r9hx-vwmv-q579",
+      "severity": "HIGH",
+      "published": "2022-12-23T00:30:23+00:00"
+    },
+    {
+      "purl": "pkg:pypi/setuptools@65.5.0",
+      "vuln_id": "PYSEC-2025-49",
+      "severity": "HIGH",
+      "published": "2025-05-17T16:15:19+00:00"
+    },
+    {
+      "purl": "pkg:pypi/setuptools@65.5.0",
+      "vuln_id": "PYSEC-2026-1918",
+      "severity": "HIGH",
+      "published": "2026-07-07T14:34:36.817041+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/coreutils@8.32-4%2Bb1",
+      "vuln_id": "DEBIAN-CVE-2024-0684",
+      "severity": "MEDIUM",
+      "published": "2024-02-06T09:15:52.643000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libgcrypt20@1.8.7-6",
+      "vuln_id": "DEBIAN-CVE-2024-2236",
+      "severity": "MEDIUM",
+      "published": "2024-03-06T22:15:57.977000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libgcrypt20@1.8.7-6",
+      "vuln_id": "DEBIAN-CVE-2026-41989",
+      "severity": "MEDIUM",
+      "published": "2026-04-23T05:16:05.750000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libgcrypt20@1.8.7-6",
+      "vuln_id": "DEBIAN-CVE-2026-41990",
+      "severity": "MEDIUM",
+      "published": "2026-04-23T05:16:05.897000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libtasn1-6@4.16.0-2",
+      "vuln_id": "DEBIAN-CVE-2024-12133",
+      "severity": "MEDIUM",
+      "published": "2025-02-10T16:15:37.260000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-2097",
+      "severity": "MEDIUM",
+      "published": "2022-07-05T11:15:08.340000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-4203",
+      "severity": "MEDIUM",
+      "published": "2023-02-24T15:15:11.980000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2022-4304",
+      "severity": "MEDIUM",
+      "published": "2023-02-08T20:15:23.887000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-0465",
+      "severity": "MEDIUM",
+      "published": "2023-03-28T15:15:06.820000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-0466",
+      "severity": "MEDIUM",
+      "published": "2023-03-28T15:15:06.880000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-1255",
+      "severity": "MEDIUM",
+      "published": "2023-04-20T17:15:06.883000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-2650",
+      "severity": "MEDIUM",
+      "published": "2023-05-30T14:15:09.683000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-2975",
+      "severity": "MEDIUM",
+      "published": "2023-07-14T12:15:09.023000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-3446",
+      "severity": "MEDIUM",
+      "published": "2023-07-19T12:15:10.003000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-3817",
+      "severity": "MEDIUM",
+      "published": "2023-07-31T16:15:10.497000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-5678",
+      "severity": "MEDIUM",
+      "published": "2023-11-06T16:15:42.670000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-6129",
+      "severity": "MEDIUM",
+      "published": "2024-01-09T17:15:12.147000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2023-6237",
+      "severity": "MEDIUM",
+      "published": "2024-04-25T07:15:45.270000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-0727",
+      "severity": "MEDIUM",
+      "published": "2024-01-26T09:15:07.637000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-12797",
+      "severity": "MEDIUM",
+      "published": "2025-02-11T16:15:38.827000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-13176",
+      "severity": "MEDIUM",
+      "published": "2025-01-20T14:15:26.247000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-2511",
+      "severity": "MEDIUM",
+      "published": "2024-04-08T14:15:07.660000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-4603",
+      "severity": "MEDIUM",
+      "published": "2024-05-16T16:15:10.643000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2024-9143",
+      "severity": "MEDIUM",
+      "published": "2024-10-16T17:15:18.130000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-11187",
+      "severity": "MEDIUM",
+      "published": "2026-01-27T16:16:14.093000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-15468",
+      "severity": "MEDIUM",
+      "published": "2026-01-27T16:16:14.400000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-15469",
+      "severity": "MEDIUM",
+      "published": "2026-01-27T16:16:14.523000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-4575",
+      "severity": "MEDIUM",
+      "published": "2025-05-22T14:16:07.630000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-66199",
+      "severity": "MEDIUM",
+      "published": "2026-01-27T16:16:15.777000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-68160",
+      "severity": "MEDIUM",
+      "published": "2026-01-27T16:16:15.900000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-69418",
+      "severity": "MEDIUM",
+      "published": "2026-01-27T16:16:33.253000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-9231",
+      "severity": "MEDIUM",
+      "published": "2025-09-30T14:15:41.190000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2025-9232",
+      "severity": "MEDIUM",
+      "published": "2025-09-30T14:15:41.313000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2026-22795",
+      "severity": "MEDIUM",
+      "published": "2026-01-27T16:16:35.430000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DEBIAN-CVE-2026-22796",
+      "severity": "MEDIUM",
+      "published": "2026-01-27T16:16:35.543000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/tar@1.34%2Bdfsg-1",
+      "vuln_id": "DEBIAN-CVE-2022-48303",
+      "severity": "MEDIUM",
+      "published": "2023-01-30T04:15:08.030000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/tar@1.34%2Bdfsg-1",
+      "vuln_id": "DEBIAN-CVE-2023-39804",
+      "severity": "MEDIUM",
+      "published": "2024-03-27T04:15:08.897000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/util-linux@2.36.1-8%2Bdeb11u1",
+      "vuln_id": "DEBIAN-CVE-2021-3995",
+      "severity": "MEDIUM",
+      "published": "2022-08-23T20:15:08.493000+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/util-linux@2.36.1-8%2Bdeb11u1",
+      "vuln_id": "DEBIAN-CVE-2021-3996",
+      "severity": "MEDIUM",
+      "published": "2022-08-23T20:15:08.560000+00:00"
+    },
+    {
+      "purl": "pkg:pypi/pip@22.3",
+      "vuln_id": "GHSA-mq26-g339-26xf",
+      "severity": "MEDIUM",
+      "published": "2023-10-25T18:32:26+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/util-linux@2.36.1-8%2Bdeb11u1",
+      "vuln_id": "DEBIAN-CVE-2024-28085",
+      "severity": "LOW",
+      "published": "2024-03-27T19:15:48.367000+00:00"
+    },
+    {
+      "purl": "pkg:pypi/pip@22.3",
+      "vuln_id": "PYSEC-2023-228",
+      "severity": "LOW",
+      "published": "2023-10-25T18:17:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/ca-certificates@20210119",
+      "vuln_id": "DLA-4485-1",
+      "severity": "UNKNOWN",
+      "published": "2026-02-20T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/e2fsprogs@1.46.2-2",
+      "vuln_id": "DLA-3910-1",
+      "severity": "UNKNOWN",
+      "published": "2024-10-04T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libtasn1-6@4.16.0-2",
+      "vuln_id": "DLA-4061-1",
+      "severity": "UNKNOWN",
+      "published": "2025-02-21T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/libtasn1-6@4.16.0-2",
+      "vuln_id": "DSA-5863-1",
+      "severity": "UNKNOWN",
+      "published": "2025-02-10T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DLA-3942-1",
+      "severity": "UNKNOWN",
+      "published": "2024-10-31T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DLA-3942-2",
+      "severity": "UNKNOWN",
+      "published": "2024-11-03T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DLA-4176-1",
+      "severity": "UNKNOWN",
+      "published": "2025-05-24T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DLA-4321-1",
+      "severity": "UNKNOWN",
+      "published": "2025-10-03T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DLA-4490-1",
+      "severity": "UNKNOWN",
+      "published": "2026-02-23T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DSA-5343-1",
+      "severity": "UNKNOWN",
+      "published": "2023-02-07T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DSA-5417-1",
+      "severity": "UNKNOWN",
+      "published": "2023-05-31T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DSA-5532-1",
+      "severity": "UNKNOWN",
+      "published": "2023-10-24T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DSA-5764-1",
+      "severity": "UNKNOWN",
+      "published": "2024-09-03T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DSA-6015-1",
+      "severity": "UNKNOWN",
+      "published": "2025-10-01T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/openssl@1.1.1n-0%2Bdeb11u3",
+      "vuln_id": "DSA-6113-1",
+      "severity": "UNKNOWN",
+      "published": "2026-01-27T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/tzdata@2021a-1%2Bdeb11u8",
+      "vuln_id": "DLA-3788-1",
+      "severity": "UNKNOWN",
+      "published": "2024-04-18T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/tzdata@2021a-1%2Bdeb11u8",
+      "vuln_id": "DLA-3972-1",
+      "severity": "UNKNOWN",
+      "published": "2024-11-28T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/tzdata@2021a-1%2Bdeb11u8",
+      "vuln_id": "DLA-4085-1",
+      "severity": "UNKNOWN",
+      "published": "2025-03-18T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/tzdata@2021a-1%2Bdeb11u8",
+      "vuln_id": "DLA-4105-1",
+      "severity": "UNKNOWN",
+      "published": "2025-04-01T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/tzdata@2021a-1%2Bdeb11u8",
+      "vuln_id": "DLA-4403-1",
+      "severity": "UNKNOWN",
+      "published": "2025-12-12T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:deb/debian/util-linux@2.36.1-8%2Bdeb11u1",
+      "vuln_id": "DSA-5650-1",
+      "severity": "UNKNOWN",
+      "published": "2024-03-31T00:00:00+00:00"
+    },
+    {
+      "purl": "pkg:pypi/setuptools@65.5.0",
+      "vuln_id": "PYSEC-2022-43012",
+      "severity": "UNKNOWN",
+      "published": "2022-12-23T00:15:00+00:00"
+    }
+  ],
+  "unchanged_count": 59,
+  "added_components": [
+    "pkg:deb/debian/gcc-14",
+    "pkg:deb/debian/gcc-14-base",
+    "pkg:deb/debian/libapt-pkg7.0",
+    "pkg:deb/debian/libbsd0",
+    "pkg:deb/debian/libcap2",
+    "pkg:deb/debian/libdb5.3t64",
+    "pkg:deb/debian/libffi8",
+    "pkg:deb/debian/libgdbm6t64",
+    "pkg:deb/debian/libhogweed6t64",
+    "pkg:deb/debian/liblastlog2-2",
+    "pkg:deb/debian/libmd0",
+    "pkg:deb/debian/libnettle8t64",
+    "pkg:deb/debian/libreadline8t64",
+    "pkg:deb/debian/libsemanage2",
+    "pkg:deb/debian/libsepol2",
+    "pkg:deb/debian/libssl3t64",
+    "pkg:deb/debian/libzstd",
+    "pkg:deb/debian/login.defs",
+    "pkg:deb/debian/openssl-provider-legacy",
+    "pkg:deb/debian/shadow",
+    "pkg:deb/debian/sqv",
+    "pkg:deb/debian/systemd",
+    "pkg:pypi/autocommand",
+    "pkg:pypi/backports-tarfile",
+    "pkg:pypi/importlib-metadata",
+    "pkg:pypi/inflect",
+    "pkg:pypi/jaraco-collections",
+    "pkg:pypi/jaraco-context",
+    "pkg:pypi/jaraco-functools",
+    "pkg:pypi/jaraco-text",
+    "pkg:pypi/more-itertools",
+    "pkg:pypi/packaging",
+    "pkg:pypi/platformdirs",
+    "pkg:pypi/tomli",
+    "pkg:pypi/typeguard",
+    "pkg:pypi/typing-extensions",
+    "pkg:pypi/zipp"
+  ],
+  "removed_components": [
+    "pkg:deb/debian/e2fsprogs",
+    "pkg:deb/debian/gcc-10-base",
+    "pkg:deb/debian/gcc-9-base",
+    "pkg:deb/debian/gpgv",
+    "pkg:deb/debian/libapt-pkg6.0",
+    "pkg:deb/debian/libcom-err2",
+    "pkg:deb/debian/libdb5.3",
+    "pkg:deb/debian/libexpat1",
+    "pkg:deb/debian/libext2fs2",
+    "pkg:deb/debian/libffi7",
+    "pkg:deb/debian/libgcrypt20",
+    "pkg:deb/debian/libgdbm6",
+    "pkg:deb/debian/libgnutls30",
+    "pkg:deb/debian/libgpg-error0",
+    "pkg:deb/debian/libgssapi-krb5-2",
+    "pkg:deb/debian/libhogweed6",
+    "pkg:deb/debian/libidn2-0",
+    "pkg:deb/debian/libk5crypto3",
+    "pkg:deb/debian/libkeyutils1",
+    "pkg:deb/debian/libkrb5-3",
+    "pkg:deb/debian/libkrb5support0",
+    "pkg:deb/debian/libnettle8",
+    "pkg:deb/debian/libnsl2",
+    "pkg:deb/debian/libp11-kit0",
+    "pkg:deb/debian/libpcre3",
+    "pkg:deb/debian/libreadline8",
+    "pkg:deb/debian/libsemanage1",
+    "pkg:deb/debian/libsepol1",
+    "pkg:deb/debian/libss2",
+    "pkg:deb/debian/libssl1.1",
+    "pkg:deb/debian/libtasn1-6",
+    "pkg:deb/debian/libtirpc-common",
+    "pkg:deb/debian/libtirpc3",
+    "pkg:deb/debian/libunistring2",
+    "pkg:deb/debian/logsave",
+    "pkg:deb/debian/lsb-base",
+    "pkg:generic/krb5",
+    "pkg:generic/util-linux"
+  ],
+  "upgraded_components": [
+    {
+      "component": "pkg:deb/debian/adduser",
+      "from": "3.118",
+      "to": "3.152"
+    },
+    {
+      "component": "pkg:deb/debian/apt",
+      "from": "2.2.4",
+      "to": "3.0.3"
+    },
+    {
+      "component": "pkg:deb/debian/base-files",
+      "from": "11.1+deb11u5",
+      "to": "13.8+deb13u6"
+    },
+    {
+      "component": "pkg:deb/debian/base-passwd",
+      "from": "3.5.51",
+      "to": "3.6.7"
+    },
+    {
+      "component": "pkg:deb/debian/bash",
+      "from": "5.1-2+deb11u1",
+      "to": "5.2.37-2+b9"
+    },
+    {
+      "component": "pkg:deb/debian/bsdutils",
+      "from": "1:2.36.1-8+deb11u1",
+      "to": "1:2.41-5"
+    },
+    {
+      "component": "pkg:deb/debian/ca-certificates",
+      "from": "20210119",
+      "to": "20250419"
+    },
+    {
+      "component": "pkg:deb/debian/coreutils",
+      "from": "8.32-4+b1",
+      "to": "9.7-3"
+    },
+    {
+      "component": "pkg:deb/debian/dash",
+      "from": "0.5.11+git20200708+dd9ef66-5",
+      "to": "0.5.12-12"
+    },
+    {
+      "component": "pkg:deb/debian/debconf",
+      "from": "1.5.77",
+      "to": "1.5.91"
+    },
+    {
+      "component": "pkg:deb/debian/debian-archive-keyring",
+      "from": "2021.1.1",
+      "to": "2025.1"
+    },
+    {
+      "component": "pkg:deb/debian/debianutils",
+      "from": "4.11.2",
+      "to": "5.23.2"
+    },
+    {
+      "component": "pkg:deb/debian/diffutils",
+      "from": "1:3.7-5",
+      "to": "1:3.10-4"
+    },
+    {
+      "component": "pkg:deb/debian/dpkg",
+      "from": "1.20.12",
+      "to": "1.22.22"
+    },
+    {
+      "component": "pkg:deb/debian/findutils",
+      "from": "4.8.0-1",
+      "to": "4.10.0-3"
+    },
+    {
+      "component": "pkg:deb/debian/grep",
+      "from": "3.6-1",
+      "to": "3.11-4"
+    },
+    {
+      "component": "pkg:deb/debian/gzip",
+      "from": "1.10-4+deb11u1",
+      "to": "1.13-1"
+    },
+    {
+      "component": "pkg:deb/debian/hostname",
+      "from": "3.23",
+      "to": "3.25"
+    },
+    {
+      "component": "pkg:deb/debian/init-system-helpers",
+      "from": "1.60",
+      "to": "1.69~deb13u1"
+    },
+    {
+      "component": "pkg:deb/debian/libacl1",
+      "from": "2.2.53-10",
+      "to": "2.3.2-2+b1"
+    },
+    {
+      "component": "pkg:deb/debian/libattr1",
+      "from": "1:2.4.48-6",
+      "to": "1:2.5.2-3"
+    },
+    {
+      "component": "pkg:deb/debian/libaudit-common",
+      "from": "1:3.0-2",
+      "to": "1:4.0.2-2"
+    },
+    {
+      "component": "pkg:deb/debian/libaudit1",
+      "from": "1:3.0-2",
+      "to": "1:4.0.2-2+b2"
+    },
+    {
+      "component": "pkg:deb/debian/libblkid1",
+      "from": "2.36.1-8+deb11u1",
+      "to": "2.41-5"
+    },
+    {
+      "component": "pkg:deb/debian/libbz2-1.0",
+      "from": "1.0.8-4",
+      "to": "1.0.8-6"
+    },
+    {
+      "component": "pkg:deb/debian/libc-bin",
+      "from": "2.31-13+deb11u5",
+      "to": "2.41-12+deb13u3"
+    },
+    {
+      "component": "pkg:deb/debian/libc6",
+      "from": "2.31-13+deb11u5",
+      "to": "2.41-12+deb13u3"
+    },
+    {
+      "component": "pkg:deb/debian/libcap-ng0",
+      "from": "0.7.9-2.2+b1",
+      "to": "0.8.5-4+b1"
+    },
+    {
+      "component": "pkg:deb/debian/libcrypt1",
+      "from": "1:4.4.18-4",
+      "to": "1:4.4.38-1"
+    },
+    {
+      "component": "pkg:deb/debian/libdebconfclient0",
+      "from": "0.260",
+      "to": "0.280"
+    },
+    {
+      "component": "pkg:deb/debian/libgcc-s1",
+      "from": "10.2.1-6",
+      "to": "14.2.0-19"
+    },
+    {
+      "component": "pkg:deb/debian/libgmp10",
+      "from": "2:6.2.1+dfsg-1+deb11u1",
+      "to": "2:6.3.0+dfsg-3"
+    },
+    {
+      "component": "pkg:deb/debian/liblz4-1",
+      "from": "1.9.3-2",
+      "to": "1.10.0-4"
+    },
+    {
+      "component": "pkg:deb/debian/liblzma5",
+      "from": "5.2.5-2.1~deb11u1",
+      "to": "5.8.1-1+deb13u1"
+    },
+    {
+      "component": "pkg:deb/debian/libmount1",
+      "from": "2.36.1-8+deb11u1",
+      "to": "2.41-5"
+    },
+    {
+      "component": "pkg:deb/debian/libncursesw6",
+      "from": "6.2+20201114-2",
+      "to": "6.5+20250216-2"
+    },
+    {
+      "component": "pkg:deb/debian/libpam-modules",
+      "from": "1.4.0-9+deb11u1",
+      "to": "1.7.0-5"
+    },
+    {
+      "component": "pkg:deb/debian/libpam-modules-bin",
+      "from": "1.4.0-9+deb11u1",
+      "to": "1.7.0-5"
+    },
+    {
+      "component": "pkg:deb/debian/libpam-runtime",
+      "from": "1.4.0-9+deb11u1",
+      "to": "1.7.0-5"
+    },
+    {
+      "component": "pkg:deb/debian/libpam0g",
+      "from": "1.4.0-9+deb11u1",
+      "to": "1.7.0-5"
+    },
+    {
+      "component": "pkg:deb/debian/libpcre2-8-0",
+      "from": "10.36-2+deb11u1",
+      "to": "10.46-1~deb13u1"
+    },
+    {
+      "component": "pkg:deb/debian/libseccomp2",
+      "from": "2.5.1-1+deb11u1",
+      "to": "2.6.0-2"
+    },
+    {
+      "component": "pkg:deb/debian/libselinux1",
+      "from": "3.1-3",
+      "to": "3.8.1-1"
+    },
+    {
+      "component": "pkg:deb/debian/libsemanage-common",
+      "from": "3.1-1",
+      "to": "3.8.1-1"
+    },
+    {
+      "component": "pkg:deb/debian/libsmartcols1",
+      "from": "2.36.1-8+deb11u1",
+      "to": "2.41-5"
+    },
+    {
+      "component": "pkg:deb/debian/libsqlite3-0",
+      "from": "3.34.1-3",
+      "to": "3.46.1-7+deb13u1"
+    },
+    {
+      "component": "pkg:deb/debian/libstdc%2B%2B6",
+      "from": "10.2.1-6",
+      "to": "14.2.0-19"
+    },
+    {
+      "component": "pkg:deb/debian/libsystemd0",
+      "from": "247.3-7+deb11u1",
+      "to": "257.13-1~deb13u1"
+    },
+    {
+      "component": "pkg:deb/debian/libtinfo6",
+      "from": "6.2+20201114-2",
+      "to": "6.5+20250216-2"
+    },
+    {
+      "component": "pkg:deb/debian/libudev1",
+      "from": "247.3-7+deb11u1",
+      "to": "257.13-1~deb13u1"
+    },
+    {
+      "component": "pkg:deb/debian/libuuid1",
+      "from": "2.36.1-8+deb11u1",
+      "to": "2.41-5"
+    },
+    {
+      "component": "pkg:deb/debian/libxxhash0",
+      "from": "0.8.0-2",
+      "to": "0.8.3-2"
+    },
+    {
+      "component": "pkg:deb/debian/libzstd1",
+      "from": "1.4.8+dfsg-2.1",
+      "to": "1.5.7+dfsg-1"
+    },
+    {
+      "component": "pkg:deb/debian/login",
+      "from": "1:4.8.1-1",
+      "to": "1:4.16.0-2+really2.41-5"
+    },
+    {
+      "component": "pkg:deb/debian/mawk",
+      "from": "1.3.4.20200120-2",
+      "to": "1.3.4.20250131-1"
+    },
+    {
+      "component": "pkg:deb/debian/mount",
+      "from": "2.36.1-8+deb11u1",
+      "to": "2.41-5"
+    },
+    {
+      "component": "pkg:deb/debian/ncurses-base",
+      "from": "6.2+20201114-2",
+      "to": "6.5+20250216-2"
+    },
+    {
+      "component": "pkg:deb/debian/ncurses-bin",
+      "from": "6.2+20201114-2",
+      "to": "6.5+20250216-2"
+    },
+    {
+      "component": "pkg:deb/debian/netbase",
+      "from": "6.3",
+      "to": "6.5"
+    },
+    {
+      "component": "pkg:deb/debian/openssl",
+      "from": "1.1.1n-0+deb11u3",
+      "to": "3.5.6-1~deb13u2"
+    },
+    {
+      "component": "pkg:deb/debian/passwd",
+      "from": "1:4.8.1-1",
+      "to": "1:4.17.4-2"
+    },
+    {
+      "component": "pkg:deb/debian/perl-base",
+      "from": "5.32.1-4+deb11u2",
+      "to": "5.40.1-6"
+    },
+    {
+      "component": "pkg:deb/debian/readline-common",
+      "from": "8.1-1",
+      "to": "8.2-6"
+    },
+    {
+      "component": "pkg:deb/debian/sed",
+      "from": "4.7-1",
+      "to": "4.9-2+deb13u1"
+    },
+    {
+      "component": "pkg:deb/debian/sysvinit-utils",
+      "from": "2.96-7+deb11u1",
+      "to": "3.14-4"
+    },
+    {
+      "component": "pkg:deb/debian/tar",
+      "from": "1.34+dfsg-1",
+      "to": "1.35+dfsg-3.1"
+    },
+    {
+      "component": "pkg:deb/debian/tzdata",
+      "from": "2021a-1+deb11u8",
+      "to": "2026b-0+deb13u1"
+    },
+    {
+      "component": "pkg:deb/debian/util-linux",
+      "from": "2.36.1-8+deb11u1",
+      "to": "2.41-5"
+    },
+    {
+      "component": "pkg:deb/debian/zlib1g",
+      "from": "1:1.2.11.dfsg-2+deb11u2",
+      "to": "1:1.3.dfsg+really1.3.1-1+b1"
+    },
+    {
+      "component": "pkg:generic/bash",
+      "from": "5.1.4",
+      "to": "5.2.37"
+    },
+    {
+      "component": "pkg:generic/gzip",
+      "from": "1.10",
+      "to": "1.13"
+    },
+    {
+      "component": "pkg:generic/openssl",
+      "from": "1.1.1n",
+      "to": "3.5.6"
+    },
+    {
+      "component": "pkg:generic/python",
+      "from": "3.11.0",
+      "to": "3.11.15"
+    },
+    {
+      "component": "pkg:pypi/pip",
+      "from": "22.3",
+      "to": "24.0"
+    },
+    {
+      "component": "pkg:pypi/setuptools",
+      "from": "65.5.0",
+      "to": "79.0.1"
+    },
+    {
+      "component": "pkg:pypi/wheel",
+      "from": "0.38.4",
+      "to": "0.46.3"
+    }
+  ],
+  "max_new_severity": "HIGH"
+}

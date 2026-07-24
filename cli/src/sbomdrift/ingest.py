@@ -22,8 +22,19 @@ from pathlib import Path
 
 from lib4sbom.parser import SBOMParser
 
-from .models import Component, Snapshot
+from .models import Component, Snapshot, normalise_purl_case
 from .store import utcnow
+
+NON_PACKAGE_TYPES = frozenset({"FILE", "DEVICE", "FIRMWARE", "DATA", "MACHINE-LEARNING-MODEL"})
+"""CycloneDX component types that describe something other than a package.
+
+Syft catalogues individual *files* alongside packages — a ``python:3.11-slim``
+SBOM contains 483 of them against 130 packages. They carry no PURL because there
+is no such thing as a PURL for ``/etc/apt/apt.conf.d/01autoremove``, so counting
+them as "components we failed to map" reported 22% coverage for an ingest that
+had in fact mapped nearly everything there was to map. They are skipped, not
+counted as failures.
+"""
 
 
 @dataclass
@@ -32,11 +43,19 @@ class IngestResult:
 
     snapshot: Snapshot
     unmapped: list[str] = field(default_factory=list)
-    """Component names that carried no PURL and were therefore not evaluated."""
+    """Package names that carried no PURL and therefore cannot be evaluated."""
+
+    skipped_non_packages: int = 0
+    """Entries that are not packages at all (files, devices) and were ignored."""
 
     @property
     def coverage(self) -> float:
-        """Fraction of components that could be mapped to a PURL."""
+        """Fraction of *packages* that could be mapped to a PURL.
+
+        Deliberately excludes non-package entries from the denominator: coverage
+        is meant to answer "how much of this SBOM could we actually check?", and
+        a file entry was never checkable in the first place.
+        """
         total = len(self.snapshot.components) + len(self.unmapped)
         return len(self.snapshot.components) / total if total else 1.0
 
@@ -61,14 +80,24 @@ def _purl_of(package: dict) -> str | None:
 
 
 def _canonical_purl(purl: str) -> str:
-    """Strip qualifiers that split one component into several.
+    """Reduce a PURL to the form used everywhere downstream.
 
-    ``pkg:deb/debian/zlib1g@1.2.13?arch=amd64`` and the ``arch=arm64`` build are
-    the same package for vulnerability purposes; keeping the qualifier would make
-    an image that changed architecture look like it replaced its entire
-    inventory. The subpath after ``#`` is dropped for the same reason.
+    Two normalisations, each fixing a real double-count seen in Syft output:
+
+    *Qualifiers are stripped.* ``pkg:deb/debian/zlib1g@1.2.13?arch=amd64`` and the
+    ``arch=arm64`` build are the same package for vulnerability purposes; keeping
+    the qualifier would make an image that changed architecture look like it had
+    replaced its entire inventory. The ``#subpath`` goes for the same reason.
+
+    *Type and namespace are lower-cased.* One ``python:3.11-slim`` SBOM contains
+    both ``pkg:deb/debian/...`` and ``pkg:deb/Debian/...``; the PURL specification
+    makes those the same package, so string equality has to agree.
     """
-    return purl.split("?", 1)[0].split("#", 1)[0]
+    base = purl.split("?", 1)[0].split("#", 1)[0]
+    name, separator, version = base.rpartition("@")
+    if not separator:
+        return normalise_purl_case(base)
+    return f"{normalise_purl_case(name)}@{version}"
 
 
 def _artefact_and_digest(path: Path, document: dict) -> tuple[str, str | None]:
@@ -124,8 +153,12 @@ def ingest_file(
 
     components: dict[str, Component] = {}
     unmapped: list[str] = []
+    skipped = 0
 
     for package in parser.get_packages() or []:
+        if str(package.get("type", "")).upper() in NON_PACKAGE_TYPES:
+            skipped += 1
+            continue
         purl = _purl_of(package)
         name = package.get("name", "")
         if not purl:
@@ -145,7 +178,7 @@ def ingest_file(
         digest=digest or detected_digest,
         sbom_format=parser.get_type(),
     )
-    return IngestResult(snapshot=snapshot, unmapped=unmapped)
+    return IngestResult(snapshot=snapshot, unmapped=unmapped, skipped_non_packages=skipped)
 
 
 def ingest_directory(

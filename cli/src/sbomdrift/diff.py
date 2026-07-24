@@ -31,6 +31,8 @@ class DriftReport:
     unchanged: list[Finding] = field(default_factory=list)
     added_components: list[str] = field(default_factory=list)
     removed_components: list[str] = field(default_factory=list)
+    upgraded_components: list[tuple[str, str, str]] = field(default_factory=list)
+    """``(identity, old version, new version)`` for components present in both."""
 
     @property
     def is_clean(self) -> bool:
@@ -40,6 +42,7 @@ class DriftReport:
             or self.newly_fixed
             or self.added_components
             or self.removed_components
+            or self.upgraded_components
         )
 
     @property
@@ -96,10 +99,18 @@ def compute_drift(store: Store, from_ref: int | str, to_ref: int | str) -> Drift
     )
 
     if before.snapshot_id != after.snapshot_id:
-        before_components = {c.purl for c in store.components(before.snapshot_id)}
-        after_components = {c.purl for c in store.components(after.snapshot_id)}
-        report.added_components = sorted(after_components - before_components)
-        report.removed_components = sorted(before_components - after_components)
+        # Compared on versionless identity, so an upgrade is an upgrade rather
+        # than a removal plus an unrelated addition.
+        before_components = {c.identity: c.version for c in store.components(before.snapshot_id)}
+        after_components = {c.identity: c.version for c in store.components(after.snapshot_id)}
+
+        report.added_components = sorted(set(after_components) - set(before_components))
+        report.removed_components = sorted(set(before_components) - set(after_components))
+        report.upgraded_components = sorted(
+            (identity, before_components[identity], after_components[identity])
+            for identity in set(before_components) & set(after_components)
+            if before_components[identity] != after_components[identity]
+        )
 
     report.newly_vulnerable.sort(key=lambda f: (-severity_rank(f.severity), f.purl, f.vuln_id))
     report.newly_fixed.sort(key=lambda f: (-severity_rank(f.severity), f.purl, f.vuln_id))

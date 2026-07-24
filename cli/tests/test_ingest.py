@@ -62,6 +62,36 @@ def test_duplicate_purls_collapse_to_one_component(tmp_path):
     assert len(ingest_file(path).snapshot.components) == 1
 
 
+def test_file_entries_are_skipped_not_counted_as_failures(tmp_path):
+    """Syft catalogues files beside packages; they are not unmapped packages.
+
+    Regression test for a real miscount: a python:3.11-slim SBOM reported 22%
+    coverage because its 483 file entries were treated as components we had
+    failed to map.
+    """
+    document = {
+        "bomFormat": "CycloneDX",
+        "specVersion": "1.5",
+        "version": 1,
+        "metadata": {"component": {"type": "container", "name": "img", "version": "1"}},
+        "components": [
+            {"type": "library", "name": "zlib1g", "version": "1.2.13",
+             "purl": "pkg:deb/debian/zlib1g@1.2.13"},
+            {"type": "file", "name": "/etc/apt/apt.conf.d/01autoremove"},
+            {"type": "file", "name": "/etc/hostname"},
+        ],
+    }
+    path = tmp_path / "img.cdx.json"
+    path.write_text(json.dumps(document), encoding="utf-8")
+
+    result = ingest_file(path)
+
+    assert len(result.snapshot.components) == 1
+    assert result.unmapped == []
+    assert result.skipped_non_packages == 2
+    assert result.coverage == pytest.approx(1.0)
+
+
 def test_missing_file_is_an_explicit_error(tmp_path):
     with pytest.raises(FileNotFoundError):
         ingest_file(tmp_path / "nope.json")
@@ -73,7 +103,30 @@ def test_missing_file_is_an_explicit_error(tmp_path):
         ("pkg:pypi/requests@2.31.0", "pkg:pypi/requests@2.31.0"),
         ("pkg:deb/debian/zlib1g@1.2?arch=amd64", "pkg:deb/debian/zlib1g@1.2"),
         ("pkg:golang/x/text@v0.3.0#subpath", "pkg:golang/x/text@v0.3.0"),
+        # Syft emits both spellings of the namespace in one document.
+        ("pkg:deb/Debian/libzstd@1.5.7", "pkg:deb/debian/libzstd@1.5.7"),
+        ("pkg:PyPI/Requests@2.31.0", "pkg:pypi/Requests@2.31.0"),
     ],
 )
 def test_canonical_purl(raw, expected):
     assert _canonical_purl(raw) == expected
+
+
+def test_case_variants_of_a_namespace_collapse_to_one_component(tmp_path):
+    """Regression: 'debian' and 'Debian' listed the same package twice."""
+    document = {
+        "bomFormat": "CycloneDX",
+        "specVersion": "1.5",
+        "version": 1,
+        "metadata": {"component": {"type": "container", "name": "img", "version": "1"}},
+        "components": [
+            {"type": "library", "name": "libzstd", "version": "1.5.7",
+             "purl": "pkg:deb/debian/libzstd@1.5.7"},
+            {"type": "library", "name": "libzstd", "version": "1.5.7",
+             "purl": "pkg:deb/Debian/libzstd@1.5.7"},
+        ],
+    }
+    path = tmp_path / "case.cdx.json"
+    path.write_text(json.dumps(document), encoding="utf-8")
+
+    assert len(ingest_file(path).snapshot.components) == 1

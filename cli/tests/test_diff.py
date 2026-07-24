@@ -82,8 +82,10 @@ def test_version_drift_reports_component_changes(store, stored_snapshot, mock_os
     report = compute_drift(store, "before", "after")
 
     assert report.kind == "version drift"
-    assert report.added_components == ["pkg:pypi/urllib3@2.2.2"]
-    assert report.removed_components == ["pkg:pypi/urllib3@2.0.7"]
+    # An upgrade is an upgrade — not a removal plus an unrelated addition.
+    assert report.added_components == []
+    assert report.removed_components == []
+    assert report.upgraded_components == [("pkg:pypi/urllib3", "2.0.7", "2.2.2")]
     assert {f.vuln_id for f in report.newly_fixed} == {"CVE-2026-1111"}
     assert report.newly_vulnerable == []
 

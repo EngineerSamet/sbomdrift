@@ -1,0 +1,9 @@
+# The repository is authored on Windows but every consumer of it is Linux:
+# GitHub runners, container builds and the Action's shell steps. Normalising to
+# LF in the repository avoids shipping CRLF into a shell script, where it fails
+# with the famously unhelpful "bad interpreter: no such file or directory".
+* text=auto eol=lf
+
+*.png binary
+*.pdf binary
+*.db binary

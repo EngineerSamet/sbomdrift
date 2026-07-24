@@ -117,9 +117,14 @@ def ingest(
                 f"· {len(result.snapshot.components)} components "
                 f"· {result.snapshot.sbom_format}"
             )
+            if result.skipped_non_packages:
+                console.print(
+                    f"  [dim]{result.skipped_non_packages} non-package entr(ies) "
+                    f"(files, devices) skipped[/dim]"
+                )
             if result.unmapped:
                 err_console.print(
-                    f"  [yellow]{len(result.unmapped)} component(s) had no PURL and cannot be "
+                    f"  [yellow]{len(result.unmapped)} package(s) had no PURL and cannot be "
                     f"evaluated[/yellow] (coverage {result.coverage:.1%})"
                 )
 
@@ -281,6 +286,10 @@ def _report_to_dict(report: DriftReport) -> dict:
         "unchanged_count": len(report.unchanged),
         "added_components": report.added_components,
         "removed_components": report.removed_components,
+        "upgraded_components": [
+            {"component": identity, "from": old, "to": new}
+            for identity, old, new in report.upgraded_components
+        ],
         "max_new_severity": report.max_new_severity(),
     }
 
@@ -323,10 +332,11 @@ def _print_report(report: DriftReport) -> None:
             table.add_row(finding.severity, finding.vuln_id, finding.purl)
         console.print(table)
 
-    if report.added_components or report.removed_components:
+    if report.added_components or report.removed_components or report.upgraded_components:
         console.print(
-            f"~ components: [green]+{len(report.added_components)}[/green] "
-            f"[red]-{len(report.removed_components)}[/red]"
+            f"~ components: [green]+{len(report.added_components)} added[/green] · "
+            f"[red]-{len(report.removed_components)} removed[/red] · "
+            f"[cyan]{len(report.upgraded_components)} upgraded[/cyan]"
         )
 
     console.print(

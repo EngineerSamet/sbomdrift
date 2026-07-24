@@ -30,6 +30,45 @@ def severity_rank(severity: str) -> int:
         return 0
 
 
+def purl_identity(purl: str) -> str:
+    """The versionless PURL — what a component *is*, independent of which release.
+
+    This distinction is load-bearing and was learned the hard way. Keying drift on
+    the full versioned PURL made an upgrade unreadable: comparing two releases of
+    ``python:3.11-slim`` produced "114 components removed, 115 added, 0 unchanged",
+    because ``openssl@1.1.1n`` and ``openssl@3.5.6`` are different strings. Every
+    finding was simultaneously new and fixed, which is churn, not drift.
+
+    Identity is the package; version is an attribute of it. With that split,
+    "openssl was upgraded and CVE-2022-4899 went away" is expressible.
+    """
+    base = purl.split("?", 1)[0].split("#", 1)[0]
+    name, _, _version = base.rpartition("@") if "@" in base else (base, "", "")
+    return normalise_purl_case(name or base)
+
+
+def purl_version(purl: str) -> str:
+    """The version component of a PURL, or an empty string when it carries none."""
+    base = purl.split("?", 1)[0].split("#", 1)[0]
+    _, separator, version = base.rpartition("@")
+    return version if separator else ""
+
+
+def normalise_purl_case(purl_name: str) -> str:
+    """Lower-case the parts of a PURL that the specification defines as case-insensitive.
+
+    Syft emits both ``pkg:deb/debian/...`` and ``pkg:deb/Debian/...`` in the same
+    document. Left alone, those are two components, and one image appears to
+    contain the same package twice.
+    """
+    parts = purl_name.split("/")
+    if parts:
+        parts[0] = parts[0].lower()  # the "pkg:type" prefix
+    if len(parts) > 2:
+        parts[1] = parts[1].lower()  # the namespace
+    return "/".join(parts)
+
+
 @dataclass(frozen=True)
 class Component:
     """One software component, identified by its Package URL.
@@ -48,6 +87,11 @@ class Component:
         if not self.purl.startswith("pkg:"):
             return "unknown"
         return self.purl[4:].split("/", 1)[0]
+
+    @property
+    def identity(self) -> str:
+        """This component regardless of version — the key drift is measured on."""
+        return purl_identity(self.purl)
 
 
 @dataclass
@@ -91,9 +135,12 @@ class Finding:
         """Identity used when diffing. A finding is the *pair*, not the CVE alone.
 
         The same CVE affecting two different components is two findings: fixing
-        one of them is real progress and must show up in the diff.
+        one of them is real progress and must show up in the diff. The package
+        side of the pair is versionless (see :func:`purl_identity`) so that
+        upgrading a package reads as "this finding went away", not as "the whole
+        component was replaced".
         """
-        return (self.purl, self.vuln_id)
+        return (purl_identity(self.purl), self.vuln_id)
 
 
 @dataclass
