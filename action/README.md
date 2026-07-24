@@ -1,5 +1,10 @@
 # sealed-build
 
+> **Published at [EngineerSamet/sealed-build](https://github.com/EngineerSamet/sealed-build)**
+> — use `EngineerSamet/sealed-build@v0.1.0` in a workflow. The GitHub Marketplace
+> requires `action.yml` at a repository root, so the released copy lives in its own
+> repository; this directory is where it is developed, alongside the CLI it pairs with.
+
 A GitHub Action that builds a container image, produces an SBOM, **refuses to push
 it if it fails a vulnerability threshold**, and signs the result with keyless
 attestation — with every third-party step pinned to an immutable commit SHA.

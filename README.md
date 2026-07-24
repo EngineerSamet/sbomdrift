@@ -6,7 +6,7 @@ tell what changed since last time?**
 | | |
 |---|---|
 | [**`sbomdrift`**](cli/) — a `pip install`-able CLI | *What became vulnerable since last time?* Stores SBOM component inventories over time, re-evaluates them against OSV.dev, and reports the **diff**. |
-| [**`sealed-build`**](action/) — a hardened GitHub Action | Builds an image, produces an SBOM, blocks it on a vulnerability threshold **before** it can reach a registry, and signs it keylessly — with every step pinned to an immutable commit SHA. |
+| [**`sealed-build`**](action/) — a hardened GitHub Action | Builds an image, produces an SBOM, blocks it on a vulnerability threshold **before** it can reach a registry, and signs it keylessly — with every step pinned to an immutable commit SHA. Released at [EngineerSamet/sealed-build](https://github.com/EngineerSamet/sealed-build) (`v0.1.0`). |
 
 They are joined by a theme, not by a dependency: `sealed-build` is one good source
 of SBOMs, and `sbomdrift` eats any SBOM. Neither holds the other hostage.
