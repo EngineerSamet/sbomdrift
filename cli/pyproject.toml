@@ -1,6 +1,6 @@
 [project]
 name = "sbomdrift"
-version = "0.1.1"
+version = "0.1.2"
 description = "Track how the vulnerability posture of your SBOMs changes over time — what became vulnerable since last time."
 readme = "README.md"
 requires-python = ">=3.11"
