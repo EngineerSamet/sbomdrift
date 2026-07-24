@@ -1,0 +1,63 @@
+# SPDX-License-Identifier: Apache-2.0
+name: demo-sealed-build
+
+# Proves the Action does what it claims by running it twice on purpose:
+#
+#   pass — a current base image; the gate allows it and an attestation is produced
+#   fail — a deliberately ancient base image; the gate refuses it
+#
+# The second job is expected to fail, and `continue-on-error` records that
+# failure without failing the workflow. A security gate that has never been seen
+# to block anything is an untested gate.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "action/**"
+      - ".github/workflows/demo-sealed-build.yml"
+      - "demo/**"
+
+permissions:
+  contents: read
+  id-token: write # keyless signing
+  attestations: write
+
+jobs:
+  gate-passes:
+    name: clean image passes the gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: sealed-build
+        uses: ./action
+        with:
+          image-name: sbomdrift-demo:clean
+          context: demo/clean
+          severity-threshold: CRITICAL
+          push: "false"
+
+  gate-blocks:
+    name: vulnerable image is blocked
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: sealed-build (expected to fail)
+        id: sealed
+        continue-on-error: true
+        uses: ./action
+        with:
+          image-name: sbomdrift-demo:vulnerable
+          context: demo/vulnerable
+          severity-threshold: HIGH
+          ignore-unfixed: "false"
+          push: "false"
+
+      - name: Assert the gate actually blocked
+        run: |
+          if [ "${{ steps.sealed.outcome }}" != "failure" ]; then
+            echo "::error::the gate passed an image it should have blocked"
+            exit 1
+          fi
+          echo "gate blocked the vulnerable image, as designed"

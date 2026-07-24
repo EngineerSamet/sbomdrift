@@ -1,0 +1,140 @@
+# SPDX-License-Identifier: Apache-2.0
+name: sealed-build
+description: >-
+  Build a container image, produce an SBOM, gate on vulnerabilities before the
+  image can reach a registry, and sign the result with keyless attestation —
+  with every tool in the chain pinned to an immutable commit SHA.
+author: Samet Sanlikan
+branding:
+  icon: lock
+  color: blue
+
+# Why this Action exists, given that actions/attest already does keyless signing:
+# it is not the signing that is hard, it is trusting the chain that produces the
+# evidence. In March 2026 an attacker force-pushed malicious code over 76 of the
+# 77 release *tags* of aquasecurity/trivy-action. Every workflow in the world
+# that referenced `@v0.28.0` — a tag, and therefore mutable — silently began
+# running the attacker's code, including the workflows whose job was to detect
+# exactly that. This Action pins every third-party step to a full 40-character
+# commit SHA, which is content-addressed and cannot be moved. Dependabot keeps
+# those pins current, so the chain is pinned but not frozen.
+
+inputs:
+  image-name:
+    description: Image reference to build, e.g. ghcr.io/owner/app:1.2.3
+    required: true
+  context:
+    description: Build context directory.
+    required: false
+    default: "."
+  dockerfile:
+    description: Path to the Dockerfile.
+    required: false
+    default: Dockerfile
+  severity-threshold:
+    description: >-
+      Fail the build when a vulnerability at or above this severity is found.
+      One of UNKNOWN, LOW, MEDIUM, HIGH, CRITICAL.
+    required: false
+    default: HIGH
+  ignore-unfixed:
+    description: >-
+      Ignore vulnerabilities that have no fix available. Defaults to true: a gate
+      that blocks on findings nobody can act on is a gate that gets switched off.
+    required: false
+    default: "true"
+  push:
+    description: Push the image to its registry — only ever reached if the gate passes.
+    required: false
+    default: "false"
+  sbom-format:
+    description: SBOM output format understood by Syft (cyclonedx-json or spdx-json).
+    required: false
+    default: cyclonedx-json
+
+outputs:
+  sbom-path:
+    description: Path of the generated SBOM file.
+    value: ${{ steps.sbom.outputs.sbom-path }}
+  digest:
+    description: Digest of the built image.
+    value: ${{ steps.build.outputs.digest }}
+  gate-result:
+    description: "'pass' when the vulnerability gate allowed the image through."
+    value: ${{ steps.gate.outputs.result }}
+
+runs:
+  using: composite
+  steps:
+    # A composite Action was chosen over a Docker or JavaScript one precisely so
+    # that a reviewer can read every step that runs, here, without building
+    # anything or trusting a published image.
+    - name: Set up Buildx
+      uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
+
+    - name: Build image (loaded locally, deliberately not pushed)
+      id: build
+      uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
+      with:
+        context: ${{ inputs.context }}
+        file: ${{ inputs.context }}/${{ inputs.dockerfile }}
+        tags: ${{ inputs.image-name }}
+        load: true
+        push: false
+
+    - name: Generate SBOM
+      id: sbom
+      uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+      with:
+        image: ${{ inputs.image-name }}
+        format: ${{ inputs.sbom-format }}
+        output-file: sbom.${{ inputs.sbom-format }}.json
+        upload-artifact: false
+        upload-release-assets: false
+
+    - name: Record the SBOM path
+      shell: bash
+      run: echo "sbom-path=sbom.${{ inputs.sbom-format }}.json" >> "$GITHUB_OUTPUT"
+
+    # The gate runs here — before any push — because scanning an image that is
+    # already in the registry tells you about a problem you have already shipped.
+    - name: Vulnerability gate
+      id: gate
+      uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+      with:
+        image-ref: ${{ inputs.image-name }}
+        format: table
+        exit-code: "1"
+        severity: ${{ inputs.severity-threshold }}
+        ignore-unfixed: ${{ inputs.ignore-unfixed }}
+
+    - name: Mark the gate as passed
+      shell: bash
+      run: echo "result=pass" >> "$GITHUB_OUTPUT"
+
+    - name: Attest the SBOM
+      # Keyless: the signing identity is the workflow itself, recorded in a public
+      # transparency log. There is no private key to rotate, store or leak — which
+      # removes the credential rather than protecting it.
+      uses: actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373 # v4.1.1
+      with:
+        subject-path: sbom.${{ inputs.sbom-format }}.json
+
+    - name: Push the image
+      # Reached only when every step above succeeded. A failed gate fails the
+      # composite Action, so this step never runs and the image never leaves the
+      # runner.
+      if: inputs.push == 'true'
+      shell: bash
+      run: docker push "${{ inputs.image-name }}"
+
+    - name: Attest the pushed image
+      # An attestation binds to a digest that exists in a registry, so this can
+      # only follow the push. That ordering is safe here because the gate has
+      # already decided the image is allowed to exist.
+      if: inputs.push == 'true'
+      uses: actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373 # v4.1.1
+      with:
+        subject-name: ${{ inputs.image-name }}
+        subject-digest: ${{ steps.build.outputs.digest }}
+        push-to-registry: true

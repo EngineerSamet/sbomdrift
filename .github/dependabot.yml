@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: Apache-2.0
+#
+# The obvious objection to pinning every Action to a commit SHA is: "then you
+# never get security updates, and your pinned chain rots." This file is the
+# answer. Dependabot understands SHA-pinned Actions, opens a pull request that
+# bumps the SHA and rewrites the `# vX.Y.Z` comment beside it, and the change
+# arrives as a reviewable diff rather than as a silent tag move.
+#
+# Pinned, but not frozen.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci"
+
+  - package-ecosystem: github-actions
+    directory: /action
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci"
+
+  - package-ecosystem: uv
+    directory: /cli
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "deps"
